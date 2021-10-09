@@ -1,0 +1,2488 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width" name="viewport"/>
+    <title>
+    </title>
+    <style type="text/css">
+      body {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      html {
+        font-family: Arial;
+      }
+
+      h1,
+      h2 {
+        color: black;
+        text-align: center;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .emp {
+        font-style: italic;
+      }
+
+      .und {
+        text-decoration: underline;
+      }
+
+      table {
+        border: 1px solid black;
+        border-spacing: 0px;
+      }
+
+      table tr th {
+        background-color: gray;
+        color: white;
+        padding: 5px;
+      }
+
+      table tr td {
+        margin: 0px;
+        padding: 5px;
+      }
+
+      .text-xs {
+        font-size: 12px;
+      }
+
+      .text-sm {
+        font-size: 14px;
+      }
+
+      .text-md {
+        font-size: 18px;
+      }
+
+      .text-lg {
+        font-size: 24px;
+      }
+
+      .text-xl {
+        font-size: 32px;
+      }
+
+      .col-1-3 {
+        width: 33.3%;
+        float: left;
+      }
+
+      .col-2-3 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-3-3 {
+        width: 100%;
+        float: left;
+      }
+
+      .col-1-2 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-2-2 {
+        width: 100%;
+        float: left;
+      }
+
+      .col-1-4 {
+        width: 25%;
+        float: left;
+      }
+
+      .col-2-4 {
+        width: 33.3%;
+        float: left;
+      }
+
+      .col-3-4 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-4-4 {
+        width: 100%;
+        float: left;
+      }
+
+      .inventory-table td {
+        border-bottom: 1px solid black;
+      }
+
+      .wrapper-box {
+        width: 100%;
+        border: 2px solid black;
+        padding: 5px;
+      }
+
+      .header {
+        border-bottom: 2px solid #000;
+      }
+
+      .feat-box {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      .feat-box > * {
+        flex: 1 1 350px;
+        margin: 5px 10px;
+        /*border: 1px solid black;*/
+      }
+    </style>
+    <script>
+      function show_hide(ident) {
+        var a = document.getElementById(ident);
+        if (a.style.display === 'none') {
+          a.style.display = 'block';
+        } else {
+          a.style.display = 'none';
+        }
+      }
+    </script>
+  </head>
+<body>
+  <h1>
+    Prestige Classes
+  </h1>
+  <p>
+    Prestige classes are classes you get upon meeting a certain prerequisite. You can only take one Prestige class per character, and cannot change it except by extraordinary circumstances. You gain one level in your Prestige class for every two levels in your normal classes. For example, a 5th level fighter, has 2 levels in their Prestige class. A multiclassed 5th level fighter & 3rd level sorcerer, has 4 levels in their Prestige class. Below are potential Prestige classes.
+  </p>
+  <br/>
+  <table class="wrapper-box" style="margin-bottom:60px; table-layout: fixed;">
+    <tr>
+      <td colspan="3">
+        <h2>
+          Demigod Prestige Class Features
+        </h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="text-md bold">Hit Dice:</div> 1d4
+        <div class="text-md bold">Hit Points at 1st Level:</div> 4
+        <div class="text-md bold">Hit Points at Higher Level:</div> 1d4 (or 3)
+      </td>
+      <td>
+        <div class="text-md bold">Armor Proficiency:</div> None
+        <div class="text-md bold">Weapon Proficiency:</div> None
+        <div class="text-md bold">Tool Proficiency:</div> None
+        <div class="text-md bold">Saving Throws:</div> None
+        <div class="text-md bold">Skill Proficiency:</div> Choose 1 from Religion, Persuasion, or Insight
+      </td>
+      <td>
+        <div class="text-md bold">Starting Equipment</div>
+        You start with the following items, plus anything provided by your background.
+        <ul style="padding-left: 0px;">
+          <li>
+            Symbol of your Diety
+          </li>
+        </ul>
+        <div class="text-md bold">Prerequisite</div>
+        Parent or Grandparent is a Deity, or selected as a Champion of your Diety.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <table class="inventory-table" style="width:100%;">
+          <tr>
+            <th style="text-align:left;">
+              Level
+            </th>
+            <th style="text-align:left;">
+              Features
+            </th>
+          </tr>
+          <tr>
+            <td>
+              2
+            </td>
+            <td>
+              <a href="#Feat1_1">Diety Domain I</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              4
+            </td>
+            <td>
+              <a href="#Feat2_1">Fast Healing I</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              6
+            </td>
+            <td>
+              <a href="#Feat3_1">Diety Domain II</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              8
+            </td>
+            <td>
+              <a href="#Feat4_1">Fast Healing II</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              10
+            </td>
+            <td>
+              <a href="#Feat5_1">Diety Domain III</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              12
+            </td>
+            <td>
+              <a href="#Feat6_1">Fast Healing III</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              14
+            </td>
+            <td>
+              <a href="#Feat7_1">Diety Domain IV</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              16
+            </td>
+            <td>
+              <a href="#Feat8_1">Fast Healing IV</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              18
+            </td>
+            <td>
+              <a href="#Feat9_1">Diety Domain V</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              20
+            </td>
+            <td>
+              <a href="#Feat10_1">Fast Healing V</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_1">
+          <h3 class="header">
+            Diety Domain I
+          </h3>
+        </a>
+        <p>
+          Each diety has a domain. You may select one of the following domain abilities from the list of Domains your diety is over or associated with. You may also select a domain from your diety's alignment.
+        </p>
+        <div class="feat-box">
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Air Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  If you are able to cast spells, you now know <a href="https://5e.tools/spells.html#feather%20fall_phb">Feather Fall</a>. This does not count towards known spells. You are also able to cast it once per day without expending a spell slot. You cannot use the ability again until you finish a long rest.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain a Fly speed equal to your movement speed. While flying, you cannot dash, or extend your movement speed faster than your regular movement speed. You cannot weild two handed weapons, wear heavy or medium armor, or carry more than 5 lbs in your hands while flying. You also cannot fly if you are encumbered.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Fly speed is now equal to two times your movement speed. You can move and act normally now, unless you are encumbered, in which case you cannot get airborn.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You are unaffected by gusts, winds, fogs, and tornadoes. Spells such as <a href="https://5e.tools/spells.html#gust_xge">Gust</a>, or <a href="https://5e.tools/spells.html#cloudkill_phb">Cloudkill</a> do not affect you. You also can hold your breathe indefinitely without penalty.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You create a tornado originating around yourself. All creatures within 20 ft of you must make a Strength Saving throw or be thrown away from you. The DC of the save is determined by the creatures distance from you. From 5 - 10 ft, the DC is 10 + Wisdom Modifier + Proficiency bonus. From 15 - 20 ft, the DC is the DC is 10 + Wisdom Modifier + Proficiency bonus. If the creature saves, they may act normally. If the creature fails, they may not move closer to you, but act normally otherwise. If the creature fails by 5 or more, they are pushed to the extent of your tornado, and cannot move back into the tornado.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Animal Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You now have the ability to speak with Animals. So long as a creature has an Intelligence score greater than 1, you can speak with them and they understand your intent. If the creature has an intelligence score of 4 or greater, then can speak back to you.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  At the end of a long rest, you gain the ability to transform some part of your body and gain one of the following natural attacks.
+                  <ul>
+                    <li>
+                      <b>Bite:</b> You gain a natural bite attack dealing 1d8 + Strength Piercing damage. At level 6 the damage increases to 2d8 + STR. At level 12, 3d8 + STR. At level 20, 4d8 + STR.
+                    </li>
+                    <li>
+                      <b>Talon:</b> You gain a natural claw attack dealing 1d8 + Strength Slashing damage. At level 6 the damage increases to 2d8 + STR. At level 12, 3d8 + STR. At level 20, 4d8 + STR.
+                    </li>
+                    <li>
+                      <b>Headbutt:</b> You gain a natural charge attack dealing 1d8 + Strength Bludgeoning damage. At level 6 the damage increases to 2d8 + STR. At level 12, 3d8 + STR. At level 20, 4d8 + STR.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you gain the ability to Polymorph into a creature of the Beast subtype whose CR is less than or equal to 1 CR.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to Polymorph into a creature of the Beast subtype whose CR is less than or equal to 3.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to Polymorph into a creature of the Beast subtype whose CR is less than or equal to 6.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Artifice Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to cast Mending. You use your Intelligence for this casting.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  As an action, you can create a Tiny non-magical object with the following effects: *Note, this effect is permenant until you create another effect or dismiss it as an action.
+                  <ul>
+                    <li>
+                      The object sheds bright light in a 5-foot radius and dim light for an additional 5 feet.
+                    </li>
+                    <li>
+                      Whenever tapped by a creature, the object emits a recorded message that can be heard up to 10 feet away. You utter the message when you bestow this property on the object, and the recording can be no more than 6 seconds long.
+                    </li>
+                    <li>
+                      The object continuously emits your choice of an odor or a nonverbal sound (wind, waves, chirping, or the like). The chosen phenomenon is perceivable up to 10 feet away.
+                    </li>
+                    <li>
+                      A static visual effect appears on one of the object's surfaces. This effect can be a picture, up to 25 words of text, lines and shapes, or a mixture of these elements, as you like.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You are able to create basic automatons. Once per long rest, you can cast <a href="https://5e.tools/spells.html#find%20familiar_phb">Find Familiar</a> as a ritual, but instead of finding a natural animal form, you create an automaton in the shape of one of the options from the Find Familiar spell. You also gain all the abilities of Find Familiar using your Automaton.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You can infuse any non-magical item (including weapons and armor), with a magical effect. These effects can be from any 2nd level spell or less. If your DM allows, you may create a new effect or spell. Use the <a href="https://5e.tools/tables.html#spell%20damage_dmg">Spell Damage</a> found in the Dungeon Master's Guide for determining damage.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You can now infuse non-magical as well as magical items with a magical effect up to 4th level.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Chaos Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your behavior is erratic and difficult to track. You gain proficiency with 2 of the following: Deception, Insight, Intimidation, and Persuasion.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per short rest, you can give disadvantage on an attack roll, saving throw, or ability check to an enemy.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you gain the ability to gain advantage on an Attack roll. When you do this, you must roll on the Wild Magic Table, and take the effect at the end of your turn.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you can extend or reduce the duration of a spell effecting you by one category. Weeks <=> Days <=> Hours <=> Minutes <=> Rounds
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to use your Wild Magic a number of times equal to your Constitution Modifier, minimum 1.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Charm Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You have advantage on saving throws against being Charmed.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per short rest, you gain the ability to entrance all enemies for 1 minute. Any enemy within line of sight of you has disavantage on Perception, Insight, Survival, and Intimidation.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You can cast <a href="https://5e.tools/spells.html#charm%20monster_xge">Charm Monster</a> once per long rest. If you are able to cast spells, you learn this spell, which does not count towards your known spells.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Charisma Score increases by 2, and gain proficiency with Charisma Saving throws. If you are already proficient, you are double proficient.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  At the end of a long rest, you may choose one of the following natural traits:
+                  <ul>
+                    <li><b>Glibness:</b> Once per day you can cast <a href="https://5e.tools/spells.html#glibness_phb">Glibness</a> on yourself without expending a spell slot.</li>
+                    <li><b>Natural Charm:</b> All creatures within 30 ft of you must make a Wisdom Saving Throw. The DC is 8 + Charisma Modifier + Proficiency Bonus. On a failed save, All hostile creatures treat you as neutral until you take a hostile action against them, and all Neutral creatures treat you as an ally until you take a hostile action against them. Once a creature is affected by this ability, they cannot be affected by this ability again for another 24 hours.</li>
+                    <li><b>Sweet Talker:</b> You gain the ability to freely cast <a href="https://5e.tools/spells.html#command_phb">Command</a>.</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Darkness Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  If you do not have darkvision, you gain darkvision up to 60 ft. If you have darkvision, your darkvision range is extended an additional 30 ft. You also gain proficiency with Stealth. If you are already proficient, you gain expertise.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you gain the ability to cast <a href="https://5e.tools/spells.html#darkness_phb">Darkness</a> without the use of a spell slot. If you are able to cast spells, you learn this spell, which does not count towards your known spells.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  While in darkness or dim light, you gain the ability to cast <a href="https://5e.tools/spells.html#misty%20step_phb">Misty Step</a> up to a number of time equal to your Wisdom Modifier, with a minimum of 1. You regain all uses of this ability at the end of a long rest.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You can meld into the Shadows perfectly, practically become them. You can travel through darkness or dimlight at 4 times your normal movement speed. If you remain perfectly still in the shadows, you treat all stealth checks as if they were 20. When attacking from dim light or darkness, you deal an additional 1d6 damage.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You can summon creatures from the darkness. Once per long rest, as an action, you can summon 1d4 <a href="https://5e.tools/bestiary.html#shadow_mm">Shadows</a> in an unoccupied space within 10 ft. of you.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Death Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  At the end of a long rest, you gain Temporary Hit Points equal to your level.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Creatures who you bring to fewer than 0 hit points, make their first Death Saving throw with disadvantage.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you can spend your action transforming into an Avatar of Death. You gain two of the following benefits for the next minute:
+                  <ul>
+                    <li>
+                      <b>Deathless:</b> You gain Temporary hit points equal to 1d8 + Constitution. These temporary hit points stack for the duration of the ability, but are lost once this effect ends
+                    </li>
+                    <li>
+                      <b>Death's Touch:</b> You deal an additional 1d6 Necrotic damage on a successful Melee attacks.
+                    </li>
+                    <li>
+                      <b>Death's Reach:</b> You deal an additional 1d6 Necrotic damage on a successful Ranged attacks.
+                    </li>
+                    <li>
+                      <b>Fear of Death:</b> All creatures who can see you within 60 ft, must suceed a DC 16 Wisdom Saving throw, or become frightened for the duration of this ability. If a creature is successful, they are immune to this effect for 24 hours.
+                    </li>
+                    <li>
+                      <b>Deadened Mind:</b> You are immune to being Frightened, Petrified, Charmed, or Stunned.
+                    </li>
+                    <li>
+                      <b>Deadened Body:</b> You gain resistance to non-magical weapon damage made against you.
+                    </li>
+                    <li>
+                      <b>To Touch Death:</b> All damage you deal is Necrotic damage.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Avatar of Death state now lasts for 10 minutes, and can be used a number of times equal to your Constitution modifier.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  When gaining your Avatar of Death trait, you may now choose up to 4 of the following abilities. You may also not choose from the following list of abilities:
+                  <ul>
+                    <li>
+                      <b>Superior Death's Touch:</b> You deal an additional 2d6 Necrotic damage on a successful Melee attacks. This ability does not stack with Death's Touch.
+                    </li>
+                    <li>
+                      <b>Superior Death's Reach:</b> You deal an additional 2d6 Necrotic damage on a successful Ranged attacks. This ability does not stack with Death's Reach.
+                    </li>
+                    <li>
+                      <b>Undeath:</b> At the start of your Avatar of Death ability, you cast <a href="https://5e.tools/spells.html#create%20undead_phb">Create Undead</a> on yourself at 6th level.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Destruction Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Constructs are vulnerable to your bludgeoning damage, so long as they don't have resistances against your damage.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You deal an additional 1d6 points of damage on all attacks. Your Strength also increases by 1.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You deal an additional 1d6 points of damage on all attacks. This ability stacks with Destruction Level 2 ability, totalling 2d6 points of damage. Your Strength also increases by 1.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You deal an additional 1d6 points of damage on all attacks. This ability stacks with Destruction Level 1 & 2 ability, totalling 3d6 points of damage. Your Strength also increases by 1.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Upon striking a critical hit, the creature you just damaged is now vulnerable to the damage type you just dealt for the next 24 hours. i.e. Dealing Slashing damage to a creature as part of a critical hit, The creature is not vulnerable to Slashing damage for 24 hours. The damage dealt on the critical's round is not considered vulnerable.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Draconic Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  As part of a Draconic Line, you must choose your Lineage. This choice cannot be changed later. Your Draconic form, leaves a physical trace behind of some sort. Whether that's something bigger like body scales, or smaller like a forked tongue.
+                  <table style="width: 100%;">
+                    <tr>
+                      <th>Dragon Lineage</th>
+                      <th>Ability</th>
+                    </tr>
+                    <tr>
+                      <td>White/Silver</td>
+                      <td>You gain resistance to Cold Damage, and gain a 15 ft. Cone Cold breath weapon (Con Save).</td>
+                    </tr>
+                    <tr>
+                      <td>Red/Gold</td>
+                      <td>You gain resistance to Fire Damage, and gain a 15 ft. Cone Fire breath weapon (Dex Save).</td>
+                    </tr>
+                    <tr>
+                      <td>Blue/Bronze</td>
+                      <td>You gain resistance to Lightning Damage, and gain a 30 ft. Line Lightning breath weapon (Dex Save).</td>
+                    </tr>
+                    <tr>
+                      <td>Black/Copper</td>
+                      <td>You gain resistance to Acid Damage, and gain a 15 ft. Cone Acid breath weapon (Dex Save).</td>
+                    </tr>
+                    <tr>
+                      <td>Green</td>
+                      <td>You gain resistance to Poison Damage, and gain a 15 ft. Cone Poison breath weapon (Con Save).</td>
+                    </tr>
+                    <tr>
+                      <td>Brass</td>
+                      <td>You gain resistance to Fire Damage, and gain a 30 ft. Line Fire breath weapon (Dex Save).</td>
+                    </tr>
+                  </table>
+                  Your breath weapon deals 2d6 points of damage. The DC for the save is equal to 8 + Constitution Modifer + Proficiency. You can use your breath weapon once per long rest.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  At the end of a long rest, choose one of the following traits to gain for the day.
+                  <ul>
+                    <li><b>Dragon's Breath:</b> Your breath weapon now recharges. At the start of every round, roll 1d20. On a 20, your breath weapon recharges.</li>
+                    <li><b>Flight:</b> You gain a fly speed equal to your movement speed. In order to remain aloft, you must muve the full length of your movement speed. You must also move 1 square of movement forward, before turning.</li>
+                    <li><b>Tough Scales:</b> Your natural Armor increases by +1. So long as your Dexterity is used when calculating AC, this effect is also used.</li>
+                    <li><b>Spiked Jaw:</b> You gain a bit attack, which you can make as a bonus action. This attack uses your Strength modifier, and deals 1d4 Piercing and 1d4 elemental damage. The element is determined by your Dragon Lineage.</li>
+                  </ul>
+                  Also, your breath weapon is now 3d6.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  As an action, You can increase your natural size category by 1. I.e. From Medium to Large. This effect lasts for 1 minute, or until killed or dispelled as a bonus action. Using this effect increases your STR by 2, your CON by 2, and decreases your DEX by 2. Also, your breath weapon is now 4d6.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to Roar as an action. This affects all creatures in a 30 ft Cone. All creatures must make a Wisdom Saving throw, or become frightened for 2d6 rounds. The DC for the save is equal to 6 + Strength Modifider + Constitution Modifier + Proficiency bonus. Once a creature saves from this ability, they are immune to the effects for 24 hours. Also, your breath weapon is now 5d6.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Also, your breath weapon's range, as well as your Roar's range, is now doubled. 30 ft Cone or a 60 ft. Line, and a 60 ft. cone.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Earth Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to cast the <a href="https://5e.tools/spells.html#mold%20earth_xge">Mold Earth</a> cantrip. Constitution is your spell casting modifier for this ability.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Difficult terrain as a result of natural earth or stone does not cost additional squares of movement for you. You also gain Tremorsense up to 60 ft.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain resistance to Lightning Damage. If you already have resistance to Lightning Damage, you gain immunity to Lightning damage.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to traverse through non-magical stone and rock. While doing so, you do not incur movement penalties in any direction you move, including vertically.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  As a reaction, while standing on Earth, Rock, or Metal, you can drop prone into the ground to avoid being hit. You emerge at the start of your turn. When you emerge, you emerge prone on the ground. You can do this a number of times equal to your Constitution Modifer.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Evil Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain proficiency with 2 of the following: Deception, Intimidation, and Persuasion.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you fire out a 15 ft Cone of Evil. All creatures must make a Constitution Saving throw. The DC is 8 + your Constitution modifier + Proficiency bonus. Evil aligned creatures have Advantage, and Good creatures have Disadvantage on this save. On a failed dave, the enemy takes 1d10 Poison damage, and becomes sickened for 1d6 rounds. On a success, the creature takes half damage and is not sickened.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, for 10 rounds, you deal an additional 1d6 points of damage to all good aligned creatures. These rounds do not need to be consecutive, but must be declared at the start of your turn.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Cone of Evil now extends to 30 ft. It also deals 3d10 Poison Damage.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                    Your aura of evil is overwhelming. All good creatures within 60 ft must make a Wisdom Saving Throw or be frightened. At the beginning of the creature's turn, they may make the save again. Once the save is passed, the creature is immune to this effect for 24 hours.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Fire Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You learn the <a href="https://5e.tools/spells.html#produce%20flame_phb">Produce Flame</a> Cantrip. Constitution is your spell casting modifier for this ability.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain resistance to Fire damage. If you already have a resistance to Fire damage, you gain immunity to Fire damage
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you can activate your innate Fire capabilities. For the next minute, on the creature's turn, they must make a Dexterity Saving throw or take 1d10 fire damage. The save DC is equal to 8 + Constitution modifier + Proficiency. This ability effects all creatures within 10 feet of you.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Natural Fire Aura can be activated a number of times equal to your Constitution modifer, and lasts for 10 minutes.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  The Fire Aura now deals 3d10 fire damage, instead of 1d10.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Glory Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain proficiency with 2 of the following skills: Deception, Intimidation, Performance, and Persuasion
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  For every enemy that you bring to 0 HP, you gain 1d8 HP. If the attack was a critical hit, you gain an additional 2d8 HP.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you can spend your action to bolster your companions for 1 minute. You grant all allies within 20 feet of you, may add your Charisma modifier on attack and damage rolls.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Charisma modifer increases by 2, and your Bolster Companion ability now lasts for 1 hour, and can be used on all Attack Rolls, Damage Rolls, and Skill Rolls, and Death Saving Throws.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Charisma modifer increases by 2, and you now can use your Bolster Companion ability a number of times per day equal to your Charisma Modifier.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Good Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain proficiency with 2 of the following: Persuasion, Medicine, and Insight.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you fire out a 15 ft Cone of Good. All creatures must make a Constitution Saving throw. The DC is 8 + your Constitution modifier + Proficiency bonus. Good aligned creatures have Advantage, and Evil creatures have Disadvantage on this save. On a failed dave, the enemy takes 1d10 Radiant damage, and becomes charmed for 1d6 rounds. On a success, the creature takes half damage and is not charmed.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, for 10 rounds, you deal an additional 1d6 points of damage to all evil aligned creatures. These rounds do not need to be consecutive, but must be declared at the start of your turn.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Cone of Good now extends to 30 ft, not 15 ft. It also deals 3d10 Radiant Damage.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                    Your aura of good is overwhelming. All evil creatures within 60 ft must make a Wisdom Saving Throw or be frightened. At the beginning of the creature's turn, they may make the save again. Once the save is passed, the creature is immune to this effect for 24 hours.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Healing Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain proficiency with Medicine and a Healer's Kit. If you are already proficient, you gain expertise instead. All healing done outside of Combat is at it's maximum potential. For instance, casting Cure Wounds outside of combat, grants 8 + your spellcasting modifer HP. 
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You have a pool of Health equal to 2 x your Level. This pool replenishes after a long rest. As an action, you can touch a creature and draw power from the pool to restore a number of hit points to that creature, up to the maximum amount remaining in your pool. This feature has no effect on undead and constructs.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your pool of Health now equals 4 x your Level. You also can spend an action to burst healing out from you at a range of 20 ft. You can choose which creatures are given HP from your pool. The maximum amount of healing you can give with this ability is 15 HP.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your pool of Health is now equal to 6 x your Level. Healing from your Health Pool now costs a bonus action.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your pool of Health is now equal to 10 x your level.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Knowledge Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain proficiency with 2 of the following: Arcana, History, Investigation, Nature, and Religion. If you choose one of the following you are already proficient with, you gain expertise. Your Intelligence increases by 2.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain proficiency with 2 of the following: Animal Handling, Insight, Medicine, Perception, and Survival. If you choose one of the following you are already proficient with, you gain expertise. Your Intelligence increases by 2.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You are able to cast <a href="https://5e.tools/spells.html#detect%20thoughts_phb">Detect Thoughts</a> once per day. Your Intelligence is your spellcasting modifer for this spell.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Intelligence increases by 2. If you are a spellcaster, you may teach yourself a spells from spell scrolls, and add them to your Spellbook. It costs 50 gold and 2 hours of study to copy a spell into your memory, or onto another scroll.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to cast more spells per day based on your primary spellcasting modifier. Use the following table for this.
+                  <table style="width: 100%;">
+                    <tr>
+                      <th rowspan="2">Ability Score</th>
+                      <th colspan="9">Bonus Spells per day</th>
+                    </tr>
+                    <tr>
+                      <th>1st</th>
+                      <th>2nd</th>
+                      <th>3rd</th>
+                      <th>4th</th>
+                      <th>5th</th>
+                      <th>6th</th>
+                      <th>7th</th>
+                      <th>8th</th>
+                      <th>9th</th>
+                    </tr>
+                    <tr>
+                      <td>1-11</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>12-13</td>
+                      <td>1</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>14-15</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>16-17</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>18-19</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>20-21</td>
+                      <td>2</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>22-23</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>24-25</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>26-27</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>28-29</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>30-31</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>32-33</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>34-35</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>36-37</td>
+                      <td>4</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>38-39</td>
+                      <td>4</td>
+                      <td>4</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>40+</td>
+                      <td>4</td>
+                      <td>4</td>
+                      <td>4</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Law Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  As an action, you can touch a willing creature and grant them order in the chaos. For their next round, they treat all d20 rolls as if the results were an 11. You can do this a number of times equal to your Wisdom modifier.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per Long rest, as a free action, you can cause a creature to have disadvantage on a saving throw. The saving throw must be from an effect or a spell originating from you. This effect cannot be used on creatures who already have advantage or disadvantage.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per Long rest, you can negate a special ability of a foe as a Standard action. In order to know a creature's abilities, you must succeed a DC10 + Monster CR Nature check. On a fail, the creature is unaffected. This effect lasts a number of rounds equal to your Wisdom modifier.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you can extend or reduce the duration of a spell effecting you by one category. Weeks <=> Days <=> Hours <=> Minutes <=> Rounds
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You manifest your even hand of Law by executing Judgements. You can execute a Judgement on yourself, or on another creature as a bonus action. You can do this a number of times equal to your Wisdom modifier, and the judgement lasts a number of your rounds equal to your level. Use this following list for all your Judgements:
+                  <ul>
+                    <li><b>Destruction:</b> Add your Wisdom modifer to all attack and damage roll against a certain creature.</li>
+                    <li><b>Resistance:</b> Add your Wisdom modifer to the creatures AC.</li>
+                    <li><b>Healing:</b> Grant your Fast Healing ability to another creature.</li>
+                    <li><b>Resiliency:</b> Add your Wisdom modifer to all saving throws.</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Luck Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  As an action, you can touch a willing creature and grant them advantage on any attack roll, ability check and saving throw. You can use this ability a number of times equal to your Wisdom modifier (minimum 1).
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Everything just seems to go your way. At the end of a long rest, you gain a number of d4's equal to your Wisdom Modifier (minimum 1) These are called your Lucky Dice. You may use these on any attack rolls, ability checks, or saving throws. You may add 1d4 to the roll before you learn the result.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Lucky Dice are increased to a d6 instead of a d4. You also gain a number of d6's equal to double your Wisdom Modifier (minimum 1).
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  When you roll a 2 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Madness Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain proficiency with Intimidation. If you are aleady proficient, you gain expertise in Intimidation. You Charisma also increases by 2.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to cast <a href="https://5e.tools/spells.html#confusion_phb">Confusion</a> once per long rest without a spell slot. If you are able to cast spells, you learn this spell, which does not count towards known spells.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you have the ability to inflict an enemy with a <a href="https://5e.tools/tables.html#short-term%20madness_dmg">Short Term Madness</a> effect. Instead of lasting 1d10 minutes, it lasts 1d6 rounds. The enemy may make an intelligence saving throw or be affected. The DC for the save is 8 + Charisma Modifier + Profciency bonus.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your madness intesifies to terrifying limits. All saving throws you make with an Intelligence or Wisdom saving throw, you do so with Advantage. All creatures within 30 ft of you must make a Charisma Saving throw or be frightened for 1d4 rounds. The DC for the save is 8 + Charisma Modifier + Profciency bonus.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  At the start of your day, you must roll 1d20. Use the following table for the result:
+                  <table style="width: 100%;">
+                    <tr>
+                      <th>Result</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>You suffer one of the effects on the <a href="https://5e.tools/tables.html#long-term%20madness_dmg">Long Term Madness Table</a>.</td>
+                    </tr>
+                    <tr>
+                      <td>2-10</td>
+                      <td>Nothing of importance happens.</td>
+                    </tr>
+                    <tr>
+                      <td>11-13</td>
+                      <td>You gain an incredible burst of strength. You gain 2 Strenth for today.</td>
+                    </tr>
+                    <tr>
+                      <td>14-17</td>
+                      <td>You can cast <a href="https://5e.tools/spells.html#confusion_phb">Confusion</a> a number of times equal to your Charisma modifer</td>
+                    </tr>
+                    <tr>
+                      <td>18-19</td>
+                      <td>You gain Immunity to Attacks or Spells that have an Intelligence and Wisdom saving throw.</td>
+                    </tr>
+                    <tr>
+                      <td>20</td>
+                      <td>You can inflict an effect on the <a href="https://5e.tools/tables.html#long-term%20madness_dmg">Long Term Madness Table</a> to one creature as an action. You can do this once per day, and if you do not, you are affected by the Madness.</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Plant Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You grow natual spines all throughout your body, deal an additional 1 point of damage to all creatures you attack using a melee weapon. You also are not affected by difficult terrain as a result of non-magical terrain.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain resistance to All Poison effects, damage, or supernatural abilities. If you already have Poison resistance, you gain immunity instead.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you can transform yourself into a more plant like state. You gain vulnerability to Fire and Cold damage, but gain resistance to Bludgeoning, Slashing, and Piercing damage, and immunity to Thunder, Psychic, and Necrotic damage. You deal an additional 1d6 points of poison damage to all enemies.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your skin naturally hardens like a tree. Your Natural AC goes up by +2. So long as your Dexterity is used when calculating AC, you are granted this benefit as well.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You are one with Nature. You can move through plants as if under the effects of <a href="https://5e.tools/spells.html#tree%20stride_phb">Tree Stride</a>.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Protection Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain a natural armor bonus of +1. So long as your Dexterity is used when calculating AC, this effect is also used. You also can gain resistance to one type of damage. As a reaction, you can spend one of the 10 rounds to gain resistance to a damage type inflicting you now. These rounds do not need to be consecutive. You regain all 10 rounds at the end of a long rest.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain a natural armor bonus of +2. So long as your Dexterity is used when calculating AC, this effect is also used. You also now can weild a Shield and a two handed weapon.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain a natural armor bonus of +3. So long as your Dexterity is used when calculating AC, this effect is also used. Your Natural Armor Bonus can also be applied to any ally within 15 ft of you. When an emeny is attacking an ally, you can use your reaction to share your AC bonus with them. This removes one Resistance rounds. The ally maintains the bonus until the start of your ally's turn.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain a natural armor bonus of +4. So long as your Dexterity is used when calculating AC, this effect is also used. You now have 20 rounds of Resistance.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain a natural armor bonus of +6. So long as your Dexterity is used when calculating AC, this effect is also used. 
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Strength Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to charge. In order to use this ability you must move at least half of your movement speed in a straight line, and be making a Melee attack against the creature. Only then can you Charge/Shield Bash an enemy. You deal an additional 2d6 damage as part of the attack.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Strength score increases by 2. You also are granted proficiency with Athletics and Strength Saving Throws. If you have proficiency already, you are granted double expertise.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  As part of your charge, you knock the opponent off balance. The Creature must make a Strength Saving throw or be knocked prone. The DC is 8 + Strength Modifier + (# of 5 ft. squares moved in a straight line) + Proficiency. For example, if you charge 15 ft. in a straight line, that's a +3 to the DC.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Strength score increases by 2. You also learn how to disarm characters. As a bonus action, you can attempt to rip the weapons from the grasp of an enemy. This doesn't work against Natural weapons and other weapons attached to a creature. Make an opposed Athletics check against the creature.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Strength score increases by 2. You can attempt to make a Savage attack. All attacks made during your turn have advantage, and all attacks made against you have advantage.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Sun Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to cast the <a href="https://5e.tools/spells.html#light_phb">Light</a> Cantrip. It's spell save DC is equal to 8 + your Wisdom Modifer + your proficiency bonus. When casting this spell, the range of the light emitted is doubled.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you gain the ability to enter a Sun State. All creatures within 30 ft must make a Constitution Saving throw or be blinded for 1d4 rounds. The DC is the save is equal to 8 + your Wisdom Modifer + your proficiency bonus. Your Sun State lasts for 1 minute, but can be dismissed as a bonus action.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to use your Sun State a number of times equal to your Wisdom Modifer. All Allies who start their turn within 30 ft. of you while you are in your Sun State, gain the effects of your Fast Healing as well.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You Sun State now radiates powerful heat from you. While in your Sun State, all creatures who are within 20 ft of you must make a Dexterity Saving throw. DC of the save is 8 + your Wisdom Modifer + your proficiency bonus. On a failed save, the creature takes 1d8 Radiant damage and 1d8 Fire damage.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  While in your Sun State, you gain the ability to make a ranged attack with a Sun Spot. Make a Ranged Attack against a creature. On a hit, you deal 3d10 Radiant damage at a range of up to 60 ft. Use your Wisdom Modifier and your proficinecy bonus when making an attack.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Travel Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You also gain an additional +10 to your base movement speed. Difficult terrain does not cost additional squares of movement. Your Dexterity increases by 2
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain proficiency with Survival, Perception, and all Vehicles. If you are already proficient, you gain expertise. You also cannot get lost while adventuring except by magical means.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain an additional +10 to your base movement speed. Your Wisdom increases by 2.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain a natural climb and swim speed equal to half of your movement speed. You gain an additional +10 to your base movement speed.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                   You gain advantage on all Dexterity and Wisdom Saving Throws. If you are already proficient, you gain double advantage. Your Wisdom and Dexterity increases by 2.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Trickery Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain proficiency with 2 of the following kills: Deception, Perception, Sleight of Hand, and Stealth. If you choose a proficiency you are already proficient in, you gain expertise. You also gain +1 to DEX and +1 to CHA.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Once per long rest, you can create a perfect copy of yourself, a Doppelganger. The copy takes actions via a mental link, and can be commanded as a free action. The AC of the Copy is 11 + DEX, and has 1 HP. This ability does not effect creatures who have Blindsense, Tremorsense or True sight. You copy lasts for up to 10 minutes, or until destroyed.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to disguise yourself at will. You can cast <a href="https://5e.tools/spells.html#disguise%20self_phb">Disguise Self</a> at will. You save DC is equal to 8 + Charisma modifier + Proficiency.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You can now create a Doppelganger a number of times equal to your Charisma modifier. You can now swap places with your Doppelganger as a Reaction. Your Doppelganger lasts now up to an hour.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Doppelganger's duration is until dispelled or killed. Your Doppelganger now also has an attack that it can make. It's attack is 1d8 + Your Dexterity modifier. 
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Void Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to step in and out of the Ethereal Plane. You have a number of feet of movement equal to 10 x your Wisdom Modifier, with a minimum of 1. When moving, you must declare that you're entering the Ethereal plane. You do not provoke attacks of opportunity while in the Ethereal plane. You may pass through walls, but doing so is considered difficult terrain.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  At the end of a long rest, you can choose one of the following Void Abilities.
+                  <ul>
+                    <li>
+                      <b>Ether Speak:</b> Your verbal components when casting a spell goes into the Ethereal plane, and are inaudible to all those on the Material plane. Attempts to <a href="https://5e.tools/spells.html#counterspell_phb">Counterspell</a> are made at disadvantage.
+                    </li>
+                    <li>
+                      <b>Advanced Ether Step:</b> Your distance is doubled for your Ether Step ability, making it a number of feet equal to 20 x your Wisdom Modifier, with a minimum of 1.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  As part of your Ether Step ability, you gain the ability to remain on the Ethereal plane, at the cost of 10 feet of your Ether step movement. You also gain the ability to drag another creature with you, for an additional 10 ft of movement. A creature reappears onto the Material plane when you appear back on the Material Plane. A creature can attempt to break free from your attempt with a Dexterity Saving throw. The DC is equal to 8 + Dexterity Modifer + Proficiency.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Ether Step distance is doubled. This ability stacks with Advanced Ether Step. Your Wisdom also increases by 2
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  At the end of a long rest, You can choose 2 from the following list, as well as the list from level 2, of Void Abilities.
+                  <ul>
+                    <li><b>Dimensional Door:</b> You can teleport once per long rest, to anywhere on your current plane of existance.</li>
+                    <li><b>Void Blur:</b> As an action, you can partway enter the Void. On a successful attack against you, roll 1d10. On a 1 through 4, the attack misses.</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    War Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain a +5 on initiaive rolls. You can't be surprised while you are conscious. You also don't gain advantage on Attack rolls against you as a result of not being seen. Your Strength increases by 2.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  When you make a successful attack against an enemy, they gain 1 point of Bleed damage. Enemies who are bleeding take the amount of bleed damage at the start of their turn. This ability stacks with itself. Bleed damage is cured with a DC15 Medicine Check or being healed by any method.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  When rolling damage, If a dice comes up with a 1 or a 2, reroll the damage, and roll again and you must take the new number. Your Charisma also increases by 2.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You can attempt to intimidate all creatures in a 30 ft Cone as an Action. All creatures must make a Wisdom Saving throw, or become frightened for 2d6 rounds. The DC for the save is equal to 6 + Strength Modifider + Charisma Modifier + Proficiency bonus.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your vicious attacks now deal 1d4 points of bleed damage instead of 1. Your Strength also increases by 2.
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <span class="text-lg">
+                    Water Domain
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 1
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain a swim speed equal to your land movement speed. You also gain the ability to breathe underwater and on land.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 2
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the use of the <a href="https://5e.tools/spells.html#ice%20knife_xge">Ice Knife</a> spell. If you are a spellcaster, this does not count towards your spells known. Your Wisdom Increases by 2.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 3
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You gain the ability to guild yourself in Ice. The ice armor surrounding you has a Hit Point total of 10 x Wisdom Modifier. Once the armor is broken, all creatures, including yourself, must make a Dexterity saving throw. The DC is 8 + Wisdom modifier. On a failed save, they take 1d10 Cold damage, and half as much on a successful save.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 4
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Your Ice Armor's AC is now equal to 2 + your current AC. It's hit point total also increases to 20 x Wisdom Modifier. Your Wisdom also Increases by 2.
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Level 5
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  You can create water in abnormal volumes. As a reaction, you can create a surge of water around you. Every creature within 20 ft of you, must make a Strength Saving throw. The DC is equal to 8 + Wisdom Modifier + Proficiency. If a creature fails, they are pushed back to the edge of the area of effect. If they fail by more than 5, they are also knocked prone. You can use this ability a number of times equal to your Wisdom Modifier.
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat2_1">
+          <h3 class="header">
+            Fast Healing I
+          </h3>
+        </a>
+        <p>
+          Your diety wants you to remain alive. You've gained the ability to regain Hit Points while you are already alive. While you have no levels of Exhaustion, Petrified or Unconscious, you regain 1 HP. This ability also removes Bleed Effects.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat3_1">
+          <h3 class="header">
+            Diety Domain II
+          </h3>
+        </a>
+        <p>
+          You may either select another one of your diety's domain abilities, or by selecting the same domain, you can level up your ability in that domain, i.e. Going from level 1 to level 2. You retain the abilities from the previous level, and gain a new ability.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat4_1">
+          <h3 class="header">
+            Fast Healing II
+          </h3>
+        </a>
+        <p>
+          Your diety wants you to remain alive. You've gained the ability to regain Hit Points while you are already alive. While you have no levels of Exhaustion, Petrified or Unconscious, you regain 2 HP. This ability also removes Bleed Effects.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat5_1">
+          <h3 class="header">
+            Diety Domain III
+          </h3>
+        </a>
+        <p>
+          You may either select another one of your diety's domain abilities, or by selecting the same domain, you can level up your ability in that domain, i.e. Going from level 1 to level 2. You retain the abilities from the previous level, and gain a new ability.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat6_1">
+          <h3 class="header">
+            Fast Healing III
+          </h3>
+        </a>
+        <p>
+          Your diety wants you to remain alive. You've gained the ability to regain Hit Points while you are already alive. While you have no levels of Exhaustion, Petrified or Unconscious, you regain 3 HP. This ability also removes Bleed Effects.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat7_1">
+          <h3 class="header">
+            Diety Domain IV
+          </h3>
+        </a>
+        <p>
+          You may either select another one of your diety's domain abilities, or by selecting the same domain, you can level up your ability in that domain, i.e. Going from level 1 to level 2. You retain the abilities from the previous level, and gain a new ability.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat8_1">
+          <h3 class="header">
+            Fast Healing IV
+          </h3>
+        </a>
+        <p>
+          Your diety wants you to remain alive. You've gained the ability to regain Hit Points while you are already alive. While you have no levels of Exhaustion, Petrified or Unconscious, you regain 4 HP. This ability also removes Bleed Effects.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat9_1">
+          <h3 class="header">
+            Diety Domain V
+          </h3>
+        </a>
+        <p>
+          You may either select another one of your diety's domain abilities, or by selecting the same domain, you can level up your ability in that domain, i.e. Going from level 1 to level 2. You retain the abilities from the previous level, and gain a new ability.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat10_1">
+          <h3 class="header">
+            Fast Healing V
+          </h3>
+        </a>
+        <p>
+          Your diety wants you to remain alive. You've gained the ability to regain Hit Points while you are already alive. While you have no levels of Exhaustion, Petrified or Unconscious, you regain 5 HP. This ability also removes Bleed Effects.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

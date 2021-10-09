@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width" name="viewport"/>
+    <title>
+    </title>
+    <style type="text/css">
+      body {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      html {
+        font-family: Arial;
+      }
+
+      h1,
+      h2 {
+        color: black;
+        text-align: center;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .emp {
+        font-style: italic;
+      }
+
+      .und {
+        text-decoration: underline;
+      }
+
+      table {
+        border: 1px solid black;
+        border-spacing: 0px;
+      }
+
+      table tr th {
+        background-color: gray;
+        color: white;
+        padding: 5px;
+      }
+
+      table tr td {
+        margin: 0px;
+        padding: 5px;
+      }
+
+      .text-xs {
+        font-size: 12px;
+      }
+
+      .text-sm {
+        font-size: 14px;
+      }
+
+      .text-md {
+        font-size: 18px;
+      }
+
+      .text-lg {
+        font-size: 24px;
+      }
+
+      .text-xl {
+        font-size: 32px;
+      }
+
+      .col-1-3 {
+        width: 33.3%;
+        float: left;
+      }
+
+      .col-2-3 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-3-3 {
+        width: 100%;
+        float: left;
+      }
+
+      .col-1-2 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-2-2 {
+        width: 100%;
+        float: left;
+      }
+
+      .col-1-4 {
+        width: 25%;
+        float: left;
+      }
+
+      .col-2-4 {
+        width: 33.3%;
+        float: left;
+      }
+
+      .col-3-4 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-4-4 {
+        width: 100%;
+        float: left;
+      }
+
+      .inventory-table td {
+        border-bottom: 1px solid black;
+      }
+
+      .wrapper-box {
+        width: 100%;
+        border: 2px solid black;
+        padding: 5px;
+      }
+
+      .header {
+        border-bottom: 2px solid #000;
+      }
+
+      .feat-box {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      .feat-box > * {
+        flex: 1 1 350px;
+        margin: 5px 10px;
+        /*border: 1px solid black;*/
+      }
+    </style>
+    <script>
+      function show_hide(ident) {
+        var a = document.getElementById(ident);
+        if (a.style.display === 'none') {
+          a.style.display = 'block';
+        } else {
+          a.style.display = 'none';
+        }
+      }
+    </script>
+  </head>
+<body>
+  <h1>
+    Prestige Classes
+  </h1>
+  <p>
+    Prestige classes are classes you get upon meeting a certain prerequisite. You can only take one Prestige class per character, and cannot change it except by extraordinary circumstances. You gain one level in your Prestige class for every two levels in your normal classes. For example, a 5th level fighter, has 2 levels in their Prestige class. A multiclassed 5th level fighter & 3rd level sorcerer, has 4 levels in their Prestige class.
+  </p>
+  <br/>
+  <h2>Ideas: Hybrid Form, Natural Armor Bonus, Controlled Bloodthrist</h2>
+  <table class="wrapper-box" style="margin-bottom:60px; table-layout: fixed;">
+    <tr>
+      <td colspan="3">
+        <h2>
+          Lycanthrope Prestige Class Features
+        </h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="text-md bold">Hit Dice:</div> Constitution modifier
+        <div class="text-md bold">Hit Points at 1st Level:</div> your Constitution modifier
+        <div class="text-md bold">Hit Points at Higher Level:</div> your Constitution modifier
+      </td>
+      <td>
+        <div class="text-md bold">Armor Proficiency:</div> None
+        <div class="text-md bold">Weapon Proficiency:</div> Natural
+        <div class="text-md bold">Tool Proficiency:</div> None
+        <div class="text-md bold">Saving Throws:</div> Constitution
+        <div class="text-md bold">Skill Proficiency:</div> Choose 2 from Athletics, Deception, Intimidation, Perception, or Stealth
+      </td>
+      <td>
+        <div class="text-md bold">Starting Equipment</div>
+        You start with anything provided by your background.
+        <div class="text-md bold">Prerequisite</div>
+        Must be bitten by a Lycanthrope and suffer from a its curse.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <table class="inventory-table" style="width:100%;">
+          <tr>
+            <th style="text-align:left;">
+              Level
+            </th>
+            <th style="text-align:left;">
+              Features
+            </th>
+            <th style="text-align:left;">
+              Natural Attack Damage
+            </th>
+            <th style="text-align:left;">
+              Bloodthirst Damage
+            </th>
+            <th style="text-align:left;">
+              Bloodthirst Attacks
+            </th>
+          </tr>
+          <tr>
+            <td>
+              1
+            </td>
+            <td>
+              <a href="#Feat1_1">Lycan Heritage</a>, <a href="#Feat1_2">Natural Attacks</a>, <a href="#Feat1_3">Bloodthirst</a>
+            </td>
+            <td>
+              1d4
+            </td>
+            <td>
+              1d4
+            </td>
+            <td>
+              1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2
+            </td>
+            <td>
+              <a href="#Feat2_1">Night Stalker</a>
+            </td>
+            <td>
+              1d4
+            </td>
+            <td>
+              1d6
+            </td>
+            <td>
+              1
+            </td>
+          </tr>
+          <tr>
+            <td>
+              3
+            </td>
+            <td>
+              <a href="#Feat3_1">Shapechanger (Bat)</a>
+            </td>
+            <td>
+              1d6
+            </td>
+            <td>
+              1d6
+            </td>
+            <td>
+              2
+            </td>
+          </tr>
+          <tr>
+            <td>
+              4
+            </td>
+            <td>
+              <a href="#Feat4_1">Spider Climb</a>
+            </td>
+            <td>
+              1d6
+            </td>
+            <td>
+              1d8
+            </td>
+            <td>
+              2
+            </td>
+          </tr>
+          <tr>
+            <td>
+              5
+            </td>
+            <td>
+              <a href="#Feat5_1">Shapechanger (Mist)</a>, <a href="#Feat5_2">Misty Escape</a>
+            </td>
+            <td>
+              1d8
+            </td>
+            <td>
+              1d10
+            </td>
+            <td>
+              2
+            </td>
+          </tr>
+          <tr>
+            <td>
+              6
+            </td>
+            <td>
+              <a href="#Feat6_1">Creatures of the Night</a>
+            </td>
+            <td>
+              1d8
+            </td>
+            <td>
+              1d10
+            </td>
+            <td>
+              3
+            </td>
+          </tr>
+          <tr>
+            <td>
+              7
+            </td>
+            <td>
+              <a href="#Feat7_1">Night Terror</a>
+            </td>
+            <td>
+              1d10
+            </td>
+            <td>
+              1d12
+            </td>
+            <td>
+              3
+            </td>
+          </tr>
+          <tr>
+            <td>
+              8
+            </td>
+            <td>
+              <a href="#Feat8_1">Bloody Fury</a>
+            </td>
+            <td>
+              1d10
+            </td>
+            <td>
+              2d8
+            </td>
+            <td>
+              3
+            </td>
+          </tr>
+          <tr>
+            <td>
+              9
+            </td>
+            <td>
+              <a href="#Feat9_1">Vampiric Dominion</a>
+            </td>
+            <td>
+              1d12
+            </td>
+            <td>
+              2d10
+            </td>
+            <td>
+              3
+            </td>
+          </tr>
+          <tr>
+            <td>
+              10
+            </td>
+            <td>
+              <a href="#Feat10_1">Master Vampire</a>
+            </td>
+            <td>
+              1d12
+            </td>
+            <td>
+              2d10
+            </td>
+            <td>
+              4
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_1">
+          <h3 class="header">
+            Lycan Heritage
+          </h3>
+        </a>
+        <p>
+          Lycanthropes, otherwise called Were-creatures, are amalgamations of human and beast. There are a few heritages of Lycanthrope with varying benefits that can be acquired. However, if you're bitten by a werewolf, and succumb to its curse, you take the Werewolf Heritage. All Lycan creatures have the following common traits:
+        </p>
+        <ul>
+          <li>
+            Darkvision up to 60 ft
+          </li>
+          <li>
+            Vulnerable to damage done by Silvered Weapons
+          </li>
+        </ul>
+        <div class="feat-box">
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <th colspan="2">Werewolf</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <p>
+                    Werewolves are the most iconic version of Lycanthropes. They are strong and powerful, but not as nimble and agile as other Lycan creatures.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th style="width: 50%;">Benefits</th>
+                <th style="width: 50%;">Disadvantages</th>
+              </tr>
+              <tr>
+                <td>
+                  <ul style="padding-left: 15px;">
+                    <li>Your Strength goes up by 2</li>
+                    <li>While in Bloodthirst, you gain 2 STR and 1 DEX</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul style="padding-left: 15px;">
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Bloodthirst Threshhold
+                </th>
+                <td>
+                  Level x CON
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Natural Attacks
+                </th>
+                <td>
+                  Bite (Piercing), Claw (Slashing)
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <th colspan="2">Wererat</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <p>
+                    Wererats are sewer dwellers. Their teeth reside outside their mouth, which makes it more difficult to transmit your curse. Wererats are also incredibly nimble
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th style="width: 50%;">Benefits</th>
+                <th style="width: 50%;">Disadvantages</th>
+              </tr>
+              <tr>
+                <td>
+                  <ul style="padding-left: 15px;">
+                    <li>Your Dexterity goes up by 2</li>
+                    <li>While in Bloodthirst, you gain 2 DEX and 1 CON</li>
+                    <li>Only vulnerable to silvered weapons in their Bloodthirst</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul style="padding-left: 15px;">
+                    <li>Curse DC decreases by 2</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Bloodthirst Threshhold
+                </th>
+                <td>
+                  Level
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Natural Attacks
+                </th>
+                <td>
+                  Bite (Piercing)
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <th colspan="2">Werebear</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <p>
+                    Werebear are forest dwellers. Their massive size and meaty paws are frightening enough as is, but pair that with a Lycan's bloodthrist is enough to give anyone goosebumps.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th style="width: 50%;">Benefits</th>
+                <th style="width: 50%;">Disadvantages</th>
+              </tr>
+              <tr>
+                <td>
+                  <ul style="padding-left: 15px;">
+                    <li>Your Strength goes up by 4</li>
+                    <li>While in Bloodthirst, you gain 2 CON and 1 STR</li>
+                    <li>Your Size category increases by one while in Bloodthirst</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul style="padding-left: 15px;">
+                    <li>Your Dexterity goes down by 2</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Bloodthirst Threshhold
+                </th>
+                <td>
+                  Level x (CON + 2)
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Natural Attacks
+                </th>
+                <td>
+                  Maul (Bludgeoning)
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <th colspan="2">Werebat</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <p>
+                    Werebats are cave dwellers. They fly through caves with skill and precision, but are antisocial to anyone not of their kind. 
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th style="width: 50%;">Benefits</th>
+                <th style="width: 50%;">Disadvantages</th>
+              </tr>
+              <tr>
+                <td>
+                  <ul style="padding-left: 15px;">
+                    <li>Your Dexterity goes up by 4</li>
+                    <li>Darkvision goes up to 90 ft.</li>
+                    <li>While in Bloodthirst, gain a fly speed equal to your land speed</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul style="padding-left: 15px;">
+                    <li>Your Charisma goes down by 2</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Bloodthirst Threshhold
+                </th>
+                <td>
+                  Level
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Natural Attacks
+                </th>
+                <td>
+                  Bite (Piercing)
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <th colspan="2">Wereboar</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <p>
+                    Wereboars are forest dwellers. While not as powerful as their forest dweller-kin, the werebear, the wereboar is terrifying in a pack. They work together to take down enemies even larger than what a werebear could.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th style="width: 50%;">Benefits</th>
+                <th style="width: 50%;">Disadvantages</th>
+              </tr>
+              <tr>
+                <td>
+                  <ul style="padding-left: 15px;">
+                    <li>Your Strength goes up by 2</li>
+                    <li>While in Bloodthirst, you gain advantage on any attack rolls so long as an ally is is within 5 ft of the creature and the ally isn't incapacitated</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul style="padding-left: 15px;">
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Bloodthirst Threshhold
+                </th>
+                <td>
+                  Level x (CON - 1)
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Natural Attacks
+                </th>
+                <td>
+                  Gore (Piercing)
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <table style="width: 100%;">
+              <tr>
+                <th colspan="2">Weretiger</th>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <p>
+                    Weretigers are Jungle dwellers. They hunt solo, and fight solo. They stay alive by not being seen.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th style="width: 50%;">Benefits</th>
+                <th style="width: 50%;">Disadvantages</th>
+              </tr>
+              <tr>
+                <td>
+                  <ul style="padding-left: 15px;">
+                    <li>Your Dexterity goes up by 2</li>
+                    <li>You gain Stealth proficiency</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul style="padding-left: 15px;">
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Bloodthirst Threshhold
+                </th>
+                <td>
+                  Level x CON
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Natural Attacks
+                </th>
+                <td>
+                  Bite (Piercing), Claw (Slashing)
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_2">
+          <h3 class="header">
+            Natural Attacks
+          </h3>
+          <p>
+            You can make a natural attack as a bonus action, that's a part of your Lycan heritage. The Damage for that attack is listed on the table above under "Natural Attack Damage". Use Strength for the modifier when calculating the damage.
+          </p>
+          <p>
+            Your Natural Attacks also have a potential to Curse your enemy with Lycanthropy. The creature must succeed on a Constitution saving throw or be cursed. The DC for the save is 10 + half your Lycan Level rounded up.
+          </p>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_3">
+          <h3 class="header">
+            Bloodthirst
+          </h3>
+        </a>
+        <p>
+          Bloodthirst is a natural response that Lycanthropes have to death and the full moon. As the Full Moon rises or your HP approaches your Bloodthirst threshold, you become more and more Feral until you finally transform. Transforming is not a easy process, and most certainly not pleasant. When you transform, your bones crack and shift, your body contorts in unnatural ways, and your face shapes into your Lycan Heritage. You forget all your Learned abilities, i.e. your class abilities, because of the Feral nature you have now become.
+        </p>
+        <p>
+          Your Natural Attacks increase in damage, and you can make additional Attacks during the same attack action as you level up.
+        </p>
+        <p>
+          If you undertake your Transformation by reaching your Bloodthirst Threshhold, the process takes 1 round, and only movement and reactions can be taking while transforming. You cannot retain any mental prowess when you reach your Bloodthirsty Threshhold. You drop all weapons and begin attacking the nearest enemy. You will continue attacking until there are no enemies or you drop to 0 HP.
+        </p>
+        <p>
+          If you undertake your Transformation by the rising of the full moon, the process takes 1 minute, and you cannot take actions or reactions while transforming. At the end of your transformation, roll a Constitution Saving Throw. the DC is equal to 10 + Lycan Level. On a fail, you enter bloodthirst regularly. On a success, you retain all your Class abilities and gain your Bloodthirst abilities.
+        </p>
+        <p>
+          Once your HP reaches 0, you leave your Bloodthirsty state, and gain 1 level of exhaustion (up to 5). You cannot die by simply leaving your Bloodthirst. If you are healed below your Bloodthirst Threshhold, you do not enter a bloodthirst again. However, if you are healed above your Bloodthirst Threshhold, and drop back down, you enter this state again. You also leave your Bloodthrist once there are only Allies within sight.
+        </p>
+        <p>
+          You are not affected by Exhaustion while in your Bloodthirsty state, and therefore do not take any of the negative effects during your bloodthirst.
+        </p>
+        <p>
+          * Note: Bloodthirst removes all of your cognitive functions, <u>unless</u> you are an offspring of two Lycanthropes. If this is the case, when you become Bloodthirsty, roll a DC15 Constitution Saving throw to maintain your Learned abilities.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat2_1">
+          <h3 class="header">
+            Night Stalker
+          </h3>
+        </a>
+        <p>
+          You gain a scent ability. You have advantage on Perception checks made to detect unique smells, and Survival checks made to track creatures you are familiar with.
+        </p>
+        <p>
+          To be familiar with a creature you must have encountered it personally, and passed a DC20 Investigation check on the creature.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat3_1">
+          <h3 class="header">
+            Shapechanger (Bat)
+          </h3>
+        </a>
+        <p>
+          You can transform into a Tiny Bat at will. Your movement speed is equal to 5 ft, and you gain a fly speed of 30 ft. You maintain all other traits inherit to your regular form. All items you are holding or wearing are transformed with you. If you are killed in this form, you revert back to your regular form upon death.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat4_1">
+          <h3 class="header">
+            Spider Climb
+          </h3>
+        </a>
+        <p>
+          You gain the effects to cast <a href="https://5e.tools/spells.html#spider%20climb_phb">Spider Climb</a> at will with an infinite duration. This can be dispelled via counterspell or dispel magic, in which case, you lose this ability for a number of hours equal to the caster's level.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat5_1">
+          <h3 class="header">
+            Shapechanger (Mist)
+          </h3>
+        </a>
+        <p>
+          You can transform into a mist that resembles yourself at will. are blinded and deafened in this new form, but can fly at 20 ft through any nook or cranny that air can pass through without squeezing. You cannot attack in this form and are immune to all damage except Sunlight or Running Water.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat5_2">
+          <h3 class="header">
+            Misty Escape
+          </h3>
+        </a>
+        <p>
+          Upon reaching zero hit points, you instead drop to one hit point and are automatically transformed into your mist form. You have 2 hours to return to your Sepulcher or you are killed. You must spend an hour in your Sepulcher to regain a corporeal form. At which point, you begin regenerate=ing to full health over the course of the next hour.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat6_1">
+          <h3 class="header">
+            Creatures of the Night
+          </h3>
+        </a>
+        <p>
+          You gain the ability to summon creatures to your side to aid you in combat. Once per long rest, as a free action, you can summon one of the following Allies to aid you in combat. They arrive within 1d4 rounds, and remain by your side for 1 hour, until you die, or until you dismiss them.
+        </p>
+        <ul>
+          <li>2d4 <a href="https://5e.tools/bestiary.html#swarm%20of%20bats_mm">Swarms of Bats</a></li>
+          <li>2d4 <a href="https://5e.tools/bestiary.html#swarm%20of%20rats_mm">Swarms of Rats</a></li>
+          <li>3d6 <a href="https://5e.tools/bestiary.html#wolf_mm">Wolfs</a></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat7_1">
+          <h3 class="header">
+            Night Terror
+          </h3>
+        </a>
+        <p>
+          This ability is an enhancement of your Night Fright ability. The maximum range of your Night Fright ability is increased to 60 ft. If a Creature is within 10 ft of you, they must make an additional save. On two failed saves, they are paralyzed with fear. On one failed save, they are simply Frightened, and must flee. On two successful saves, they are unaffected by your fright ability.
+        </p>
+        <p>
+          <i>* Note:</i> This ability does not affect other Vampires.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat8_1">
+          <h3 class="header">
+            Bloody Fury
+          </h3>
+        </a>
+        <p>
+          Growing in your blood thirst, you gain the ability to enter a Feral Fury. Once per Long rest, you spend an action to enter a Feral Vampiric State. This state can last up to 10 minutes. However, if you are rendered Paralyzed, Petrified, Restrained, Stunned or Unconscious for more than 1 turn, you immediately leave this form.
+        </p>
+        <p>
+          Once you exit this form, your Bloodthirst DC increases by 4, and you gain 2 levels of exhaustion which can be cured by the rules of the Bloodthirst Ability. Here are the following abilities you gain in your Bloody Fury:
+        </p>
+        <ul>
+          <li>
+            Your Strength, Charisma, and Constitution scores all increase by 4. Your Dexterity, Intelligence, and Wisdom decrease by 4, to a minumum of 1.
+          </li>
+          <li>
+            Your land movement speed is doubled.
+          </li>
+          <li>
+            You grow Massive Bat wings, and gain a fly speed equal to your movement speed.
+          </li>
+          <li>
+            You regenerate at double the usual rate; 4d10 + 2x Constitution Modifier.
+          </li>
+          <li>
+            When you use the attack action, you may attack 3 times. Twice with your Claws, and once with your Bite.
+          </li>
+          <li>
+            You gain a Natural Claw attack that deals 2d6 Slashing damage using your Strength for Damage.
+          </li>
+          <li>
+            Your Bite increases by 5 levels. Use the following table beyond 10th prestige levels.
+            <table style="width: 60%; margin: auto; margin-top: 10px; margin-bottom: 10px;">
+              <tr>
+                <th>
+                  Level
+                </th>
+                <th>
+                  Piercing Damage
+                </th>
+                <th>
+                  Necrotic Damage
+                </th>
+                <th>
+                  Gestation Period
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  10
+                </td>
+                <td>
+                  1d10
+                </td>
+                <td>
+                  3d12
+                </td>
+                <td>
+                  3 Hours
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  11
+                </td>
+                <td>
+                  1d12
+                </td>
+                <td>
+                  4d12
+                </td>
+                <td>
+                  2 Hours
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  12
+                </td>
+                <td>
+                  1d12
+                </td>
+                <td>
+                  5d12
+                </td>
+                <td>
+                  1 Hour
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  13
+                </td>
+                <td>
+                  2d8
+                </td>
+                <td>
+                  6d12
+                </td>
+                <td>
+                  30 Minutes
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  14
+                </td>
+                <td>
+                  2d8
+                </td>
+                <td>
+                  7d12
+                </td>
+                <td>
+                  15 Minutes
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  15
+                </td>
+                <td>
+                  2d10
+                </td>
+                <td>
+                  8d12
+                </td>
+                <td>
+                  5 Minutes
+                </td>
+              </tr>
+            </table>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat9_1">
+          <h3 class="header">
+            Vampiric Dominion
+          </h3>
+        </a>
+        <p>
+          This ability extends your Creatures of the Night ability. When summoning Creatures, you may choose from this list as well.
+        </p>
+        <ul>
+          <li>2d4 <a href="https://5e.tools/bestiary.html#vampire%20spawn_mm">Vampire Spawn</a></li>
+          <li>1d10 <a href="https://5e.tools/bestiary.html#wight_mm">Wight</a></li>
+          <li>2d6 <a href="https://5e.tools/bestiary.html#winter%20wolf_mm">Winter Wolfs</a></li>
+          <li>2d10 <a href="https://5e.tools/bestiary.html#swarm%20of%20undead%20snakes_egw">Swarm of Undead Snakes</a></li>
+          <li>1d6 <a href="https://5e.tools/bestiary.html#skeletal%20juggernaut_gos">Skeletal Juggernaut</a></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat10_1">
+          <h3 class="header">
+            Master Vampire
+          </h3>
+        </a>
+        <p>
+          You've not only grown acustomed to the night, you've embraced it. Once per day, as a standard action, you can make a single Bite attack on a creature. If the attack succeeds to hit, the creature must make a save against your Vampiric Curse. On a failed save, the creature immediatly becomes your Fledgling. You can command it as if it were a child, and the creature must obey.
+        </p>
+        <p>
+          This version of the Curse is unstable. If you give a command that goes in direct opposition to the creature's nature, they can make another saving throw against the Curse. If the curse is freed by this method, the creature has 10 days before becoming a vampire. If the creature is not freed from the curse, and you attempt to assert your control normally, the creature has disavantage on the save.
+        </p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

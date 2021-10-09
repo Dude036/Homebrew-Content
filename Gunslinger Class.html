@@ -1,0 +1,2939 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width" name="viewport"/>
+    <title>
+      Gunslinger - D&D 5th Edition Class
+    </title>
+    <style type="text/css">
+      body {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      html {
+        font-family: Arial;
+      }
+
+      h1,
+      h2 {
+        color: black;
+        text-align: center;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .emp {
+        font-style: italic;
+      }
+
+      .und {
+        text-decoration: underline;
+      }
+
+      table {
+        border: 1px solid black;
+        border-spacing: 0px;
+      }
+
+      table tr th {
+        background-color: gray;
+        color: white;
+        padding: 5px;
+      }
+
+      table tr td {
+        margin: 0px;
+        padding: 5px;
+      }
+
+      .text-xs {
+        font-size: 12px;
+      }
+
+      .text-sm {
+        font-size: 14px;
+      }
+
+      .text-md {
+        font-size: 18px;
+      }
+
+      .text-lg {
+        font-size: 24px;
+      }
+
+      .text-xl {
+        font-size: 32px;
+      }
+
+      .col-1-3 {
+        width: 33.3%;
+        float: left;
+      }
+
+      .col-2-3 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-3-3 {
+        width: 100%;
+        float: left;
+      }
+
+      .col-1-2 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-2-2 {
+        width: 100%;
+        float: left;
+      }
+
+      .col-1-4 {
+        width: 25%;
+        float: left;
+      }
+
+      .col-2-4 {
+        width: 33.3%;
+        float: left;
+      }
+
+      .col-3-4 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-4-4 {
+        width: 100%;
+        float: left;
+      }
+
+      .inventory-table td {
+        border-bottom: 1px solid black;
+      }
+
+      .wrapper-box {
+        width: 100%;
+        border: 2px solid black;
+        padding: 5px;
+      }
+
+      .header {
+        border-bottom: 2px solid #000;
+      }
+
+      .feat-box {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      .feat-box > * {
+        flex: 1 1 350px;
+        margin: 5px 10px;
+        /*border: 1px solid black;*/
+      }
+    </style>
+    <script>
+      function show_hide(ident) {
+        var a = document.getElementById(ident);
+        if (a.style.display === 'none') {
+          a.style.display = 'block';
+        } else {
+          a.style.display = 'none';
+        }
+      }
+    </script>
+  </head>
+<body>
+  <h1>
+   Gunslinger Class
+  </h1>
+  <p>
+    In Thunia, technology has advanced to the point where Guns are common. However, a gunslinger's keen eye, and quick reflexes make the gunslinger a terrifying visage. To a Gunslinger, their firearm is an extension of their person.
+  </p>
+  <br/>
+  <table class="wrapper-box" style="margin-bottom:60px; table-layout: fixed;">
+    <tr>
+      <td colspan="3">
+        <h2>
+          Gunslinger Class Features
+        </h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="text-md bold">Hit Dice:</div> 1d8
+        <div class="text-md bold">Hit Points at 1st Level:</div> 8 + Constitution
+        <div class="text-md bold">Hit Points at Higher Level:</div> 1d8 (or 5) + Constitution per level after 1st
+      </td>
+      <td>
+        <div class="text-md bold">Armor Proficiency:</div> Light, Medium
+        <div class="text-md bold">Weapon Proficiency:</div> Simple, Guns
+        <div class="text-md bold">Tool Proficiency:</div> Tinker's tools
+        <div class="text-md bold">Saving Throws:</div> Dexterity, Intelligence
+        <div class="text-md bold">Skill Proficiency:</div> Choose 2 from Acrobatics, Deception, Insight, Intimidation, Perception, Sleight of Hand, Survival
+      </td>
+      <td>
+        <div class="text-md bold">Starting Equipment</div>
+        You start with the following items, plus anything provided by your background.
+        <ul style="padding-left: 0px;">
+          <li>
+            (a) Hide Armor or (b) Leather Armor
+          </li>
+          <li>
+            (a) Dagger or (b) Sling & 20 ammunition
+          </li>
+          <li>
+            (a) Tinker's Tools
+          </li>
+          <li>
+            (a) Dungeoneer's Pack or (b) Explorer's Pack
+          </li>
+        </ul>
+        Alternatively, you may start with 5d4 × 10 gp to buy your own equipment.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <table class="inventory-table" style="width:100%;">
+          <tr>
+            <th style="text-align:left;">
+              Level
+            </th>
+            <th style="text-align:left;">
+              Proficiency
+            </th>
+            <th style="text-align:left;">
+              Features
+            </th>
+          </tr>
+          <tr>
+            <td>
+              1
+            </td>
+            <td>
+              1d4
+            </td>
+            <td>
+              <a href="#Feat1_1">Firearm Training</a>, <a href="#Feat1_2">Muntions Creation</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2
+            </td>
+            <td>
+              1d4
+            </td>
+            <td>
+              <a href="#Feat2_1">Fighting Style</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              3
+            </td>
+            <td>
+              1d4
+            </td>
+            <td>
+              <a href="#Feat3_1">Gun Mastery Feature</a>, <a href="#Feat3_2">Weapon of Choice</a>, 
+            </td>
+          </tr>
+          <tr>
+            <td>
+              4
+            </td>
+            <td>
+              1d4
+            </td>
+            <td>
+              <a href="#Feat4_1">Ability Score Improvement</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              5
+            </td>
+            <td>
+              1d6
+            </td>
+            <td>
+              <a href="#Feat5_1">Attachments</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              6
+            </td>
+            <td>
+              1d6
+            </td>
+            <td>
+              <a href="#Feat6_1">Intimidating Firearm</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              7
+            </td>
+            <td>
+              1d6
+            </td>
+            <td>
+              <a href="#Feat3_1">Gun Mastery Feature</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              8
+            </td>
+            <td>
+              1d6
+            </td>
+            <td>
+              <a href="#Feat8_1">Rapid Reload</a>, <a href="#Feat8_2">Extra Attack</a>, <a href="#Feat8_3">Ability Score Improvement</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              9
+            </td>
+            <td>
+              1d8
+            </td>
+            <td>
+              -
+            </td>
+          </tr>
+          <tr>
+            <td>
+              10
+            </td>
+            <td>
+              1d8
+            </td>
+            <td>
+              <a href="#Feat10_1">Attachments (2)</a>, <a href="Feat3_1">Gun Mastery Feature</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              11
+            </td>
+            <td>
+              1d8
+            </td>
+            <td>
+              <a href="#Feat11_1">Gunslinger's Initiative</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              12
+            </td>
+            <td>
+              1d8
+            </td>
+            <td>
+              <a href="#Feat12_1">Ability Score Improvement</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              13
+            </td>
+            <td>
+              1d10
+            </td>
+            <td>
+              <a href="#Feat13_1">Fan the Hammer</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              14
+            </td>
+            <td>
+              1d10
+            </td>
+            <td>
+              -
+            </td>
+          </tr>
+          <tr>
+            <td>
+              15
+            </td>
+            <td>
+              1d10
+            </td>
+            <td>
+              <a href="#Feat15_1">Attachments (3)</a>, <a href="Feat3_1">Gun Mastery Feature</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              16
+            </td>
+            <td>
+              1d10
+            </td>
+            <td>
+              <a href="#Feat16_1">Ability Score Improvement</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              17
+            </td>
+            <td>
+              1d12
+            </td>
+            <td>
+              -
+            </td>
+          </tr>
+          <tr>
+            <td>
+              18
+            </td>
+            <td>
+              1d12
+            </td>
+            <td>
+              <a href="#Feat3_1">Gun Mastery Feature</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              19
+            </td>
+            <td>
+              1d12
+            </td>
+            <td>
+              -
+            </td>
+          </tr>
+          <tr>
+            <td>
+              20
+            </td>
+            <td>
+              1d12
+            </td>
+            <td>
+              <a href="#Feat20_1">Attachments (4)</a>, <a href="#Feat20_2">Shooting Ace</a>, <a href="#Feat20_3">Ability Score Improvement</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_1">
+          <h3 class="header">
+            Firearm Training
+          </h3>
+        </a>
+        <p>
+          <span class="bold">Gun Usage:</span> All guns in Thunia tend to operate on the basic mechanics of load a round, fire a round, eject casing and other debris, repeat. If any event in that process fails, the gun misfires. When making an Attack Roll, if the d20 lands on a 1 or a 2, the gun Misfires. If the gun is in perfect condition, it gains the broken condition. If the gun has the broken condition, the gun explodes. All creatures in a 10ft radius of the gunslinger, including the gunslinger, must roll a DC15 DEX save or take the gun's regular damage.
+        </p>
+        <p>
+          There are ways your misfire chance can increase, such as using poorly made bullets, which means if your misfire chance is a 4, then when making an attack roll, a 4 or lower on the die, will cause a misfire.
+        </p>
+        <p>
+          <span class="bold">Ammo:</span> All ammunition is not created equal. Ammunition made for a pistol will not work for any other type of firearm. If a firearm is loaded and discharged with the incorrect ammunition, the weapon automatically misfires.
+        </p>
+        <p>
+          <span class="bold">Reloading:</span> All weapons have a magazine capacity, or how many times you can pull the trigger before you're out of ammunition in the weapon. Reloading, unless otherwise stated, takes a bonus action.
+        </p>
+        <p>
+          <span class="bold">Repairs & Cleanings:</span> A gunslinger needs to know their tools inside and out. With weapons only recently emerging in Thunia, having this knowledge is critical to a gunslinger's survival. During a short or long rest, you can repair your firearm back to it's original glory, with the aid of a set of Tinker's Tools. This cleaing and repair removes the broken condition as well as any effect that effect the efficacy of your firearm.
+        </p>
+        <p>
+          <span class="bold">Ranges:</span> Firearms have two ranges. The first is your <u>Close Range</u>. This is the range at which you are most effective at hitting targets. Anything past that is the <u>Effective Range</u>. This is the range that you are still capable of hitting within, but it is much harder. When firing at a target outside of your effective range, roll with disadvantage.
+        </p>
+        <p>
+          <span class="bold">Gun Types:</span> There are three main types of guns. For the purposes of defining the use case of these weapons, I will use the following metric;
+        </p>
+        <ul>
+          <li>
+            <span class="bold">Pistols:</span> One Handed, Low to High Caliber Slug Round
+          </li>
+          <li>
+            <span class="bold">Rifles:</span> Two Handed, Low Caliber Slug Round
+          </li>
+          <li>
+            <span class="bold">Snipers:</span> Two Handed, High Caliber Slug Round
+          </li>
+          <li>
+            <span class="bold">Shotguns:</span> Two or One Handed, Spread Round
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_2">
+          <h3 class="header">
+            Muntions Creation
+          </h3>
+        </a>
+        <p>
+          Since your ammunition is rare, and often difficult to come by, you need to be able to make your own. This isn't helped by the fact that once a Munition is discharged, it cannot be recovered after combat. With the aid of your Tinker's tools, and enough raw materials, you can create your own ammunition. You can create up to Gunslinger Level + Intelligence modifier rounds per hour of rest, with a minimum of 1 per hour.
+        </p>
+        <table class="inventory-table" style="width: 100%;">
+          <tr>
+            <th style="text-align:left;">
+              Material
+            </th>
+            <th style="text-align:left;">
+              Cost
+            </th>
+            <th style="text-align:left;">
+              Special
+            </th>
+          </tr>
+          <tr>
+            <td>
+              Gun Powder
+            </td>
+            <td>
+              1 cp / 1 rounds
+            </td>
+            <td>
+              -
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center;">
+              <span class="bold"> Common Materials </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Bronze / Copper
+            </td>
+            <td>
+              1 sp / 15 rounds
+            </td>
+            <td>
+              +2 Misfire Chance
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Lead / Iron
+            </td>
+            <td>
+              1 gp / 15 rounds
+            </td>
+            <td>
+              +1 Misfire Chance
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Steel
+            </td>
+            <td>
+              4 gp / 15 rounds
+            </td>
+            <td>
+              -
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center;">
+              <span class="bold"> Uncommon Materials </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Silver
+            </td>
+            <td>
+              5 gp / 15 rounds
+            </td>
+            <td>
+              Bypasses Resistance for Lychanthropes
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Gold
+            </td>
+            <td>
+              50 gp / 15 rounds
+            </td>
+            <td>
+              -
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Platinum
+            </td>
+            <td>
+              500 gp / 15 rounds
+            </td>
+            <td>
+              -
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center;">
+              <span class="bold"> Rare Materials </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Obsidian
+            </td>
+            <td>
+              75 gp / 15 rounds
+            </td>
+            <td>
+              Converts Damage to Slashing
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Cold Iron
+            </td>
+            <td>
+              100 gp / 15 rounds
+            </td>
+            <td>
+              +1 Cold Damage
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Elysian Bronze
+            </td>
+            <td>
+              100 gp / 15 rounds
+            </td>
+            <td>
+              +1 Radiant Damage
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Viridium
+            </td>
+            <td>
+              100 gp / 15 rounds
+            </td>
+            <td>
+              +1 Poison Damage
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center;">
+              <span class="bold"> Very Rare Materials </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Mithral
+            </td>
+            <td>
+              500 gp / 15 rounds
+            </td>
+            <td>
+              -
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Blood Crystal
+            </td>
+            <td>
+              1,000 gp / 15 rounds
+            </td>
+            <td>
+              1 Bleed Damage per round for 1d4 rounds (non-stacking)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Hot Siccatite
+            </td>
+            <td>
+              1,250 gp / 15 rounds
+            </td>
+            <td>
+              +1d6 Fire Damage
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Cold Siccatite
+            </td>
+            <td>
+              1,250 gp / 15 rounds
+            </td>
+            <td>
+              +1d6 Cold Damage
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Adamantine
+            </td>
+            <td>
+              5,000 gp / 15 rounds
+            </td>
+            <td>
+              Ammunition is treated as magical for bypassing resistances
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center;">
+              <span class="bold"> Legendary Materials </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Noqual
+            </td>
+            <td>
+              1,000 gp / 15 rounds
+            </td>
+            <td>
+              Double damage to Constructs, Objects, & Structures. <span class="emp">Quadrupled if sapping</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Horacalum
+            </td>
+            <td>
+              2,000 gp / 15 rounds
+            </td>
+            <td>
+              +2 to Hit on attack rolls
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Voidglass
+            </td>
+            <td>
+              2,500 gp / 15 rounds
+            </td>
+            <td>
+              +2d6 Psychic Damage
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Mindglass
+            </td>
+            <td>
+              5,000 gp / 15 rounds
+            </td>
+            <td>
+              DC13 Intelligence Saving Throw or be stunned for 1 round (non-stacking)
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center;">
+              <span class="bold"> Bullet Modifications </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Armor Piercing
+            </td>
+            <td>
+              +15 sp / 15 rounds
+            </td>
+            <td>
+              -1 to Hit, +1 to Damage on medium or heavily armored targets
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Hollow Point
+            </td>
+            <td>
+              +15 sp / 15 rounds
+            </td>
+            <td>
+              +1 to Damage on lightly, or unarmored targets
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Poisoned
+            </td>
+            <td>
+              +180 gp / 15 rounds
+            </td>
+            <td>
+              Bullet becomes 1d4 piercing and target must succeed a Constitution saving throw, (DC 8 + Proficiency modifier + Intelligence modifier) or become poisoned for 1 minute.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Explosive
+            </td>
+            <td>
+              +48 gp / 15 rounds
+            </td>
+            <td>
+              Bullet does an addition 1d8 Fire damage, +2 Misfire chance
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Casing
+            </td>
+            <td>
+              +15 gp / 15 rounds
+            </td>
+            <td>
+              Bullet becomes 1d4 piercing, and executes whatever is incased inside of the round.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Sapping
+            </td>
+            <td>
+              +450 gp / 15 rounds
+            </td>
+            <td>
+              Range is halved, but damage is doubled for Constructs, Objects, & Structures
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Shotgun Slug Shell
+            </td>
+            <td>
+              +48 gp / 15 rounds
+            </td>
+            <td>
+              <span style="color: red;">Shotgun Only</span>; Fires a slug, instead of a spread shot. Additional 1d12 damage, +1 Misfire Chance
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Birdshot Shell
+            </td>
+            <td>
+              +12 gp / 15 rounds
+            </td>
+            <td>
+              <span style="color: red;">Shotgun Only</span>; Instead of an attack roll, creatures make a Dexterity Saving throw, (DC 8 + Proficiency modifier + Intelligence modifier), or take an additional 2d4 piercing damage.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Tracer Rounds
+            </td>
+            <td>
+              +8 gp / 15 rounds
+            </td>
+            <td>
+              +5 to hit on next round, if fired at the same target. -10 to Stealth.
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat2_1">
+          <h3 class="header">
+            Fighting Style
+          </h3>
+        </a>
+        <p>
+          You adopt a particular fighting style that suits how you weild your weapon. Choose one of the following. You cannot take the same Fighting Style option more than once.
+        </p>
+        <ul>
+          <li>
+            <span class="bold">Precise Shot:</span> +2 to attack rolls made with a firearm
+          </li>
+          <li>
+            <span class="bold">Power Shot:</span> When you roll a 1 or 2 on a damage dice, reroll the die and take the new roll
+          </li>
+          <li>
+            <span class="bold">Deulist:</span> Sheathing or Drawing your weapon is a free action, and +2 to Initiative Rolls
+          </li>
+          <li>
+            <span class="bold">Rough & Tumble:</span> +1 to AC
+          </li>
+          <li>
+            <span class="bold">Tough:</span> When rolling HP, you may take a 6 on the die, instead of the regular method of rolling.
+          </li>
+          <li>
+            <span class="bold">Double Trouble:</span> You are proficient with using an offhand attack. Add your ability modifer to your off hand weapon.
+            <div class="text-xs emp">Can only dual weild with Pistols</div>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat3_1">
+          <h3 class="header">
+            Gun Mastery
+          </h3>
+        </a>
+        <p>
+          At 3rd Level, a Gunslinger chooses a Gun Mastery that best reflects their fighting style. This Mastery grants you features at 3rd, 7th, 10th, 15th, and 18th.
+        </p>
+        <ul>
+          <li>
+            <a href="#Subclass1">Close Quarters Combatant</a>
+          </li>
+          <li>
+            <a href="#Subclass2">Spellslinger</a>
+          </li>
+          <li>
+            <a href="#Subclass3">Demolitionist</a>
+          </li>
+          <li>
+            <a href="#Subclass4">Sniper</a>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat3_2">
+          <h3 class="header">
+            Weapon of Choice
+          </h3>
+          <p>
+            At 3rd level, you become more familiar with your subclasses weapon. This familiarity grants you the following bonuses:
+          </p>
+          <ul>
+            <li>Reloading with your weapon of choice is a free action, instead of a bonus action</li>
+            <li>Your misfire chance is 1 with your weapon of choice</li>
+            <li>When creating Ammunition, add your proficiency bonus when determining how much ammunition is made.</li>
+          </ul>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat4_1">
+          <h3 class="header">
+            Ability Score Improvement
+          </h3>
+          <p>
+            At 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. Instead of increasing an ability score, You may instead take a <a href="#gunslingerFeats">feat</a>.
+          </p>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat5_1">
+          <h3 class="header">
+            Attachments
+          </h3>
+        </a><p>
+          At 5th level, You've learned that a firearm is pretty good, but you know what's better? A gun with a sword on the front of it. You may attach one of the following to your gun. Your attachment can be swapped out during a short or long rest. Each item can either be crafted or purchased from a town, but that item is strictly meant for the weapon it was designed for. You may adapt a previously created/purchased modification for a different weapon for half of the raw materials and time
+        </p>
+        <table class="inventory-table" style="width: 100%;">
+          <tr>
+            <th>Info</th>
+            <th>Gold Cost</th>
+            <th>Build Requirements</th>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('0')" style="color:blue;">
+                Barrel Axe
+              </span>
+              <br/>
+              <span class="text-sm emp" id="0" style="display: none;">
+                Damage: 1d6 (x2) ['Slashing',]
+                <p>
+                  An Axe mounted on the front of your gun. This attack is treated as an offhand attack using your Strength as the primary stat.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              30 gp
+            </td>
+            <td>
+              Handaxe, 0.5 lbs of a similar metal, & 3 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('1')" style="color:blue;">
+                Bayonet
+              </span>
+              <br/>
+              <span class="text-sm emp" id="1" style="display: none;">
+                Damage: 1d6 (x2) ['Piercing',]
+                <p>
+                  A regular Bayonet. This attack is treated as an offhand attack using your Dexterity as the primary stat.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              30 gp
+            </td>
+            <td>
+              Shortsword, 0.5 lbs of a similar metal, & 3 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('2')" style="color:blue;">
+                Handle Lantern
+              </span>
+              <br/>
+              <span class="text-sm emp" id="2" style="display: none;">
+                <p>
+                  You have a light attached to your handle, that lightens up the room around you. Your gun acts as if <a href="https://5e.tools/spells.html#light_phb">Light</a> is cast on it. You may choose to activate and deactive it as a free action.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              500 gp
+            </td>
+            <td>
+              An object that's less than 0.5 ft<sup>3</sup> to attach to your gun, a spellcaster who knows light, 1<sup>st</sup> level spell slot.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('3')" style="color:blue;">
+                Sights
+              </span>
+              <br/>
+              <span class="text-sm emp" id="3" style="display: none;">
+                <p>
+                  You add a better sight to your weapon making it easier to aim, especially at targets further away. Increase effective range by 10 ft.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              80 gp
+            </td>
+            <td>
+              Tinker's tools, 0.5 lbs of a metal, 0.2 lbs of glass, & 4 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('3a')" style="color:blue;">
+                Night Sights
+              </span>
+              <br/>
+              <span class="text-sm emp" id="3a" style="display: none;">
+                <p>
+                  You add a better sight to your weapon making it easier to see in the dark. You gain darkvision equal to half your effective range
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              300 gp
+            </td>
+            <td>
+              A spellcaster who knows Darkvision, 2<sup>nd</sup> Level Spell Slot, Tinker's tools, 1 lbs of a metal, 0.5 lbs of glass, & 18 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('4a')" style="color:blue;">
+                Sniper Sights
+              </span>
+              <br/>
+              <span class="text-sm emp" id="4a" style="display: none;">
+                <p>
+                  <span style="color: red;">Sniper or Rifle Only</span> You add a way better sight to your weapon making it easier to aim, especially at targets further away. Doubles your weapon's effective range.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              80 gp
+            </td>
+            <td>
+              Tinker's tools, 1 lbs of a metal, 0.5 lbs of glass, & 12 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('4')" style="color:blue;">
+                +1 Weapon Stock
+              </span>
+              <br/>
+              <span class="text-sm emp" id="4" style="display: none;">
+                <p>
+                  You augment your gun to add a stock, and make it more stable when firing. Your weapon gets a +1 to hit.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              150 gp
+            </td>
+            <td>
+              Tinker's tools, 5 lbs of a metal, 2<sup>nd</sup> level Spell Slot, & 6 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('5')" style="color:blue;">
+                +2 Weapon Stock
+              </span>
+              <br/>
+              <span class="text-sm emp" id="5" style="display: none;">
+                <p>
+                  You augment your gun to add a stock, and make it more stable when firing. Your weapon gets a +2 to hit.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              550 gp
+            </td>
+            <td>
+              Tinker's tools, 15 lbs of a metal, 4<sup>th</sup> level spell slot, & 36 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('6')" style="color:blue;">
+                +3 Weapon Stock
+              </span>
+              <br/>
+              <span class="text-sm emp" id="6" style="display: none;">
+                <p>
+                  You augment your gun to add a stock, and make it more stable when firing. Your weapon gets a +3 to hit.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              5050 gp
+            </td>
+            <td>
+              Tinker's tools, 30 lbs of a metal, 7<sup>th</sup> level spell slot, & 9 days.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('7')" style="color:blue;">
+                +1 Weapon Barrel
+              </span>
+              <br/>
+              <span class="text-sm emp" id="7" style="display: none;">
+                <p>
+                  You perfect your weapon's barrel to hone it's damage potential. Your weapon gets a +1 to all damage.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              150 gp
+            </td>
+            <td>
+              Tinker's tools, 5 lbs of a metal, 2<sup>nd</sup> level spell slot, & 6 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('8')" style="color:blue;">
+                +2 Weapon Barrel
+              </span>
+              <br/>
+              <span class="text-sm emp" id="8" style="display: none;">
+                <p>
+                  You perfect your weapon's barrel to hone it's damage potential. Your weapon gets a +2 to damage.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              550 gp
+            </td>
+            <td>
+              Tinker's tools, 15 lbs of a metal, 4<sup>th</sup> level spell slot, & 36 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('9')" style="color:blue;">
+                +3 Weapon Barrel
+              </span>
+              <br/>
+              <span class="text-sm emp" id="9" style="display: none;">
+                <p>
+                  You perfect your weapon's barrel to hone it's damage potential. Your weapon gets a +3 to damage.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              5050 gp
+            </td>
+            <td>
+              Tinker's tools, 30 lbs of a metal, 7<sup>th</sup> level spell slot, & 9 days.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('10')" style="color:blue;">
+                Weapon Holster
+              </span>
+              <br/>
+              <span class="text-sm emp" id="10" style="display: none;">
+                <p>
+                  You sew together a holster for your weapon, making it easier to draw, and carry around. Drawing your weapon can be done as a free action.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              15 gp
+            </td>
+            <td>
+              Leatherworking Tools, 10 square feet of leather, 1 hour.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('11')" style="color:blue;">
+                Suppressor
+              </span>
+              <br/>
+              <span class="text-sm emp" id="11" style="display: none;">
+                <p>
+                  You figured out how to hush the loud explosion of your gun. This allows you to maintain silence on your weapon. Your weapon now can only be heard within 10 ft of you.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              375 gp
+            </td>
+            <td>
+              A spellcaster who knows Silence, 4th level spell slot, Tinker Tools, 0.5 lbs of metal, & 3 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('12')" style="color:blue;">
+                Magazine
+              </span>
+              <br/>
+              <span class="text-sm emp" id="12" style="display: none;">
+                <p>
+                  You're tired of reloading, but still want to use your gun. This attachments allows you to extend how many bullets are prepared to be fired. Doubles weapon's ammo capacity, but reloading now costs a standard action.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              175 gp
+            </td>
+            <td>
+              Tinker Tools, 2 lbs of metal, & 3 hours.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('13')" style="color:blue;">
+                Stabilizer Feet
+              </span>
+              <br/>
+              <span class="text-sm emp" id="13" style="display: none;">
+                <p>
+                  <span style="color: red;">Sniper or Rifle Only</span> You place some stabilizer feet on your weapon. While prone, you gain a +2 to hit.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              20 gp
+            </td>
+            <td>
+              Tinker Tools, 1 lbs of metal, & 1 hour.
+            </td>
+          </tr>
+          <tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('14')" style="color:blue;">
+                Bandolier
+              </span>
+              <br/>
+              <span class="text-sm emp" id="14" style="display: none;">
+                <p>
+                  You've created a long strap of leather meant for holding your ammunition. You can hold 20 times your magazine capacity on your person, so you no longer need to interact with a backpack and pull out ammo.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              100 gp
+            </td>
+            <td>
+              Leatherworking Tools, 2 lbs of Leather, & 3 hour.
+            </td>
+          </tr><tr>
+            <td width="33%">
+              <span class="text-md" onclick="show_hide('15')" style="color:blue;">
+                Hidden Weapon Holder
+              </span>
+              <br/>
+              <span class="text-sm emp" id="15" style="display: none;">
+                <p>
+                  <span style="color: red;">Pistol only</span> You have advantage on Sleight of hand checks for concealing your weapon.
+                </p>
+              </span>
+            </td>
+            <td width="10%">
+              250 gp
+            </td>
+            <td>
+              Leatherworking Tools, 3 lbs of Leather, & 4 hour.
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat6_1">
+          <h3 class="header">
+            Intimidating Firearm
+          </h3>
+        </a>
+        <p>
+          At 6th level, you recognize the power that your weapon has when waved in the face of an enemy. Add half your gunslinger level when making Intimidation checks.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat8_1">
+          <h3 class="header">
+            Rapid Reload
+          </h3>
+        </a>
+        <p>
+          At 8th level, you've praticed enough with your guns, that reloading come naturally. Reloading is now a free action, instead of a bonus action.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat8_2">
+          <h3 class="header">
+            Extra Attack
+          </h3>
+          <p>
+            At 8th level, You're trigger finger is quicker than expected. You gain an additional attack.
+          </p>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat8_3">
+          <h3 class="header">
+            Ability Score Improvement
+          </h3>
+          <p>
+            At 8th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. Instead of increasing an ability score, You may instead take a <a href="#gunslingerFeats">feat</a>.
+          </p>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat10_1">
+          <h3 class="header">
+            Attachments (2)
+          </h3>
+        </a>
+        <p>
+          At 10th level, you've learned to adapt your gun to handle more attachments. Your gun can now carry an additional attachment, totally 2.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat11_1">
+          <h3 class="header">
+            Gunslinger's Initiative
+          </h3>
+        </a>
+        <p>
+          At 11th level, you're eyes are trained for spotting enemies. You may add your Intelligence modifier to initiative, and cannot be surprised, however you act last in the initiative of that surprise round. Once per long rest, you can choose to be at the top of the initiative order, regardless of what you initially rolled.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat12_1">
+          <h3 class="header">
+            Ability Score Improvement
+          </h3>
+          <p>
+            At 12th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. Instead of increasing an ability score, You may instead take a <a href="#gunslingerFeats">feat</a>.
+          </p>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat13_1">
+          <h3 class="header">
+            Fan the Hammer
+          </h3>
+        </a>
+        <p>
+          At 13th level, As an action, you may choose to fire every round left in the magazine of your weapon. You can use this ability once per long rest. You make a number of attacks equal to the number of rounds left in your magazine. For every two rounds left in the chamber, your misfire chance increases by 1, rounded up.
+        </p>
+        <div class="text-sm emp">7 rounds in magazine = +4 misfire chance for every shot</div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat15_1">
+          <h3 class="header">
+            Attachments (3)
+          </h3>
+        </a>
+        <p>
+          At 15th level, you've learned to adapt your gun to handle even more attachments. Your gun can now carry an additional attachment, totally 3.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat16_1">
+          <h3 class="header">
+            Ability Score Improvement
+          </h3>
+          <p>
+            At 16th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. Instead of increasing an ability score, You may instead take a <a href="#gunslingerFeats">feat</a>.
+          </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat20_1">
+          <h3 class="header">
+            Attachments (4)
+          </h3>
+        </a>
+        <p>
+          At 20th level, you've learned to adapt your gun to handle probably too many attachments. Your gun can now carry an additional attachment, totally 4.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat20_2">
+          <h3 class="header">
+            Shooting Ace
+          </h3>
+        </a>
+        <p>
+          At 20th level, Your gun weilding capabilites have become legenary. Guns are an extension of who your are. You can no longer misfire.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat20_3">
+          <h3 class="header">
+            Ability Score Improvement
+          </h3>
+          <p>
+            At 20th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature. Instead of increasing an ability score, You may instead take a <a href="#gunslingerFeats">feat</a>.
+          </p>
+      </td>
+    </tr>
+  </table>
+  <table class="wrapper-box" style="margin-bottom:60px;">
+    <tr>
+      <td>
+        <a name="Subclass1">
+          <h2>
+            Close Quarters Combatant
+          </h2>
+          Moving and weaving through the battlefield is your speciality. You don't mind getting up close and personal with your enemies. You casually shrug off effect that take others minutes to recover from.
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Weapon of Choice
+        </h3>
+        <p>
+          At 3rd level, your weapon of choice is either Pistol or Rifle, but not both. See above for benefits
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Battlefield Agility
+        </h3>
+        <p>
+          At 3rd level, you gain the ability to Dash and Disengage as a bonus action.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Extra Attack
+        </h3>
+        <p>
+          At 7th level, when you take the Attack action, you can attack twice, instead of once. The number of attacks increases to three when you reach 15th level. This ability stacks with the extra attack given from level 8.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Snap Shot
+        </h3>
+        <p>
+          At 10th level, Your reflexes have become battle hardened to the point where you can visualize what your enemy will do. You can now make Attacks of Opportunity against creatures with your gun. This attack can only be made against a creature who is within line of sight, and within your effective range.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Extra Attack (2)
+        </h3>
+        <p>
+          At 15th level, When you take the attack action, you can attack three times, instead of twice.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Expert Battle Navigator
+        </h3>
+        <p>
+          At 18th level, Throughout your time on the battlefield, you have gained an immense amount of experience, dealing with explosive, spells, and general mayhem. Once per round, you can choose to succeed a Strength or Dexterity saving throw that you otherwise would have failed. You may do this a number of times equal to your Intelligence Modifier.
+        </p>
+      </td>
+    </tr>
+  </table>
+  <table class="wrapper-box" style="margin-bottom:60px;">
+    <tr>
+      <td>
+        <a name="Subclass2">
+          <h2>
+            Spellslinger
+          </h2>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Weapon of Choice
+        </h3>
+        <p>
+          At 3rd level, you must decide your weapon of Choice. You may choose a Rifle, Pistol, or Shotgun. See above for benefits
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Arcane Infusions
+        </h3>
+        <p>
+          At 3rd level, you gain the ability infuse your bullets with magic. Every bullet created can be infused with a Cantrip, that you know, during your short rest. These Arcane Infusions are permenantly assigned to the bullets. Your spellcasting modifier is Intelligence. The number of Cantrips you know is equal to 2 + your Intelligence modifier.
+        <p>
+          Your power with Cantrips become more and more effective the more you study and use them. If a spell's damage increases as your level increases, you use the higher damage. <span class="bold" style="color: green;">Example:</span> Chill Touch doeals 1d8 at level 1, and 2d8 at level 5. If you're level 5, your Chill Touch Bullets deal 2d8 damage. Below is a list of Spells you may choose from;
+        </p>
+        <ul style="columns: 3">
+          <li>Acid Splash</li>
+          <li>Chill Touch</li>
+          <li>Create Bonfire</li>
+          <li>Fire Bolt</li>
+          <li>Frostbite</li>
+          <li>Infestation</li>
+          <li>Poison Spray</li>
+          <li>Produce Flame</li>
+          <li>Ray of Frost</li>
+          <li>Shocking Grasp</li>
+          <li>Thunderclap</li>
+          <li>Toll the Dead</li>
+        </ul>
+        <p style="padding: 0; margin: auto; width: 100%; border-bottom: 1px solid black;">
+          These spells cannot be infused within your bullets, but you can learn them and cast them normally.
+        </p>
+        <ul style="columns: 3">
+          <li>Friends</li>
+          <li>Guidance</li>
+          <li>Gust</li>
+          <li>Light</li>
+          <li>Mending</li>
+          <li>Message</li>
+        </ul>
+        <center>
+          <span class="bold">Spell Save DC:</span> 8 + Proficiency bonus + Intelligence modifier
+          <br/>
+          <span class="bold">Spell Attack Modifier:</span> Proficiency dice + Intelligence modifier
+        </center>
+        <p>
+          <span class="bold">Concentration: </span> When making an attack that requires concentration, you automatically focus upon maintaining a bond with the cast spell. You can only focus upon one spell at a time. If you fire a bullet and the spell infused in that bullet requires concentration, the spell fizzles, and fails. You may choose to drop concentration on any spell as a free action though.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Increase Infusion Efficacy
+        </h3>
+        <p>
+          At 7th level, when applying damage to a target using an infusion, you may add your Intelligence modifier to the infusion Damage as well as your Dexterity modifier to your bullet damage. <span class="bold" style="color: green;">Example:</span> Your weapon does 1d10 + Dexterity modifier, and your Chill touch bullet does an additional 2d8 + Intelligence modifier.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Magical Weapon
+        </h3>
+        <p>
+          At 7th level, your weapon is considered magical for the purposes of bypassing resistances. If your weapon is gains a +1 to it's quality. <span class="bold" style="color: green;">Example:</span> Your weapon is already +1 before level 7. Once you gain this feature, it is considered a +2 when weilded by you. No other creature is granted this benefit if they use youre weapon.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Armed with Magics
+        </h3>
+        <p>
+          At 10th level, you infuse your weapon with a special magical property. As part of an attack, you execute the following skill according to your weapon. This effect lasts 2d6+2 rounds. This can be done a number of times equal to your Intelligence modifier.
+        </p>
+        <ul>
+          <li>
+            <span class="bold">Pistols:</span> For the duration, you gain an additional attack, and an additional 10 ft of movement speed.
+          </li>
+          <li>
+            <span class="bold">Rifles:</span> You infuse your weapon with Magical Energy. Choose one of the following Damage types; Acid, Fire, Cold, Lightning, or Poison. For the duration, your weapon deals an additional dice of damage of that given elemental type.
+          </li>
+          <li>
+            <span class="bold">Sniper:</span> For the duration, you ignore all range penalties imposed by your weapon. As long as there is no obstruction between you and the target, you make the attack as normal. All of your damage from your gun is considered Force Damage.
+          </li>
+          <li>
+            <span class="bold">Shotguns:</span> Choose one of the following damage types; Acid, Fire, Cold, Lightning, or Poison. When the trigger is pulled, the gun fires off a 30 ft cone, of your chosen damage type. Each creature in that area must make a Dexterity saving throw, taking 3d6 damage, or half as much on a success. 
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Shared Infusions
+        </h3>
+        <p>
+          At 15th level, you've adapted your infusions to work with other peoples weapons. You touch a magical weapon, and grant it an infusion for 1 hour. You may do this as many times as your Intelligence modifier.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Master of the Weave
+        </h3>
+        <p>
+          At 18th level, You've learned how to harness more of the weave within your gun and ammunition. You gain the ability to infuse your ammunition with 2 infusions that you know.
+        </p>
+      </td>
+    </tr>
+  </table>
+  <table class="wrapper-box" style="margin-bottom:60px;">
+    <tr>
+      <td>
+        <a name="Subclass3">
+          <h2>
+            Demolitionist
+          </h2>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Weapon of Choice
+        </h3>
+        <p>
+          At 3rd level, your weapon of choice is either Shotgun or Rifle, but not both. See above for benefits
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Demo Kit
+        </h3>
+        <p>
+          At 3rd level, you gain proficiency with your explosives kit, called a Demo Kit. This Kit allows you to create destructive equipment during your downtime. Each type of Bomb comes with special properties of destruction. Every Explosive uses your Save DC. Your Save DC is calculated as <span class="und">8 + Proficiency Bonus + Intelligence modifier</span>.
+        </p>
+        <p>
+          Your Demo Kit's Bombs are expendable at any rate you wish. So long as you have the bomb, there is no limit to your destructive power. Once a bomb is placed, it is primed for detonation. You can trigger a detonation of all primed bombs as a free action. The deonation  range is noted on each bomb as Trigger Distance.
+        </p>
+        <div style="flex-wrap: wrap; display: flex;">
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Explosive Charge
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    1d8 (x2) ['Bludgeoning','30/90 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Excavates 5 ft<sup>3</sup> cube
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: 1000 ft.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 5 ft. tile
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              Your basic bomb, and the bread and butter of any demolitionist. These are explosive charges that are designed for leveling buildings or for mining. But, an explosive is an explosive, and can just as well be used against an enemy.
+            </p>
+            <p>
+              <span class="bold">Special: </span> If you choose to target a creature and successfully hit, the user can attempt to remove 1 explosive from themselves as a free action. On the target's turn, they may attempt to remove it from themselves, by either removing their armor, or making a sucessful Sleight of hand check against your Save DC.
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Electric Smoke
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    2d6 (x2) ['Lightning','30/90 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Fills a 20 ft radius circle with smoke that becomes electrified
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: N/A
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 20 ft. radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              If you ever are being chased, or really want to ruin someone's day, use this. This explosive works in two parts. When the charge makes contact with the ground, or a creature, the cannister fills the area with heavily obscuring Fog. This fog lasts for 1 minute, or until a wind of at least 10 MPH disperses it. A creature attempting to look through the Fog, or a creature inside of the fog attempting to look out, automatically fails any ability check that requires sight. Also, any attacks made against someone in the Fog have disadvantage.
+            </P>
+            <p>
+              On the following round, the cannister becomes electricifed, and the smoke carries that electricity to all enemies inside the area of effect. All creatures still within the Fog, need to make a Dexterity Saving Throw. On a successful save, the creature takes half damage.
+            </p>
+            <p>
+              <span class="bold">Special: </span> The Electric Smoke cannot be planted, or remotely detonated. It must be thrown to go off.
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Flash Bang
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    1d2 (x1) ['Thunder','30/60 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Disorient Combatants
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: 100 ft.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 15 ft & 30 ft radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              Flashbangs are not intended to deal damage or cause any major harm. They are meant to disorient and stun targets. When thrown or placed, the item creates a loud explosive and a brilliant white flash. Hence the name, Flashbang.
+            </P>
+            <p>
+              <span class="bold">Special: </span> All creatures within 15 ft of the explosion suffer the damage, and must make two Constitution saving throws. If the creature fails their first save, they are blinded for the duration. If the creature fails their second save, they are deafend for the duration. Creatures outside of 15 feet, but within 30 feet have advantage on the saving throws, and take minimum possible damage. 
+            </p>
+            <p>
+              The duration of the creature's condition is equal to the damage dealt to each creature. If a creature takes no damage from this bomb, they automatically pass their saves.
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Wa Wa Wa
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    1d2 + 2 (x1) ['Force','30/60 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    The "Are we there yet" repetition gets ya.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: 100 ft.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 20 ft radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              The Wa Wa Wa, commonly known as a Whiner, is an area deterant intended to destroy your sanity, before your body. It does a very small amount of damage, but is effective as forcing focus away from you, and onto something intended to be destroyed.
+            </p>
+            <p>
+              When the Wa Wa Wa enters combat, damage blankets the field, annoying all creatures within it's radius. The Wa Wa Wa continues to deal damage for 2d6 rounds, at which time, it explodes dealing max damage to all target's adjacent to it.
+            </p>
+            <p>
+              <span class="bold">Special: </span> The Wa Wa Wa can be destroyed early, if you or the enemy so choose. It has an AC of 10, and HP equal to your Gunslinger level.
+            </p>
+          </div>
+        </div>
+        <br>
+        <p>
+          The rules for placing Charges are as follows;
+        </p>
+        <table style="width: 100%;">
+          <tr>
+            <th>Material</th><th>Explosive Charges</th><th>Planting Time</th>
+          </tr>
+          <tr>
+            <td>Wood/Dirt/Natural Material</td><td>1 per 5 ft<sup>3</sup></td><td>1 Bonus Action or Action</td>
+          </tr>
+          <tr>
+            <td>Metal/Rock</td><td>2 per 5 ft<sup>3</sup></td><td>1 Bonus Action or Action</td>
+          </tr>
+          <tr>
+            <td>Adamantine/Rare Metals</td><td>4 per 5 ft<sup>3</sup></td><td>1 Action</td>
+          </tr>
+          <tr>
+            <td>Enemy</td><td>1 per Enemy</td><td>1 Action<a href="#Demo1_1">*</a></td>
+          </tr>
+          <tr>
+            <td>Tile</td><td>1 per Tile</td><td>1 Action<a href="#Demo1_2">**</a></td>
+          </tr>
+          <tr>
+            <td>Magical</td><td>+1 per 5 ft<sup>3</sup></td><td>+1 Round</td>
+          </tr>
+        </table>
+        <p class="text-sm">
+          <span class="bold">Hiding: </span> Hiding charges is often very important for a successful infiltration. If you wish to hide your charges, you need an additional minute of time per charge. It's visibility is dependent on a Sleight of Hand check made at the time of planting.
+        </p>
+        <p class="text-sm">
+          <a name="Demo1_1">* </a> To stick it to an enemy, you need to make a Ranged Attack against the creature's AC. On a fail, see <a href="#Demo1_3">here<sup>+</sup></a>. The planting time of this action is considered 1 Standard Action, regardless of if the enemy is considered magical and/or wearing armor.
+        </p>
+        <p class="text-sm">
+          <a name="Demo1_2">** </a> When attempting to target a specifc tile within your range, make a ranged attack as if you're attempting to hit an enemy with an AC of 5. On a fail, see <a href="#Demo1_3">here<sup>+</sup></a>.
+        </p>
+        <p>
+          Your kit does not automatically regain charges, however, you can spend an hour searching for materials that can be crafted into charges. Allies can assist in the search for resources. You gain an additional proficiency dice for every ally who assists in the search.
+        </p>
+        <p>
+          The terrain has a large effect on how effective your foraging is. For each hour spent, roll 1d20 + Proficiency against the Terrain's Value. If you are successful, the number of charges regained is equivalent to Your Roll - Terrain Value (Ignore negative results). <span class="bold" style="color: green;">Example:</span> 18 - DC10 = 8 Charges gained. You can turn these charges into any of your known bombs. Any charges not converted into bombs are rendered inert and useless.
+        </p>
+        <table>
+          <tr>
+            <th>Terrain</th><th>Difficulty</th>
+          </tr>
+          <tr>
+            <td>Mountian, Coast, Forest, or Grassland</td><td>10</td>
+          </tr>
+          <tr>
+            <td>Arctic, Desert, or Swamp</td><td>15</td>
+          </tr>
+          <tr>
+            <td>Underwater, or Underground</td><td>20</td>
+          </tr>
+          <tr>
+            <td>Outer Planes</td><td>+5 to Value</td>
+          </tr>
+          <tr>
+            <td>Elemental Planes</td><td>+10 to Value</td>
+          </tr>
+        </table>
+        <div class="text-sm">
+          <p>
+            <a name="Demo1_3"><sup>+ </sup></a> When you miss an attack against a creature or a tile, roll 1d8 if you're using a grid map, (or a 1d6 if you're using a hexagon map) to determine the direction the explosive it lands. Then roll 1d4 to determine the number tiles away the item landed. If there is an obstacle that would feasible prevent it from landing in the destination tile, the item instead lands in the tile along that same path, that makes the most sense to the DM. I.e. throwing it off a ledge, make the trajectory farther away, hitting a wall, makes it shorter. Here is a grid showing the directions based on the D8 rolled for a square map;
+          </p>
+          <table border="1px" style="margin: auto; text-align: center;">
+            <tr>
+              <td style="width: 33%">8</td>
+              <td style="width: 33%">1</td>
+              <td style="width: 33%">2</td>
+            </tr>
+            <tr>
+              <td style="width: 33%">7</td>
+              <td style="width: 33%">-</td>
+              <td style="width: 33%">3</td>
+            </tr>
+            <tr>
+              <td style="width: 33%">6</td>
+              <td style="width: 33%">5</td>
+              <td style="width: 33%">4</td>
+            </tr>
+          </table>
+          <p>
+            Here is an example of if you targeted Tile 'T', and rolled a 4 on the d8 and a 2 on the d4. The charge would land on tile 'D'
+          </p>
+          <table border="1px" style="margin: auto; text-align: center;">
+            <tr>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+            </tr>
+            <tr>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+            </tr>
+            <tr>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">T</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+            </tr>
+            <tr>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+            </tr>
+            <tr>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">-</td>
+              <td style="width: 20%;">D</td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Elemental Demo
+        </h3>
+        <p>
+          At 7th level, your creative outlet of Explosives has reached a new level of destruction. Add the following to the list of charges you can make and use.
+        </p>
+        <div style="flex-wrap: wrap; display: flex;">
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Thermite Charge
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    1d10 (x2) ['Fire','20/60 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Fills a 5 x 10 ft line with Fire
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: 500 ft.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 20 ft line
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              The Thermite charge takes 1 minute or 10 rounds to burn out. All creatures that pass through that line take 1d10 fire damage and must make a Dexterity Saving throw against your Save DC. Creatures who are considered On Fire take residual 1d6 fire damage until they spend an action to put out the fire. If this Thermite planted, using the same rate as an Explosive Charge, you can modify the orientation of the line, so long as it's continual.
+            </P>
+            <p>
+              <span class="bold">Special: </span> Thermite has a unique property of setting things alight. At initiative 1, if a square is on fire, the fire spreads to all adjacent squares that contain flammable material. Those squares that are set on fire via this method do not carry the same rulings 
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Snowball
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    2d6 (x2) ['Cold','30/90 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Incases whatever it comes in contact with in Ice
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: N/A
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: Target / 5 ft radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              As silly as it's name is, this weapon is far more dangerous than it's name or legacy presents. You have two potential action possible with this snowball. you may target a creature or a square/hex.
+            </p>
+            <p>
+              To target a person, make a ranged attack against that creatures AC. On a Success, The creature takes the above damage, and must make a Dexterity Saving throw against your Save DC. On a failed save, the creature's speed is reduced to 0 for 1 round, as they're frozen in place.
+            </p>
+            <p>
+              To target a certain square or hex, make a ranged Attack against a tile. On a successful attack, the tile, and all tiles adjacent become difficult terrain and Icy. If a cretures wishes to cross an Icy square, the user must make a Dexterity Saving throw against your Save DC, or fall prone. Creatures moving at half their speed, automatically pass this check.
+            </p>
+            <p>
+              <span class="bold">Special: </span> The snow ball cannot be planted, or remotely detonated. As with it's regular counter part, this must be thrown.
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Poison Rain
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    2d10 (x2) ['Poison','30/40 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Spreading death over a large area
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: N/A
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 45 ft - 5 ft per square thrown diameter 
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              This type of grenade is not one that's supposed to explode on the ground. when it detonates, it spray's fat globules of poisonous liquid, that is incredibly sticky. It's intended use is to make it's targets ill, and set them up for more destructive damage later.
+            </p>
+            <p>
+              Any creature caught in it's range takes the damage and must make a Constitution saving throw. On a fail, the target is poisoned for 1d4 rounds
+            </p>
+            <p>
+              <span class="bold">Special: </span> If Poison Rain grenade is launched with a weapon and it's range is different, while within the effective range of the weapon, the area of effect is 20 ft radius, and outside of that, it's 10 ft radius.
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Concussive Grenade
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    2d8 (x2) ['Force','30/90 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Shakes the ground. Like a lot.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: 500 ft
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 30 ft radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+                Knocking enemies down, is an effective way to handle crowds. When the grenade makes impact with the ground, the grenade rocks the ground. All creatures within the radius of the shockwave must make a Dexterity saving throw. On a success, the creature takes half damage.
+            </p>
+            <p>
+              <span class="bold">Special: </span> All creatures who fail their save by 5 or more, also fall prone.
+            </p>
+          </div>
+        </div>
+        <p>
+          Additionally, your other bombs become more potent. Below is the damage numbers for your currently possible bombs. Here is what your Bombs should do for damage now.
+          <ul>
+            <li><span class="bold">Explosive Charge:</span> 2d8 Bludgeoning</li>
+            <li><span class="bold">Electric Smoke:</span> 3d6 Lightning</li>
+            <li><span class="bold">Wa Wa Wa:</span> 1d3 + 3 Force</li>
+            <li><span class="bold">Flashbang:</span> 1d3 Thunder</li>
+          </ul>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Bomb Shot
+        </h3>
+        <p>
+          At 10th level, you've discovered a way to modify your Shotgun to lob projectiles for you. All your bombs now can be fired from your shotgun. When using this method for firing your bombs, the max range number is now your normal range number. Your new Max range number is three times your normal range. For instance, your Explosive Charge now has a range of 90 / 270 ft.
+        </p>
+        <p>
+          Additionally, your bombs become even more potent. Add 1 additional damage dice for those bombs. Here is what your Bombs should do for damage now.
+          <ul>
+            <li><span class="bold">Explosive Charge:</span> 3d8 Bludgeoning</li>
+            <li><span class="bold">Electric Smoke:</span> 4d6 Lightning</li>
+            <li><span class="bold">Wa Wa Wa:</span> 1d4 + 4 Force</li>
+            <li><span class="bold">Flashbang:</span> 1d4 Thunder</li>
+            <li><span class="bold">Thermite Charge:</span> 2d10/2d6 Fire</li>
+            <li><span class="bold">Snowball:</span> 3d6 Cold</li>
+            <li><span class="bold">Poison Rain:</span> 3d10 Poison</li>
+            <li><span class="bold">Concussive Grenade:</span> 3d8 Force</li>
+          </ul>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Self Preservation
+        </h3>
+        <p>
+          At 10th level, You're incredibly used to things blowing up. Sometimes things blow up in your face. You gain the ability to avoid damage from your own bombs. Whenever one of your bombs explodes, and you would be caught in the blast radius, you make the save against damage at advantage.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Destructive Demon
+        </h3>
+        <p>
+          At 15th level, at 15th level you gain the knowledge to really start laying out the damage.
+        </p>
+        <div style="flex-wrap: wrap; display: flex;">
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Spring Razor
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    4d8 (x3) ['Slashing','30/90 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Razor thin wire sitting on a hairpin trigger
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: Special
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 5 ft. radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              More of a trap, than a conventional bomb, but what does it matter if it takes out an enemy. This bomb sits on a hairpin trigger. If anyone walks within 5 ft of it's location, it will trigger. In combat, any creature within 5 ft of the target of this bomb makes a Dexterity saving throw. On a successful saving throw, they take half damage. Out of combat, a successful Stealth check against your Save DC doesn't trigger this bomb. This item can be planted at the same rate as an Explosive Charge.
+            </p>
+            <p>
+              <span class="bold">Special: </span> This pile of wires is really good at taking out unsuspecting enemies. If a target is not in combat, and not walking cautiously, they roll their save with disadvantage.
+            </p>
+          </div><div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Cluster Grenade
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    3d10 (x2) ['Piercing','20/60 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Explosions make more explosions
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: 1000 ft.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 10 ft. spreading radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+                This bomb is considerably larger than most of your other hand held bombs. This is because it has many other bombs inside of it. Once this bomb detonates, all creatures must make a Dexterity Saving throw. On a success, the creature takes half damage.
+            </p>
+            <p>
+              <span class="bold">Special: </span> When the bomb detonates, it throws out two bombs into the air. Calculate the bombs trajectory with the same method you would use for missing a target, found <a href="#Demo1_3">here</a>. The bombs detonate the following round. The damage however is reduced by 1 damage dice, until there are no damage dice left. At which point, the cluster grenade ends.
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Acrid Touch
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    2d6 (x2) ['Acid','30/90 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Coats armor and begins eating away at it.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: N/A
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: Target
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              This bomb coats it's victim in a corrosive layer that slow eats away armor. The Target must make a Dexterity Saving throw. On a success, the target takes half damage.
+            </P>
+            <p>
+              If the target is wearing non-magical Metal armor and fails their save, their armor takes a permenant -1 to AC. If the creature is weilding a non-magical metal weapon and fails their save, the item takes a permenant -1 on attack and damage. This effect does not stack.
+            </p>
+            <p>
+              <span class="bold">Special: </span> The Acrid Tough cannot be planted, or remotely detonated. It must be thrown.
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Anti-Magic Zone
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    0 (x2) ['N/A','45/90 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    No fun zone
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: 1000 ft square
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 10 ft increasing radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              A large cylindrical bottle, about 2 ft in length, and 6 inches in diameter, holds a very dark secret. The cyilinder begins to devour all magic within the area. It's effect slowly increases every round at the top of the round, by 10 ft. All active magical spells must make a Concetration check against the your spell Save DC.
+            </p>
+            <p>
+              The anti-magic zone device will increase forever, unless destroyed. It has a number of Hit points and an AC equal to your Gunslinger's level. If the device is planted, it is granted +3 AC due to cover.
+            </p>
+            <p>
+              <span class="bold">Special: </span> Magical devices are effected by the anti-magic field. You can render a Magical object inert by holding it within the casing of the anti-magic field grenade. If a magical object is held within the casing of the anti-magic field for a number of consecutive days equal to the caster level, the object is rendered inert for 1 year. Once removed, the year time limit begins.
+            </p>
+          </div>
+        </div>
+        <p>
+          Additionally, your bombs become incredibly potent. Add 1 additional damage dice for those bombs. Here is what your Bombs should do for damage now.
+          <ul>
+            <li><span class="bold">Explosive Charge:</span> 4d8 Bludgeoning</li>
+            <li><span class="bold">Electric Smoke:</span> 5d6 Lightning</li>
+            <li><span class="bold">Wa Wa Wa:</span> 1d6 + 6 Force</li>
+            <li><span class="bold">Flashbang:</span> 1d6 Thunder</li>
+            <li><span class="bold">Thermite Charge:</span> 3d10/3d6 Fire</li>
+            <li><span class="bold">Snowball:</span> 4d6 Cold</li>
+            <li><span class="bold">Poison Rain:</span> 4d10 Poison</li>
+            <li><span class="bold">Concussive Grenade:</span> 4d8 Force</li>
+          </ul>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Extraplanar Bombadier
+        </h3>
+        <p>
+          At 18th level, You've reached your ultimate bomb making form.
+        </p><div style="flex-wrap: wrap; display: flex;">
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Withering Touch
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    4d10 (x2) ['Necrotic','30/90 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Designed to permanently destroy organic material
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: N/A
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: Target
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              The target must make a Constitution saving throw. On a success save, the target takes half damage. If the creature fails their save, they also take a -2 Constitution for 1 minute, going to a -1 for the following minute. Subsequent fails only resets the timer, and does not stack.
+            </p>
+            <p>
+              <span class="bold">Special: </span> This bomb hurts your hands and eyes to make. You've designed a special cage for it, that negates it's effects, but the cage isn't entirely effective. When you decide to use this bomb, you take 1 point of necrotic damage, and must make the constitution save as well. Also note that if the Target is a construct, or entirely metallic, the creature is unnaffected by this bomb.
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Nuclear Charge
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    3d10 (x3) ['Radiant','30/90 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Unstable, and radiates a strange unearthly glow
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: 1000 ft.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 30 ft. radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              You've been able to isolate the most powerful explosives, enough to destroy all life within the massive radius of this explosion. All creatures must make a Dexterity Saving throw. If the creature succeeds, they take half damage. If the creature fails, they make a constitution saving throw. On a fail, the creature is poisoned for 1d4 rounds. This can be planted at double the rate of an explosive charge.
+            </p>
+            <p>
+              Hiding this charge is difficult. Creatures have advantage when within 60 ft. of this charge to find it.
+            </p>
+            <p>
+              <span class="bold">Special: </span> If a creature drops to 0 hit point as a result of this bomb, they explode. All creatures within 30 ft. of this explosion must make a Dexterity Savng Throw. On a failed save, they take 4d6 Radiant damage and half as much on a successful save. 
+              <div class="text-xs emp">Note: This explosion also triggers this special effect for all targets who fall to 0 HP within this area</div>
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Nerve Agent
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    4d6 (x1) ['Psychic','30/90 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Deteriorate your victims from the inside.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: 100 ft.
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 10 ft spreading radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+            	This gas infects the mind, and brings all mental faculties to a screeching halt and inflicts massive amounts of pain. When a creature comes into contact with this agent, they must make a Constitution saving throw. On a Success, they take half damage. On a fail, they are Paralyzed. Once paralyzed, they must make an additional Constitution saving throw. On a subsequent fail, their Intelligence and Wisdom is drained by 1d4. This damage is healed 1d4 per 24 hours of rest.
+            </p>
+            <p>
+            	<span class="bold">Special: </span> This gas is heavy, slow to catalyze, and spreads from the origin point. For the next 1d4+1 rounds, the gas spreads an additional 5 feet. This gas can be blown away by a strong wind or Gust. If the creature is a construct, or does not use an organic brain, the creature is unaffected by this bomb.
+            </p>
+          </div>
+          <div style="flex: 1; padding: 0px 10px;">
+            <table style="width: 75%;">
+              <tr>
+                <td>
+                  <span class="text-md">
+                    Gravity Well
+                  </span>
+                  <br/>
+                  <span class="text-sm emp">
+                    Special (x1) ['Force','50/100 ft.',]
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Mini black hole
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Trigger: N/A
+                  </span>
+                  <br/>
+                  <span class="text-xs emp">
+                    Area of Effect: 25 ft & 50 ft radius
+                  </span>
+                </td>
+              </tr>
+            </table>
+            <p>
+              A translucent spherical marble, about an inch in diameter, holds a swirling sea of stars. The dark interior holds a valuable secret. When the casing is shattered, the black mass amongst the stars crashes in on itself, erupting in a gravitational pull strong enough to drag an imperial airship.
+            </P>
+            <p>
+              When the casing shatters, all targets within 50 feet must make a Strength saving throw. On a fail, they are dragged to the closest adjacent square. The closest creature is dragged first, followed by the next closest, and so on. All creatures dragged to the square take fall damage equal to the distance dragged. At the top of the round, all creatures must make their strength save again, following the above perscribed order. The effected area, is considered difficult terrain for the purposes of movement.
+            </p>
+            <p>
+              <span class="bold">Special: </span> Creatures within 25 ft of the gravity well, roll their Strength save at disadvantage
+            </p>
+          </div>
+        </div>
+        </div>
+        <p>
+          Additionally, your bombs become impossibly potent. Add 1 additional damage dice for those bombs. Here is what your Bombs should do for damage now.
+          <ul>
+            <li><span class="bold">Explosive Charge:</span> 5d8 Bludgeoning</li>
+            <li><span class="bold">Electric Smoke:</span> 6d6 Lightning</li>
+            <li><span class="bold">Wa Wa Wa:</span> 1d8 + 8 Force</li>
+            <li><span class="bold">Flashbang:</span> 2d4 Thunder</li>
+            <li><span class="bold">Thermite Charge:</span> 4d10/4d6 Fire</li>
+            <li><span class="bold">Snowball:</span> 5d6 Cold</li>
+            <li><span class="bold">Concussive Grenade:</span> 5d8 Force</li>
+            <li><span class="bold">Spring Razor:</span> 5d8 Slashing</li>
+            <li><span class="bold">Cluster Grenade:</span> 4d10 Piercing</li>
+            <li><span class="bold">Acrid Tough:</span> 3d6 Acid</li>
+          </ul>
+        </p>
+      </td>
+    </tr>
+  </table>
+  <table class="wrapper-box" style="margin-bottom:60px;">
+    <tr>
+      <td>
+        <a name="Subclass4">
+          <h2>
+            Sniper
+          </h2>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Weapon of Choice
+        </h3>
+        <p>
+          At 3rd level, your weapon of choice is a Rifle or a Sniper. See above for benefits
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Targetting
+        </h3>
+        <p>
+          At 3rd level, you know enough to know where to hit someone to stun then, or cripple them. As part of your attack action, you can declare that you're targetting a certain body part to gain the additional benefit. However, you cannot take a bonus action, your movement, or your reaction once you declare you're doing this. For all your Targetting abilities, your Save DC is equal to 8 + Proficiency modifier + Inteligence modifier.
+        </p>
+        <table width="100%">
+          <tr>
+            <th>Target</th>
+            <th>Special Effect</th>
+            <th>Difficulty</th>
+          </tr>
+          <tr>
+            <td>Head</td>
+            <td>If the enemy is wearing a helmet, they are stunned for 1 round. If the enemy is not wearing a helmet, roll damage twice, and take the more favorable result.</td>
+            <td>-6 to hit</td>
+          </tr>
+          <tr>
+            <td>Arms</td>
+            <td>The Enemy drops whatever they're holding. If what they're holding is two handed, they may make a Dexterity Saving throw to remain holding it in their other hand.</td>
+            <td>-2 to hit</td>
+          </tr>
+          <tr>
+            <td>Legs</td>
+            <td>The creature's movement speed drops to 0 for their next turn.</td>
+            <td>-3 to hit</td>
+          </tr>
+          <tr>
+            <td>Feet</td>
+            <td>The creature has their feet blown our from under them. They fall prone on the square they are currently on.</td>
+            <td>-5 to hit</td>
+          </tr>
+          <tr>
+            <td>Wings</td>
+            <td>
+              Their flight is interupted. The creature must make a Dexterity Saving throw. On a successful save, they arrest their fall, after 20ft of falling. On a fail, they cannot stop their fall, and fall back to the earth.
+              <div class="text-xs emp">Note: Creature must have wings in order for this to be targetted.</div>
+            </td>
+            <td>-2 to hit</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Sharpshooter
+        </h3>
+        <p>
+          At 7th level, you gain Proficiency with Perception or Survival. If you are already proficient, you gain expertise, or double proficiency
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Powerful Weapon
+        </h3>
+        <p>
+          At 7th Level, you've feeling comfortable with the immense weight that Sniper rifles have. When calculating Damage Rolls, use both your Strength modifier and your Dexterity modifier.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Measured Breath
+        </h3>
+        <p>
+          At 7th Level, you've gained control over your breathing when the pressure is on. You can choose to forgoe your turn this round, to ensure a hit next round. You get a +10 to hit on your next turn. The following round, you must recover. You take a -5 to hit for that round.
+        </p>
+        <p class="text-sm emp">Note: This feature can be used in conjuction with your Targetting features.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Power Shot
+        </h3>
+        <p>
+          At 10th level, you can choose a number of bullets you have already made, equal to your Intelligence modifer. These bullets are then modified to become volatile proponents of destruction. When firing these bullets, you have an additional +2 Misfire chance. If these bullets successfully make contact, they deal an additional 2d10 Piercing Damage.
+        </p>
+        <p>
+          If these bullets are not used by the end of the day, they break, and are destroyed.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Bane
+        </h3>
+        <p>
+          At 10th level, You've studied enough targets to know their weaknesses and their critical points. Choose one of the following creature types; 
+        </p>
+        <ul style="columns: 3">
+          <li>Aberrations</li><li>Beasts</li><li>Celestials</li>
+          <li>Constructs</li><li>Dragons</li><li>Elementals</li>
+          <li>Fey</li><li>Fiends</li><li>Giants</li>
+          <li>Humanoids</li><li>Monstrosities</li><li>Oozes</li>
+          <li>Plants</li><li>Undead</li>
+        </ul>
+        <p>
+          For your selected creature type, you gain the following benefits against those type of creatures;
+        </p>
+        <ul>
+          <li>Gain a +2 bonus on Survival, Perception, History, and Investigation checks</li>
+          <li>Gain a +2 to Attack and Damage rolls</li>
+          <li>
+            Your critical range is expanded by 1 against these creatures
+            <div class="text-xs emp">Example: 20 Crit range becomes 19-20</div>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Improved Targetting
+        </h3>
+        <p>
+          At 15th level, You've practiced your targetting so much that you've started expirementing on targetting very specific ares. Gain the following uses of Targetting;
+        </p><table width="100%">
+          <tr>
+            <th>Target</th>
+            <th>Special Effect</th>
+            <th>Difficulty</th>
+          </tr>
+          <tr>
+            <td>Graze</td>
+            <td>You fire a bullet that grazed right past them. Target must succeed a Wisdom Saving throw or be frightened for 1d6 rounds. You deal &frac14; your normal damage.</td>
+            <td>-1 to hit</td>
+          </tr>
+          <tr>
+            <td>Spine</td>
+            <td>
+              You fire into their back, severing their spinal column. The creature must roll a Constitution Saving throw or become permenantly paralyzed.
+              <div class="text-xs emp">Note: The creature must have taken their move away from you in order for this to be targetted.</div>
+            </td>
+            <td>-9 to hit</td>
+          </tr>
+          <tr>
+            <td>Weapon</td>
+            <td>
+              You fire a bullet into the enemies weapon. It deals damage to the weapon instead of the target. Creature rolls a Strength saving throw. On a fail, the weapon takes an amount of damage. Consult the chart below to determine how damage is taken.
+            <table style="margin: auto;">
+              <tr>
+                <th>Damage Dice</th>
+                <th>Damage Taken</th>
+              </tr>
+              <tr>
+                <td>+1 or better weapons</td>
+                <td>Strength save gains an addative equal to twice the weapon's + <div class="text-sm emp">Ex. +2 => +4 to save</div></td>
+              </tr>
+              <tr>
+                <td>More than 1 dice</td>
+                <td>Reduce amount of dice by 1. <span class="text-sm emp">Ex. 2d12 => 1d12</span></td>
+              </tr>
+              <tr>
+                <td>d20, d12, d10, d8</td>
+                <td>Reduce Damage dice by half</td>
+              </tr>
+              <tr>
+                <td>d6, d4, d2</td>
+                <td>Item is destroyed</td>
+              </tr>
+            </table>
+            </td>
+            <td>-3 to hit one handed, -1 to hit two handed, -5 if shielded</td>
+          </tr>
+        </table>
+        <p>
+          You've also become very swift in your targetting. Targetting now only costs your action to complete.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Bane (2)
+        </h3>
+        <p>
+          At 18th level, Select a second creature type from the Bane list found above. You also gain the following bonuses.
+        </p>
+        <ul>
+          <li>Deal an additional 2d6 damage based on your weapon's damage type to creatures who you are the bane of</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <h2>
+    <a name="gunslingerFeats">
+      Gunslinger Feats
+    </a>
+  </h2>
+  <p>
+    In order to take these feats, you need to have at least 1 level in Gunslinger.
+  </p>
+  <div class="feat-box">
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="text-md bold">
+              Lucky Shot
+            </div>
+            <div class="text-sm emp"><span class="bold">Prerequisite: </span> Halfing</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              You've always gotten lucky in your shots. Your halfling luck ability extends to a misfire, even if the roll is not a 1. You may reroll a misfire if it occurs, but you must use the new roll.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="text-md bold">
+              Almost Hit
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              When an attack fails to hit a target who is within your effective range, you can choose to use this ability as a free action. The bullet instead of missing grazes the target for half of the minimum possible damage against the creature.
+            </p>
+            <p>
+              You can use this ability a number of times equal to your Dexterity Modifier.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="text-md bold">
+              Swift Dual Duelist
+            </div>
+            <div class="text-sm emp"><span class="bold">Prerequisite: </span> Duelist Fighting Style</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              You no longer need to fire your off hand weapon seperate from your primary weapon. Instead of taking a bonus action to fire your off hand weapon, you do so as a free action.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="text-md bold">
+              Quick Turn
+            </div>
+            <div class="text-sm emp"><span class="bold">Prerequisite: </span> Close Quarters Combatant</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              As a reaction, If a creature falls to 0 HP as a result of your successful attack action, you may choose to target the closest enemy who is within your effective range.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="text-md bold">
+              Trap Springer
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              You can spot traps more easily. Gain a +5 to Perception when looking for traps. While a trap's trigger is within your effective range, you may also target a trap's trigger as a standard action, causing the trap to spring.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="text-md bold">
+              Hardy
+            </div>
+            <div class="text-sm emp"><span class="bold">Prerequisite: </span> Close Quarters Combatant, Spellslinger, or Demloitionist</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              You've been the punching bag for a while now, and you've grown accustomed it. You may add your proficiency dice, if you are not proficient, to all saves that result any of the following effects.
+            </p>
+            <ul style="columns: 3;">
+              <li>Blinded</li>
+              <li>Deafened</li>
+              <li>Grappled</li>
+              <li>Incapacitated</li>
+              <li>Paralyzed</li>
+              <li>Poisoned</li>
+              <li>Prone</li>
+              <li>Restrained</li>
+              <li>Stunned</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="text-md bold">
+              Adaptive Strength
+            </div>
+            <div class="text-sm emp"><span class="bold">Prerequisite: </span> Sniper</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              You're weighty gun has helped strengthen your body. Gain the following benefits;
+            </p>
+            <ul>
+              <li>Gain +1 Stength, to a maximum of 20.</li>
+              <li>Standing from Prone requires only 5 ft. of movement.</li>
+              <li>Use your Strength modifier when making an attack instead of your Dexterity Modifier</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="text-md bold">
+              Potent Explosives
+            </div>
+            <div class="text-sm emp"><span class="bold">Prerequisite: </span> Demolistionist</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              You've done significant research into the potency of your explosives. All of your explosive Charges increase by one dice size. However each use of your demo kit now costs twice as much as it normally would.
+            </p>
+            <div class="emp">d2 => d4 => d6 => d8 => d10 => d12</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="text-md bold">
+              Advanced Study
+            </div>
+            <div class="text-sm emp"><span class="bold">Prerequisite: </span> Spellslinger, Multiclassed Wizard/Artificer</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+             You've studied magics far beyond most, and know what it takes to do what you set your mind to. You may choose a spell from the following spell list, and can prepare it at the lowest casting level as an infusion with a bullet. You can infuse a number of bullets per day equal to your Intelligence Modifier with these spells.
+            </p>
+            <ul style="columns: 2;">
+              <li>Burning Hands</li>
+              <li>Cause Fear</li>
+              <li>Chromatic Orb</li>
+              <li>Earth Tremor</li>
+              <li>Grease</li>
+              <li>Ice knife</li>
+              <li>Magic Missile</li>
+              <li>Ray of Sickness</li>
+              <li>Thunderwave</li>
+              <li>Witch Bolt</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table style="width: 100%;">
+        <tr>
+          <td>
+            <div class="text-md bold">
+              Advanced Bloodline
+            </div>
+            <div class="text-sm emp"><span class="bold">Prerequisite: </span> Spellslinger, Multiclassed Sorcerer</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+             You're natural magics grant you the ability to use your Charisma modifier for all Intelligence checks related to Gunslinger abilites. 
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br/>
+ </body>
+</html>
