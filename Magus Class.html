@@ -224,6 +224,16 @@
         min-height: 40px;
         line-height: 20px
       }
+      .feat-box {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        padding: 10px;
+      }
+      .feat-box > * {
+        flex: 1 1 33%;
+        margin: 5px 10px;
+      }
     </style>
     <script>
       function show_hide(ident) {
@@ -275,7 +285,7 @@
              (a) a martial weapon or (b) two simple weapons
           </li>
           <li>
-            leather armor
+            (a) leather armor or (b) a component pouch
           </li>
           <li>
             (a) a scholar's pack or (b) an explorer's pack
@@ -293,7 +303,8 @@
       <td colspan="3">
         <table class="inventory-table" style="width:100%;">
           <tr>
-            <th colspan="4"></th>
+            <th colspan="3"></th>
+            <th>Cantrips</th>
             <th colspan="5">
               Spell Slots per Level
             </th>
@@ -308,8 +319,8 @@
             <th style="text-align:left;">
               Features
             </th>
-            <th style="text-align:left;">
-              Cantrips Known
+            <th>
+              Known
             </th>
             <th>
               1st
@@ -335,7 +346,7 @@
               +2
             </td>
             <td>
-              <a href="#Feat1_1">Magus Arcana</a>, <a href="#Feat1_2">Spell Combat</a>, <a href="#Feat1_3">Intelligent Dodge</a>
+              <a href="#Feat1_1">Arcane Pool</a>, <a href="#Feat1_2">Spellcasting</a>, <a href="#Feat1_3">Spell Combat</a>, <a href="#Feat1_4">Intelligent Dodge</a>
             </td>
             <td>
               2
@@ -364,7 +375,7 @@
               +2
             </td>
             <td>
-              <a href="#Feat2_1">Link Content</a>
+              <a href="#Feat2_1">Spell Strike</a>
             </td>
             <td>
               2
@@ -451,7 +462,7 @@
               +3
             </td>
             <td>
-              <a href="#Feat5_1">Link Content</a>
+              <a href="#Feat5_1">Enhanced Arcane Pool Usage</a>
             </td>
             <td>
               3
@@ -509,7 +520,7 @@
               +3
             </td>
             <td>
-              <a href="#Feat7_1">Link Content</a>
+              <a href="#Feat7_1">Evasion</a>
             </td>
             <td>
               4
@@ -914,16 +925,253 @@
       <td colspan="3">
         <a name="Feat1_1">
           <h3 class="header">
-            Link Content
+            Arcane Pool
           </h3>
         </a>
         <p>
-          Content Description
+          Every magus contains a pool of magical energy within themselves. You can tap into this pool of power to enhance your abilities, to enchant weaponry or armor, and to shield yourself from magical effects. Your Arcane Pool pool is equal to your level.
+        </p>
+        <p>
+          At first level, you can use one point of your Arcane Pool to do one of the following;
+        </p>
+        <ul>
+          <li>
+            <b>Enchant:</b> As a free action, enchant your weapon to become a +1 weapon. If your weapon is already enchanted to be +1 or greater, this property is added to it as well. i.e. a +2 weapon, that is enchanted via your Arcane pool points, becomes a +3 weapon.
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_2">
+          <h3 class="header">
+            Spellcasting
+          </h3>
+        </a>
+        <p>
+          You have become a student of arcane magic. Your lifeline to magic is in your spellbook. At first level, your spellbook contains a number of spells equal to your magus level + your Intelligence modifier. At each level up, you gain an additional spell that is on the Wizards' spell list.
+        </p>
+        <p>
+          Your Spellbook is not a stagnant thing. It is ever changing. You may add spells to your spell book by copying them down into your spellbook. This process take 2 hours and 50 gold per spell level. You can then choose to prepare this spell as you would any other spell that you know. You are also able to copy down any spell from a spell scroll using this method. In order to do so, the spell must also be on the Wizard spell list.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_3">
+          <h3 class="header">
+            Spell Combat
+          </h3>
+        </a>
+        <p>
+          Your prowess on the battlefield may not yet be tested, however your aptitude is more inline than what is normally expected. You gain the following benefits;
+        </p>
+        <ul>
+          <li>
+            While not encumbered, you gain an 10 feet of additional movement speed.
+          </li>
+          <li>
+            You gain a bonus to Constitution saving throws for maintaining concentration. The bonus is equal to your Intelligence modifier (minimum +1).
+          </li>
+          <li>
+            So long as you have a free hand, you can treat your open hand as if were an arcane focus.
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_4">
+          <h3 class="header">
+            Intelligent Dodge
+          </h3>
+        </a>
+        <p>
+          While you are wearing no armor, and weilding no shield, your AC is equal to your Dexterity bonus + your Intelligence Bonus.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat2_1">
+          <h3 class="header">
+            Spell Strike
+          </h3>
+        </a>
+        <p>
+          Your weapon is now the vehicle for your spellcasting. 
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat5_1">
+          <h3 class="header">
+            Enhanced Arcane Pool Usage
+          </h3>
+        </a>
+        <p>
+          Your arcane pool has increased usability. You may now expend Arcane pool points to attune your weapon with the following properties
+        </p>
+        <div style="border: 0;" class="feat-box">
+          <div>
+            <div style="background-color: #CFCFCF;" class="text-md bold center">
+              Dancing
+            </div>
+            <div class="text-sm">
+              <b>Prerequisite:</b> +3 Weapon, Melee weapon
+              <p>
+                You release your weapon to float about and attack for itself. Your weapon says afloat for a number of rounds equal to your proficiency bonus. If the weapon is held by the end of it's Dancing lifespan, the weapon drops to the ground. This weapon attacks using your attack bonus and deals damage as if you were using it. You can use your bonus action to command the weapon to move up to 20 feet. If the weapon is on your square or adjacent to you, you can grasp the weapon as a free action. The weapon cannot make attacks of Opportunity while dancing.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div style="background-color: #CFCFCF;" class="text-md bold center">
+              Flaming
+            </div>
+            <div class="text-sm">
+              <b>Prerequisite:</b> +1 Weapon
+              <p>
+                This weapon is covered in fire. Attacks made with this weapon deal an additional 1d6 of fire damage.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div style="background-color: #CFCFCF;" class="text-md bold center">
+              Flaming Burst
+            </div>
+            <div class="text-sm">
+              <b>Prerequisite:</b> +2 Weapon
+              <p>
+                This weapon is covered in fire. Attacks made with this weapon deal an additional 1d6 of fire damage. If the wielder makes a critical hit against a creature, the damage becomes 1d10, instead of 1d6. If this weapon's critical is greater than x2, it deals 1d10 extra damage for every number above 2. x3 = 2d10; x7 = 6d10.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div style="background-color: #CFCFCF;" class="text-md bold center">
+              Frost
+            </div>
+            <div class="text-sm">
+              <b>Prerequisite:</b> +1 Weapon
+              <p>
+                This weapon is covered in ice. Attacks made with this weapon deal an additional 1d6 of cold damage.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div style="background-color: #CFCFCF;" class="text-md bold center">
+              Icy Burst
+            </div>
+            <div class="text-sm">
+              <b>Prerequisite:</b> +2 Weapon
+              <p>
+                This weapon is covered in ice. Attacks made with this weapon deal an additional 1d6 of cold damage. If the wielder makes a critical hit against a creature, the damage becomes 1d10, instead of 1d6. If this weapon's critical is greater than x2, it deals 1d10 extra damage for every number above 2. x3 = 2d10; x7 = 6d10.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div style="background-color: #CFCFCF;" class="text-md bold center">
+              Keen
+            </div>
+            <div class="text-sm">
+              <b>Prerequisite:</b> +1 Weapon, Slashing or Piercing Melee Weapon
+              <p>
+                This weapon's critical range is doubled. Ex. 19-20 [Range: 2] becomes 17-20 [Range: 4]
+              </p>
+            </div>
+          </div>
+          <div>
+            <div style="background-color: #CFCFCF;" class="text-md bold center">
+              Shock
+            </div>
+            <div class="text-sm">
+              <b>Prerequisite:</b> +1 Weapon
+              <p>
+                This weapon crackles with electricity. Attacks made with thise weapon deal an additional 1d6 points of Lightning damage.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div style="background-color: #CFCFCF;" class="text-md bold center">
+              Shocking Burst
+            </div>
+            <div class="text-sm">
+              <b>Prerequisite:</b> +1 Weapon
+              <p>
+                This weapon crackles with electricity. Attacks made with thise weapon deal an additional 1d6 points of Lightning damage. If the wielder makes a critical hit against a creature, the damage becomes 1d10, instead of 1d6. If this weapon's critical is greater than x2, it deals 1d10 extra damage for every number above 2. x3 = 2d10; x7 = 6d10
+              </p>
+            </div>
+          </div>
+          <div>
+            <div style="background-color: #CFCFCF;" class="text-md bold center">
+              Speed
+            </div>
+            <div class="text-sm">
+              <b>Prerequisite:</b> +3 Weapon
+              <p>
+                This weapon is swift. The user gains an additional attack when taking the Attack Action with this weapon.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div style="background-color: #CFCFCF;" class="text-md bold center">
+              Vorpal
+            </div>
+            <div class="text-sm">
+              <b>Prerequisite:</b> +5 Weapon, Slashing weapon
+              <p>
+                This weapon decapitates the target. This weapon cannot benefit from abilites that increase it's critical range. On a Critical hit, make another attack roll. If the second attack roll surpasses the AC of the target, the target is dead. On a fail, treat the critical normally.
+              </p>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat7_1">
+          <h3 class="header">
+            Evasion
+          </h3>
+        </a>
+        <p>
+          Beginning at 7th level, you can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or an ice storm spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.
         </p>
       </td>
     </tr>
   </table>
   <div class="wrapper-box">
+    <a name="ArcanePool">
+      <h3 class="header">
+        Arcane Pool Points
+      </h3>
+      <p style="margin: 5px;">
+        Sometimes you want additional Feats for your magus to adept them to new scenarios. These feats allow you to do just that.
+      </p>
+    </a>
+    <div class="attacks">
+      <table>
+        <tr>
+          <th>Monastic Magus</th>
+        </tr>
+        <tr>
+          <td>
+            <ul>
+              <li>
+                You can now use your Spellstrike ability with an unarmed strike.
+              </li>
+              <li>
+                Your Unarmed strike now deals 1d4 + Your strength modifier, instead of your Strength modifier. 
+              </li>
+              <li>
+                At level 8, your Unarmed Strike deals 1d6 instead of 1d4. At level 15, your Unarmed Strike now deals 1d8. 
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div><div class="wrapper-box">
     <a name="MagusFeats">
       <h3 class="header">
         Additional Feats
