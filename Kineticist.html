@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width" name="viewport"/>
+    <title>
+      Kineticist Class
+    </title>
+    <style>
+      body {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      html {
+        font-family: Arial;
+      }
+      h1, h2 {
+        color: black;
+        text-align: center;
+      }
+      .center {
+        text-align: center;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .emp {
+        font-style: italic;
+      }
+      table {
+        border:1px solid black;
+        border-spacing:0px;
+      }
+      table tr th {
+          background-color:gray;
+          color:white;
+          padding:5px;
+      }
+      table tr td {
+          margin:0px;
+          padding:5px;
+      }
+      .text-xs {
+          font-size:12px;
+      }
+      .text-sm {
+          font-size:14px;
+      }
+      .text-md {
+          font-size:18px;
+      }
+      .text-lg {
+          font-size:24px;
+      }
+      .text-xl {
+          font-size:32px;
+      }
+      .wrapper-box {
+        width: 100%;
+        border: 2px solid black;
+        margin-bottom: 60px;
+      }
+
+      .suggestion {
+        padding: 2px 0px;
+        margin: 0px;
+        list-style: none;
+      }
+      .suggestion li {
+        border: 1px solid black;
+        background-color: #dddddd;
+        padding: 2px 4px;
+        margin: 5px 10px;
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+      }
+      .suggestion li:active {
+        background-color: #404040;
+      }
+      .suggestion li:hover {
+        background-color: #808080;
+      }
+      .attacks {
+          display: flex; 
+          flex-wrap: wrap; 
+          align-items: flex-start; 
+          width: 100%; 
+          padding-top: 10px; 
+          padding-bottom: 20px
+      }
+      .attacks table {
+          width: 44%; 
+          margin-left: 3%;
+          margin-right: 3%; 
+          margin-bottom: 1%;
+      }
+      .header {
+        padding: 5px 5px;
+        border-bottom-color: black;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+      }
+      .crit tr:nth-child(even) {
+        background-color: #EEE;
+      }
+      .link {
+        text-align: center;
+      }
+      .link li {
+        padding-bottom: 10px;
+      }
+      .link a {
+        border: 1px solid black;
+        width: 60%;
+        text-decoration: none;
+        color: #222;
+        background-color: #ddd;
+        padding: 3px 3px 3px 3px;
+      }
+      .link a:hover {
+        background-color: #222;
+        color: #ddd;
+      }
+      .sidebar {
+        float: left;
+        position: fixed;
+        top: 0;
+        right: 0px;
+        margin: 5px;
+      }
+      .grey {
+        background-color: #EFEFEF;
+      }
+      .grey:hover {
+        background-color: #CFCFCF;
+      }
+      .blue {
+        background-color: #6666FF;
+      }
+      .blue:hover {
+        background-color: #6666CF;
+      }
+      .yellow {
+        background-color: #FFFF66;
+      }
+      .yellow:hover {
+        background-color: #CFCF66;
+      }
+      .green {
+        background-color: #66FF66;
+      }
+      .green:hover {
+        background-color: #66CF66;
+      }
+      .red {
+        background-color: #FF6666;
+      }
+      .red:hover {
+        background-color: #CF6666;
+      }
+      .grey:active, .blue:active, .yellow:active, .green:active {
+        background-color: #000000;
+        color: #EFEFEF;
+      }
+      .sidebar_object {
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+        padding: 10px 20px;
+        border-style: solid;
+        border: 2px;
+      }
+      .editor {
+        padding: 5px;
+      }
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 5px 0px;
+        background-color: grey;
+        color: white;
+        text-align: center;
+      }
+      .traits {
+        padding: 5px 2px;
+        width: 95%;
+        margin: 15px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+      .traits_obj {
+        justify-content: flex-start;
+        width: 23%;
+        margin: 0px 10px;
+        padding: 3px;
+      }
+      .spells {
+        width: 95%;
+        display: flex;
+        padding: 5px 2px;
+        margin: 2px 5px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+      .spells_obj {
+        justify-content: flex-start;
+        width: 31%;
+        margin: 0px 5px;
+        padding: 3px;
+      }
+      .overflow_textarea {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        resize: both;
+        min-height: 40px;
+        line-height: 20px
+      }
+      .feat-box {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        padding: 10px;
+      }
+      .feat-box > * {
+        flex: 1 1 33%;
+        margin: 5px 10px;
+      }
+    </style>
+    <script>
+      function show_hide(ident) {
+        var a = document.getElementById(ident);
+        if (a.style.display === 'none') {
+          a.style.display = 'block';
+        } else {
+          a.style.display = 'none';
+        }
+      }
+    </script>
+  </head>
+<body>
+  <h1>
+    Kineticist
+  </h1>
+  <p>
+    Become a specialist in the Elements.
+  </p>
+  <br/>
+  <table class="wrapper-box" style="margin-bottom:60px; table-layout: fixed;">
+    <tr>
+      <td colspan="3">
+        <h2>
+          Kineticist
+        </h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="text-md bold">Hit Dice:</div> 1d8
+        <div class="text-md bold">Hit Points at 1st Level:</div> 8 + your Constitution modifier
+        <div class="text-md bold">Hit Points at Higher Level:</div> 1d8 + your Constitution modifier
+      </td>
+      <td>
+        <div class="text-md bold">Armor Proficiency:</div> Light
+        <div class="text-md bold">Weapon Proficiency:</div> Simple
+        <div class="text-md bold">Tool Proficiency:</div> None
+        <div class="text-md bold">Saving Throws:</div> Constitution and Dexterity
+        <div class="text-md bold">Skill Proficiency:</div> Choose 2 from  Arcana, History, Insight, Medicine, Nature, Perception, and Religion.
+      </td>
+      <td>
+        <div class="text-md bold">Starting Equipment</div>
+        <p>
+          Content
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <table class="inventory-table" style="width:100%;">
+          <tr>
+            <th style="text-align:left;">
+              Level
+            </th>
+            <th style="text-align:left;">
+              Feats
+            </th>
+            <th style="text-align:left;">
+              Kinetic Blast
+            </th>
+            <th style="text-align:left;">
+              Kinetic Burst
+            </th>
+          </tr>
+          <tr>
+            <td>
+              1
+            </td>
+            <td>
+              <a href="#Feat1_1">Elemental Attunement</a>, <a href="#Feat1_2">Kinetic Attacks</a>,  <a href="#Feat1_3">Burn</a>
+            </td>
+            <td>
+              1d10
+            </td>
+            <td>
+              1d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2
+            </td>
+            <td>
+              <a href="#Feat2_1">Elemental Defense</a>
+            </td>
+            <td>
+              1d10
+            </td>
+            <td>
+              2d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              3
+            </td>
+            <td>
+              <a href="#Feat3_1">Kinetic Advantage</a>
+            </td>
+            <td>
+              2d10
+            </td>
+            <td>
+              2d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              4
+            </td>
+            <td>
+              <a href="#Feat4_1">Elemental Attunement Feat</a>, <a href="#Feat4_2">Ability Score Improvement</a>
+            </td>
+            <td>
+              2d10
+            </td>
+            <td>
+              3d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              5
+            </td>
+            <td>
+              <a href="#Feat5_1">Meta-Kinesis (Empower)</a>
+            </td>
+            <td>
+              3d10
+            </td>
+            <td>
+              4d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              6
+            </td>
+            <td>
+              <a href="#Feat6_1">Kinetic Familiarity I</a>
+            </td>
+            <td>
+              3d10
+            </td>
+            <td>
+              5d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              7
+            </td>
+            <td>
+              <a href="#Feat7_1">Elemental Attunement Feat</a>
+            </td>
+            <td>
+              4d10
+            </td>
+            <td>
+              5d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              8
+            </td>
+            <td>
+              <a href="#Feat8_1">Ability Score Improvement</a>
+            </td>
+            <td>
+              4d10
+            </td>
+            <td>
+              6d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              9
+            </td>
+            <td>
+              <a href="#Feat9_1">Meta-Kinesis (Maximize)</a>, <a href="#Feat9_2">Kinetic Familiarity II</a>
+            </td>
+            <td>
+              5d10
+            </td>
+            <td>
+              7d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              10
+            </td>
+            <td>
+              <a href="#Feat10_1">Compound Element</a>
+            </td>
+            <td>
+              5d10
+            </td>
+            <td>
+              8d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              11
+            </td>
+            <td>
+              <a href="#Feat11_1">Elemental Attunement Feat</a>
+            </td>
+            <td>
+              7d10
+            </td>
+            <td>
+              8d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              12
+            </td>
+            <td>
+              <a href="#Feat12_1">Kinetic Familiarity III</a>, <a href="#Feat12_2">Ability Score Improvement</a>
+            </td>
+            <td>
+              7d10
+            </td>
+            <td>
+              9d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              13
+            </td>
+            <td>
+              <a href="#Feat13_1">Meta-Kinesis (Quicken)</a>
+            </td>
+            <td>
+              8d10
+            </td>
+            <td>
+              9d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              14
+            </td>
+            <td>
+              <a href="#Feat14_1">Internal Reservoir</a>
+            </td>
+            <td>
+              8d10
+            </td>
+            <td>
+              10d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              15
+            </td>
+            <td>
+              <a href="#Feat15_1">Kinetic Familiarity IV</a> ,<a href="#Feat15_2">Elemental Attunement Feat</a>
+            </td>
+            <td>
+              9d10
+            </td>
+            <td>
+              10d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              16
+            </td>
+            <td>
+              <a href="#Feat16_1">Ability Score Improvement</a>
+            </td>
+            <td>
+              9d10
+            </td>
+            <td>
+              11d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              17
+            </td>
+            <td>
+              <a href="#Feat17_1">Elemental Attunement Feat</a>
+            </td>
+            <td>
+              10d10
+            </td>
+            <td>
+              11d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              18
+            </td>
+            <td>
+              <a href="#Feat18_1">Kinetic Familiarity V</a>
+            </td>
+            <td>
+              10d10
+            </td>
+            <td>
+              11d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              19
+            </td>
+            <td>
+              <a href="#Feat19_1">Kinetic Opus</a>
+            </td>
+            <td>
+              10d10
+            </td>
+            <td>
+              11d6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              20
+            </td>
+            <td>
+              <a href="#Feat20_1">True Kineticist</a>, <a href="#Feat20_2">Ability Score Improvement</a>
+            </td>
+            <td>
+              10d10
+            </td>
+            <td>
+              11d6
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_1">
+          <h3 class="header">
+            Elemental Attunement
+          </h3>
+        </a>
+        <p>
+          Your inherit nature ties you to an Element, and stems from your tie to an Elemental Plane. You gain a feat from your Elemental Attunement subclass at 1st, 4th, 7th, 11th, and 15th.
+        </p>
+        <ul>
+          <li>
+            <a href="#Earth_Sub">Earth</a>
+            <!-- Acid -->
+          </li>
+          <li>
+            <a href="#Water_Sub">Water</a>
+            <!-- Cold -->
+          </li>
+          <li>
+            <a href="#Fire_Sub">Fire</a>
+            <!-- Fire -->
+          </li>
+          <li>
+            <a href="#Air_Sub">Air</a>
+            <!-- Lightning -->
+          </li>
+          <li>
+            <a href="#Psychic_Sub">Psychic</a>
+            <!-- Astral -->
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_2">
+          <h3 class="header">
+            Kinetic Attacks
+          </h3>
+        </a>
+        <p>
+          You gain the following Actions.
+        </p>
+        <div class="attacks">
+          <table>
+            <tr>
+              <th>Kinetic Blast</th>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> 0
+              </td>
+            </tr>
+            <tr>
+              <td>
+                You tap into your well of elemental energy, and direct it into a singular point. You fire a blast of energy at a target within 30 ft, make a ranged attack against the targets AC. On a hit, deal an amount of damage equal to your Kinetic Blast Damage.
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>Kinetic Burst</th>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> +1
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Gathering energy on a single point within 30 ft, you create an explosion of energy around that point to all creatures within 5 ft. The target makes a Dexterity saving throw against your Burn DC. On a fail, deal an amount of damage equal to your Kinetic Burst Damage. On a success, the target takes half damage, and no additional effects are applied. 
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>Focus Energy (Bonus)</th>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> -1
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  If both of your hands are free, you may spend your Bonus action to reduce the the amount of Burn taken by 1. This effect persists until the end of your next turn.
+                </p>
+                <p>
+                  If you take damage before you have released the Focused Energy via a Kinetic Attack, you must make a Constitution save to maintain your gathered power. The DC for the save is equal to 10 or Half of the damage taken, whichever is larger.
+                </p>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>Focus Energy (Bonus + Action)</th>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> -2
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  If both of your hands are free, you may spend your Action and Bonus Action to reduce the the amount of Burn taken by 2. This effect persists until the end of your next turn.
+                </p>
+                <p>
+                  If you take damage before you have released the Focused Energy via a Kinetic Attack, you must make a Constitution save to maintain your gathered power. The DC for the save is equal to 10 or Half of the damage taken, whichever is larger.
+                </p>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>Focus Energy (Full Round)</th>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> -3
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  If both of your hands are free, you may spend the entirety of your turn to reduce the the amount of Burn taken by 3. This effect persists until the end of your next turn.
+                </p>
+                <p>
+                  If you take damage before you have released the Focused Energy via a Kinetic Attack, you must make a Constitution save to maintain your gathered power. The DC for the save is equal to 10 or Half of the damage taken, whichever is larger.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          <b>Note:</b> Focus Energy is extremely loud, and volatile. You shed Bright light up to 20 ft in radius, and Dim light an additional 20 ft past that.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat1_3">
+          <h3 class="header">
+            Burn
+          </h3>
+        </a>
+        <p>
+          Your Spellcasting comes at a cost of your own Constitution. Whenever you take an action that incurs burn, you decrease your total HP by double the amount of Burn accepted. i.e. 2 Burn is used, reduce maximum HP by 4. You cannot accept Burn Damage if that damage would reduce your HP to less than 1 HP. Your Max HP is reset when you take a long rest.
+        </p>
+        <p>
+          When casting a Kinetic Attack that requires a DC, your DC is calculated as <u>8 + Proficiency Bonus + Constitution Modifer + Burn Points Used</u>.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat2_1">
+          <h3 class="header">
+            Elemental Defense
+          </h3>
+        </a>
+        <p>
+          Beginning at 2nd level, If your Maximum HP is reduced as a result of inflicting Burn upon yourself. You are bolstered by your Elements, and recieve an AC bonus equal to your Constitution Modifier if you are unarmored.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat3_1">
+          <h3 class="header">
+            Kinetic Advantage
+          </h3>
+        </a>
+        <p>
+          Beginning at 3rd level, at the start of your turn, you may accept 1 point of Burn damage to add your Constitution Modifier to all Kinetic Attacks made this round. This Burn damage cannot be reduced by way of Focus Energy.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat4_1">
+          <h3 class="header">
+            Elemental Attunement Feat
+          </h3>
+        </a>
+        <p>
+          At 4th level, you gain an additional feat from your Elemental Attunement.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat4_2">
+          <h3 class="header">
+            Ability Score Improvement
+          </h3>
+        </a>
+        <p>
+          When you reach 4th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.
+        </p>
+        <p>
+          If your DM allows the use of feats, you may instead take a feat.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat5_1">
+          <h3 class="header">
+            Meta-Kinesis (Empower)
+          </h3>
+        </a>
+        <p>
+          At 5th Level, you may accept 1 point of Burn damage to increase the damage dealt by a Kinetic Attack by 1 for every damage dice rolled.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat6_1">
+          <h3 class="header">
+            Kinetic Familiarity I
+          </h3>
+        </a>
+        <p>
+          When you reach 6th level, Whenever making an action that uses Burn, you reduce the total amount of burn taken by 1, to a minimum of 0.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat7_1">
+          <h3 class="header">
+            Elemental Attunement Feat
+          </h3>
+        </a>
+        <p>
+          At 7th level, you gain an additional feat from your Elemental Attunement.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat8_1">
+          <h3 class="header">
+            Ability Score Improvement
+          </h3>
+        </a>
+        <p>
+          When you reach 8th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.
+        </p>
+        <p>
+          If your DM allows the use of feats, you may instead take a feat.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat9_1">
+          <h3 class="header">
+            Meta-Kinesis (Maximize)
+          </h3>
+        </a>
+        <p>
+          At 9th Level, you may accept 2 point of Burn damage to treat all damage as if the maximum amount was rolled.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat9_2">
+          <h3 class="header">
+            Kinetic Familiarity II
+          </h3>
+        </a>
+        <p>
+          When you reach 9th level, Whenever making an action that uses Burn, you reduce the total amount of burn taken by 2, to a minimum of 0.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat10_1">
+          <h3 class="header">
+            Compound Element
+          </h3>
+        </a>
+        <p>
+          At 10th level, you begin to train with other elements related to yours. Select one of the following Compound Kinetic Actions that your meet the Prerequisites for.
+        </p>
+        <div class="attacks">
+          <table>
+            <tr>
+              <th>
+                Brim Stone
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <b>Prerequisite:</b> Fire or Air Attunement
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> 2
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  You point at a space within 50 ft of you, and rain hellfire on all creatures in a 20 ft radius. All creatures must make a Dexterity saving throw. On a success, they take   half damage. Deal damage according to your Kinetic Burst, plus an additional 3d6 Bludgeoning Damage.
+              </p>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>
+                Steam Cloud
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <b>Prerequisite:</b> Fire or Water Attunement
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> 1
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  A gust of steam emits forth from your hands, affecting every creature within a 30 ft cone. All creatures make a Dexterity Saving Throw
+                </p>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>
+                Pillars of Ice
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <b>Prerequisite:</b> Water or Air Attunement
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> Varies
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  You may accept any number of points of Burn to raise Pillars of Ice that occupy 10 x 10 squares, with a height of 20 ft. These Pillars have an AC equal to half your Kineticist Level rounded up, and have a number of HP equal to 2 x your Kineticist Level. These Pillars can be placed under creatures, who may make a Dexterity Saving throw to dodge out of the way. Creatures who succeed the Dexterity saving throw must move off of the Pillar's square as part of the save.
+                </p>
+                <p>
+                  Any creature who starts their turn on top of a column takes 4d8 cold damage if they are not wearing shoes, and 2d8 if they are.
+                </p>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>
+                Acid Rain
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <b>Prerequisite:</b> Earth or Air Attunement
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> 1+
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  You point at a location within 90 ft of you, and create a rain cloud. The rain cloud rains acid on all creatures in a 10 foot radius. You may accept up to 3 additional points of burn to increase the radius by 10 ft per poitn of Burn accepted. The Acid cloud persists for a number of rounds equal to your Constitution modifer, and can be moved 30ft as a Bonus action.
+                </p>
+                <p>
+                  All creatures caught in the Rain must make a Constitution Saving throw. On a sucessful save, the target takes half of your Kinetic Burst Damage.
+                </p>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>
+                Terra's Spine
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <b>Prerequisite:</b> Fire or Earth Attunement
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> 2
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  A 60 ft line of Obsidian shards jut out of the ground, ripping into all creature's feet. Deal damage equal to your Kinetic Burst, with an additional 3d6 Peircing Damage.
+                </p>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>
+                Rubble
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <b>Prerequisite:</b> Earth or Water Attunement
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Burn:</b> 1
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>
+                  A large tremor shakes the earth around you in a 50 ft radius. All creatures within the effect take 1d6 slashing damage. Whenever a creature moves 5 ft, the sharp earth beneath their feet pierces them. Every 5 ft of movement incurs an additional 1d6 slashing damage. This effect lasts for a number of rounds equal to your Constitution Modifier.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat11_1">
+          <h3 class="header">
+            Elemental Attunement Feat
+          </h3>
+        </a>
+        <p>
+          At 11th level, you gain an additional feat from your Elemental Attunement.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat12_1">
+          <h3 class="header">
+            Kinetic Familiarity III
+          </h3>
+        </a>
+        <p>
+          When you reach 12th level, Whenever making an action that uses Burn, you reduce the total amount of burn taken by 3, to a minimum of 0.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat12_2">
+          <h3 class="header">
+            Ability Score Improvement
+          </h3>
+        </a>
+        <p>
+          When you reach 12th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.
+        </p>
+        <p>
+          If your DM allows the use of feats, you may instead take a feat.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat13_1">
+          <h3 class="header">
+            Meta-Kinesis (Quicken)
+          </h3>
+        </a>
+        <p>
+          At 13th Level, you may accept 3 point of Burn damage to cast your Kinetic Blast or Kinetic Burst as a Bonus action.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat14_1">
+          <h3 class="header">
+            Internal Reservoir
+          </h3>
+        </a>
+        <p>
+          At 14th Level, your reservoir of Focus Energy is deeper. You may spend 1 minute to prepare Focus Energy as if it were a Full Round action. This reservoir persists until used, or you take a long rest. You may use this reservoir at any time during the day as a free action.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat15_1">
+          <h3 class="header">
+            Kinetic Familiarity IV
+          </h3>
+        </a>
+        <p>
+          When you reach 15th level, Whenever making an action that uses Burn, you reduce the total amount of burn taken by 4, to a minimum of 0.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat15_2">
+          <h3 class="header">
+            Elemental Attunement Feat
+          </h3>
+        </a>
+        <p>
+          At 15th level, you gain an additional feat from your Elemental Attunement.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat16_1">
+          <h3 class="header">
+            Ability Score Improvement
+          </h3>
+        </a>
+        <p>
+          When you reach 16th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.
+        </p>
+        <p>
+          If your DM allows the use of feats, you may instead take a feat.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat18_1">
+          <h3 class="header">
+            Kinetic Familiarity V
+          </h3>
+        </a>
+        <p>
+          When you reach 18th level, Whenever making an action that uses Burn, you reduce the total amount of burn taken by 5, to a minimum of 0.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat17_1">
+          <h3 class="header">
+            Elemental Attunement Feat
+          </h3>
+        </a>
+        <p>
+          At 17th level, you gain an additional feat from your Elemental Attunement.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat19_1">
+          <h3 class="header">
+            Kinetic Opus
+          </h3>
+        </a>
+        <p>
+          Warping the elements around your has become second nature. Once per long rest, you may choose to ignore all burn on a single Kinetic Attack.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat20_1">
+          <h3 class="header">
+            True Kineticist
+          </h3>
+        </a>
+        <p>
+          At 20th level, you've grown accustomed to burn and its effect. If you have taken burn damage since your last rest and enter combat, you recover 1d8 HP.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <a name="Feat20_1">
+          <h3 class="header">
+            Ability Score Improvement
+          </h3>
+        </a>
+        <p>
+          When you reach 20th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.
+        </p>
+        <p>
+          If your DM allows the use of feats, you may instead take a feat.
+        </p>
+      </td>
+    </tr>
+  </table>
+  <table class="wrapper-box" style="margin-bottom:60px; table-layout: fixed;">
+    <tr>
+      <a name="Earth_Sub">
+        <th class="text-xl">
+          Earth
+        </th>
+      </a>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Acid Attunement
+        </h3>
+        <p>
+          At level 1, your Kinetic Blast and Burst deal Acid Damage.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 4 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 7 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 11 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 15 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 17 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+  </table>
+  <table class="wrapper-box" style="margin-bottom:60px; table-layout: fixed;">
+    <tr>
+      <a name="Water_Sub">
+        <th class="text-xl">
+          Water
+        </th>
+      </a>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Cold Attunement
+        </h3>
+        <p>
+          At level 1, your Kinetic Blast and Burst deal Cold Damage.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 4 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 7 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 11 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 15 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 17 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+  </table>
+  <table class="wrapper-box" style="margin-bottom:60px; table-layout: fixed;">
+    <tr>
+      <a name="Fire_Sub">
+        <th class="text-xl">
+          Fire
+        </th>
+      </a>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Fire Attunement
+        </h3>
+        <p>
+          At level 1, your Kinetic Blast and Burst deal Fire Damage.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 4 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 7 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 11 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 15 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 17 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+  </table>
+  <table class="wrapper-box" style="margin-bottom:60px; table-layout: fixed;">
+    <tr>
+      <a name="Air_Sub">
+        <th class="text-xl">
+          Air
+        </th>
+      </a>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Lightning Attunement
+        </h3>
+        <p>
+          At level 1, your Kinetic Blast and Burst deal Lightning Damage.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 4 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 7 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 11 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 15 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 17 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+  </table>
+  <table class="wrapper-box" style="margin-bottom:60px; table-layout: fixed;">
+    <tr>
+      <a name="Psychic_Sub">
+        <th class="text-xl">
+          Psychic
+        </th>
+      </a>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Psychic Attunement
+        </h3>
+        <p>
+          At level 1, your Kinetic Blast and Burst deal Psychic Damage.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 4 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 7 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 11 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 15 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="header">
+          Level 17 Feat
+        </h3>
+        <p>
+          Infusion
+        </p>
+      </td>
+    </tr>
+  </table>
+  <div style="padding: 5px;" class="wrapper-box">
+    <a name="AttackTable">
+      <h3 class="header">
+        Attack Tables
+      </h3>
+      <p>
+        Describe
+      </p>
+    </a>
+    <div class="attacks">
+      <table>
+        <tr>
+          <th>Tabular Header 1</th>
+        </tr>
+        <tr>
+          <td>
+            Tabular Content 1
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div style="padding: 5px;" class="wrapper-box">
+    <a name="FeatBox">
+      <h3 class="header">
+        Feat Boxes
+      </h3>
+      <p>
+        Describe
+      </p>
+    </a>
+    <div class="feat-box">
+      <div>
+        <div style="background-color: #CFCFCF;" class="text-md bold center">
+          Box 1
+        </div>
+        <div class="text-sm">
+          Box 1 Contents
+        </div>
+      </div>
+      <div>
+        <div style="background-color: #CFCFCF;" class="text-md bold center">
+          Box 2
+        </div>
+        <div class="text-sm">
+          Box 2 Contents
+        </div>
+      </div>
+      <div>
+        <div style="background-color: #CFCFCF;" class="text-md bold center">
+          Box 3
+        </div>
+        <div class="text-sm">
+          Box 3 Contents
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
