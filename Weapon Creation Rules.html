@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width" name="viewport"/>
+    <title>
+    </title>
+    <style type="text/css">
+      body {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      html {
+        font-family: Arial;
+      }
+
+      h1,
+      h2 {
+        color: black;
+        text-align: center;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .emp {
+        font-style: italic;
+      }
+
+      .und {
+        text-decoration: underline;
+      }
+
+      table {
+        border: 1px solid black;
+        border-spacing: 0px;
+      }
+
+      table tr th {
+        background-color: gray;
+        color: white;
+        padding: 5px;
+      }
+
+      table tr td {
+        margin: 0px;
+        padding: 5px;
+      }
+
+      .text-xs {
+        font-size: 12px;
+      }
+
+      .text-sm {
+        font-size: 14px;
+      }
+
+      .text-md {
+        font-size: 18px;
+      }
+
+      .text-lg {
+        font-size: 24px;
+      }
+
+      .text-xl {
+        font-size: 32px;
+      }
+
+      .col-1-3 {
+        width: 33.3%;
+        float: left;
+      }
+
+      .col-2-3 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-3-3 {
+        width: 100%;
+        float: left;
+      }
+
+      .col-1-2 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-2-2 {
+        width: 100%;
+        float: left;
+      }
+
+      .col-1-4 {
+        width: 25%;
+        float: left;
+      }
+
+      .col-2-4 {
+        width: 33.3%;
+        float: left;
+      }
+
+      .col-3-4 {
+        width: 50%;
+        float: left;
+      }
+
+      .col-4-4 {
+        width: 100%;
+        float: left;
+      }
+
+      .inventory-table td {
+        border-bottom: 1px solid black;
+      }
+
+      .wrapper-box {
+        width: 100%;
+        border: 2px solid black;
+        padding: 5px;
+      }
+
+      .header {
+        border-bottom: 2px solid #000;
+      }
+
+      .feat-box {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      .feat-box > * {
+        flex: 1 1 350px;
+        margin: 5px 10px;
+        /*border: 1px solid black;*/
+      }
+    </style>
+    <script>
+      function show_hide(ident) {
+        var a = document.getElementById(ident);
+        if (a.style.display === 'none') {
+          a.style.display = 'block';
+        } else {
+          a.style.display = 'none';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a style="
+              width: 120px;
+              height: 30px;
+              background: whitesmoke;
+              padding: 10px;
+              text-align: center;
+              border: 2px solid gray;
+              border-radius: 5px;
+              color: black;
+              font-weight: bold;
+              line-height: 25px;
+              text-decoration: none;"
+      href=".">
+      Back
+    </a>
+    <h1>Weapon Creation Rules</h1>
+    <p>
+      Have you ever wanted to add some flair to making a custom weapon? One that really feels like yours. To make something completely unique to your build. One that's less boring than just a longsword. That's what this ruleset is for.
+    </p>
+    <p>
+      Each section breaks down the basics for creating a weapon. Not all weapons are created equally, but there is some commonality. Here is the list of different types of weapons you can possibly create
+    </p>
+    <ul>
+      <li>
+        <a href="#Blades"><h3>Bladed Weapons</h3></a>
+        <ul>
+          <li>Swords</li>
+          <li>Polearms</li>
+          <li>Axes</li>
+        </ul>
+      </li>
+      <li>
+        <a href="#Blunt"><h3>Blunt Weapons</h3></a>
+        <ul>
+          <li>Clubs</li>
+        </ul>
+      </li>
+      <li>
+        <a href="#Guns"><h3>Firearms</h3></a>
+      </li>
+    </ul>
+    <hr>
+    <h2>
+      <a name="Materials">Material Properties</a>
+    </h2>
+    <table class="wrapper-box" style="margin-bottom:60px;">
+      <tr>
+        <td>
+          <p>
+            Certain Materials in the fantasy world have special properties. This section breaks down the general nature of the material, what it explicitly can and cannot do. Anything outside of the explicit description, should be discussed with your Game Master. Each material section contains a description of the material, if there are any special properties, what those are, and how those properties may interact with the outside world.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table class="inventory-box" style="width:100%">
+            <tr>
+              <th style="width:80%;">
+                Material
+              </th>
+              <th>
+                Price / lbs
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <div class="text-lg bold">
+                  Iron
+                </div>
+                <p class="text-sm">
+                  The standard by which all weapons are measured or created. Iron is plentiful, and very malleable. It is incredibly easy to create 
+                </p>
+              </td>
+              <td>
+                2 gp / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="text-lg bold">
+                  Lead
+                </div>
+                <p class="text-sm">
+                  Description
+                </p>
+              </td>
+              <td>
+                2 gp / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="text-lg bold">
+                  Copper
+                </div>
+                <p class="text-sm">
+                  Description
+                </p>
+              </td>
+              <td>
+                2 cp / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="text-lg bold">
+                  Bronze
+                </div>
+                <p class="text-sm">
+                  Description
+                </p>
+              </td>
+              <td>
+                2 cp / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="text-lg bold">
+                  Steel
+                </div>
+                <p class="text-sm">
+                  Description
+                </p>
+              </td>
+              <td>
+                8 gp / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="text-lg bold">
+                  Brass
+                </div>
+                <p class="text-sm">
+                  Description
+                </p>
+              </td>
+              <td>
+                8 gp / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="text-lg bold">
+                  Silver
+                </div>
+                <p class="text-sm">
+                  Description
+                </p>
+              </td>
+              <td>
+                5 gp / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="text-lg bold">
+                  Gold
+                </div>
+                <p class="text-sm">
+                  Description
+                </p>
+              </td>
+              <td>
+                50 gp / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="text-lg bold">
+                  Platinum
+                </div>
+                <p class="text-sm">
+                  Description
+                </p>
+              </td>
+              <td>
+                500 gp / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="text-lg bold">
+                  Obsidian
+                </div>
+                <p class="text-sm">
+                  Description
+                </p>
+              </td>
+              <td>
+                75 gp / lbs
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <h2>
+      <a name="Blades">Bladed Weapons</a>
+    </h2>
+    <table class="wrapper-box" style="margin-bottom:60px;">
+      <tr>
+        <td>
+          <p>
+            Bladed Weapons encompass the majority of weapons in the fantasy setting. These include Axes, Polearms, Swords, and sometimes exotic weaponry.
+          </p>
+        </td>
+      </tr>
+    </table>
+    <h2>
+      <a name="Blunt">Blunt Weapons</a>
+    </h2>
+    <table class="wrapper-box" style="margin-bottom:60px;">
+      <tr>
+        <td>
+        </td>
+      </tr>
+    </table>
+    <h2>
+      <a name="Guns">Firearms</a>
+    </h2>
+    <table class="wrapper-box" style="margin-bottom:60px;">
+      <tr>
+        <td>
+          <p>
+            Firearms are an immense leap forward in Technology. As such, incorporating them into your games can bring a lot of scrutiny as to their function, creation, and features. This section attempts to explain their creation and general function. I leave the features and facets to your imagination.
+          </p>
+          <p>
+            The following is the creation process of a firearm from start to finish. All steps can be done completely seperate. Your Gun can be disassembled and rebuilt as part of the clean procedure, so you're free to rebuild your Gun as you see fit.
+          </p>
+          <ol>
+            <li>
+              Barrel Casting
+            </li>
+            <li>
+              Stock Casting/Whittling
+            </li>
+            <li>
+              Ammo Tinkering
+            </li>
+            <li>
+              Receiver Tinkering
+            </li>
+            <li>
+              Final Assembly
+            </li>
+          </ol>
+          <p>
+            For the steps that have you roll on a Success table, you calculate the success with the following formula:
+          </p>
+          <div style="text-align: center;">
+            Success = 1d100 + Gunslinger Level + Tool Proficiency + Dexterity + Success Modifer
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="text-xl bold" style="margin-top: 30px; text-align: center;">
+            Barrel Casting
+          </div>
+          <div class="text-sm emp">
+            <b>
+              Requirements:
+            </b>
+            Active Forge + Smith's Tools + Tinker's Tools
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>
+            Casting is the process of forging material and placing the molten material into a cast, which is then used to create the barrel. This part needs to be the most hardy of the firearm, as it's the piece that needs to withstand the most abuse, and remain true. There are several different types of materials that can be used to create a Barrel, each with different properties.
+          </p>
+          <p>
+            When crafting a Barrel, you'll need an active forge for a few hours. To begin creating a barrel, choose your material, spend the requisite time building the barrel, and finally roll on the success table. At the end of this process, you have a part that's worthy of being attached to a gun.
+          </p>
+          <ul>
+            <li>
+              <b>Pistol:</b> 2 Hours + 2 lbs of Material
+            </li>
+            <li>
+              <b>Rifle & Shotgun:</b> 3 Hours + 5 lbs of Material
+            </li>
+            <li>
+              <b>Sniper:</b> 4 Hours + 8 lbs of Material
+            </li>
+          </ul>
+          <span class="text-sm emp">
+            <b>Note:</b> 1 Hour is allotted to prep work during a long rest.
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="bold">
+            &nbsp; - Material List
+          </div>
+          <table style="margin: auto;">
+            <tr>
+              <th>
+                Material
+              </th>
+              <th>
+                Success
+              </th>
+              <th>
+                Additional Propertoes
+              </th>
+              <th colspan="2">
+                Base Range
+              </th>
+            </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>
+                Rifle & Sniper
+              </th>
+              <th>
+                Pistol & Shotgun
+              </th>
+            </tr>
+            <tr>
+              <td>
+                Silver
+              </td>
+              <td>
+                -1
+              </td>
+              <td>
+                Resale Cost x 2
+              </td>
+              <td>
+                60 ft / 120 ft
+              </td>
+              <td>
+                30 ft / 60 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Gold
+              </td>
+              <td>
+                -2
+              </td>
+              <td>
+                Resale Cost x 5
+              </td>
+              <td>
+                60 ft / 120 ft
+              </td>
+              <td>
+                30 ft / 60 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Bronze, Copper, Steel, Brass, Iron
+              </td>
+              <td>
+                +0
+              </td>
+              <td>
+                -
+              </td>
+              <td>
+                60 ft / 120 ft
+              </td>
+              <td>
+                30 ft / 60 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Platinum
+              </td>
+              <td>
+                +1
+              </td>
+              <td>
+                Resale Cost x 10
+              </td>
+              <td>
+                60 ft / 120 ft
+              </td>
+              <td>
+                30 ft / 60 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Cold Iron
+              </td>
+              <td>
+                +1
+              </td>
+              <td>
+                +1 Damage against Demons
+              </td>
+              <td>
+                80 ft / 160 ft
+              </td>
+              <td>
+                40 ft / 80 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mithral
+              </td>
+              <td>
+                +1
+              </td>
+              <td>
+                Resale Cost x 5, Weight x 0.5
+              </td>
+              <td>
+                80 ft / 160 ft
+              </td>
+              <td>
+                40 ft / 80 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Noqual
+              </td>
+              <td>
+                +3
+              </td>
+              <td>
+                Deals 1 Psychic Damage
+              </td>
+              <td>
+                50 ft / 100 ft
+              </td>
+              <td>
+                25 ft / 50 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Hot Siccatite
+              </td>
+              <td>
+                +2
+              </td>
+              <td>
+                Deals 1 Fire Damage
+              </td>
+              <td>
+                80 ft / 160 ft
+              </td>
+              <td>
+                40 ft / 80 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Cold Siccatite
+              </td>
+              <td>
+                +2
+              </td>
+              <td>
+                Deals 1 Cold Damage
+              </td>
+              <td>
+                80 ft / 160 ft
+              </td>
+              <td>
+                40 ft / 80 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Elysian Bronze
+              </td>
+              <td>
+                +2
+              </td>
+              <td>
+                Deals 1 Radiant Damage
+              </td>
+              <td>
+                80 ft / 160 ft
+              </td>
+              <td>
+                40 ft / 80 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Adamantine
+              </td>
+              <td>
+                +10
+              </td>
+              <td>
+                -
+              </td>
+              <td>
+                100 ft / 200 ft
+              </td>
+              <td>
+                50 ft / 100 ft
+              </td>
+            </tr>
+          </table>
+          <br>
+          <div class="bold">
+            &nbsp; - Success Table
+          </div>
+          <table style="margin: auto;">
+            <tr>
+              <th>
+                Success Result
+              </th>
+              <th>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td>
+                > 1
+              </td>
+              <td>
+                You destroy the metal reducing it to a worthless lump that's not usable. Hopefully you learn from this.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                1 - 10
+              </td>
+              <td>
+                You create an adequate barrel. It can be reforged, but it has a Misfire chance increased by 1.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                11 - 35
+              </td>
+              <td>
+                You create a barrel. It can be reforged. If the material has an additional property, it is unusable unless you reforge the barrel.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                36 - 90
+              </td>
+              <td>
+                You create a good barrel. It can be reforged.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                91 - 99
+              </td>
+              <td>
+                You create a great barrel. It can be reforged and it's misfire chance is reduced by 1, to a minimum of 1.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                < 100
+              </td>
+              <td>
+                You create a perfect barrel. It can be reforged, it's misfire change is reduced by 1, and is considered a +1 Weapon.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="text-xl bold" style="margin-top: 30px; text-align: center;">
+            Stock Casting/Whittling
+          </div>
+          <div class="text-sm emp">
+            <b>
+              Requirements:
+            </b>
+            Active Forge + Smith's Tools or Woodworking Tools + Tinker's Tools
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>
+            You can create a stock from the two major materials. Woods and Metals. Wood offers a softer Stock, and more suitable for extended use. It's also something you that's easier to create while in the wild. Metals, on the other hand, offer a more rigid experience, and thus are more effective with weapons that are fired continuously. Metal is also more durable, and less likely to break upon impact.
+          </p>
+          <p>
+            When creating a Stock, you follow a similar pattern to creating a barrel. Choose a Material, Spend the needed time, then roll on the success table.
+          </p>
+          <p>
+            Build Time and Material Cost by Weapon Type:
+          </p>
+          <ul>
+            <li>
+              <b>Pistol:</b> 1 Hours + 1 lbs of Material
+            </li>
+            <li>
+              <b>Rifle & Shotgun:</b> 3 Hours + 2 lbs of Material
+            </li>
+            <li>
+              <b>Sniper:</b> 6 Hours + 3 lbs of Material
+            </li>
+          </ul>
+          <span class="text-sm emp">
+            <b>Note:</b> 1 Hour is allotted to prep work during a long rest.
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="bold">
+            &nbsp; - Material List
+          </div>
+          <table style="margin: auto;">
+            <tr>
+              <th>
+                Material
+              </th>
+              <th>
+                Success
+              </th>
+              <th>
+                Additional Properties
+              </th>
+              <th>
+                Base Melee Damage
+              </th>
+            </tr>
+            <tr>
+              <td>
+                Silver
+              </td>
+              <td>
+                +1
+              </td>
+              <td>
+                Resale Cost x 2
+              </td>
+              <td>
+                STR Bludgeoning
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Gold
+              </td>
+              <td>
+                +1
+              </td>
+              <td>
+                Resale Cost x 5
+              </td>
+              <td>
+                STR Bludgeoning
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Bronze, Copper, Steel, Brass, Iron
+              </td>
+              <td>
+                +0
+              </td>
+              <td>
+                -
+              </td>
+              <td>
+                STR Bludgeoning
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Platinum
+              </td>
+              <td>
+                +3
+              </td>
+              <td>
+                Resale Cost x 10
+              </td>
+              <td>
+                STR Bludgeoning
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Cold Iron
+              </td>
+              <td>
+                +1
+              </td>
+              <td>
+                -
+              </td>
+              <td>
+                STR Cold
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Mithral
+              </td>
+              <td>
+                +2
+              </td>
+              <td>
+                Resale Cost x 5, Weight x 0.5
+              </td>
+              <td>
+                1d4 + STR Bludgeoning
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Noqual
+              </td>
+              <td>
+                +3
+              </td>
+              <td>
+                +1 INT & WIS Saving Throws
+              </td>
+              <td>
+                STR Psychic
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Hot Siccatite
+              </td>
+              <td>
+                -2
+              </td>
+              <td>
+                Deals 1 Fire damage to Weilder
+              </td>
+              <td>
+                1d4 + STR Fire
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Cold Siccatite
+              </td>
+              <td>
+                -2
+              </td>
+              <td>
+                Deals 1 Cold damage to Weilder
+              </td>
+              <td>
+                1d4 + STR Cold
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Elysian Bronze
+              </td>
+              <td>
+                +2
+              </td>
+              <td>
+                -
+              </td>
+              <td>
+                1d4 + STR Radiant
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Adamantine
+              </td>
+              <td>
+                +10
+              </td>
+              <td>
+                -
+              </td>
+              <td>
+                1d4 + STR Bludgeoning
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Bone (1 cp / lbs)
+              </td>
+              <td>
+                -2
+              </td>
+              <td>
+                Resale Cost x 0.5
+              </td>
+              <td>
+                STR Bludgeoning
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Darkwood (5 sp / lbs)
+              </td>
+              <td>
+                +0
+              </td>
+              <td>
+                -
+              </td>
+              <td>
+                1d4 + STR Bludgeoning
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Greenwood (3 gp / lbs)
+              </td>
+              <td>
+                +2
+              </td>
+              <td>
+                +1 Stock
+              </td>
+              <td>
+                1d4 + STR Bludgeoning
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Whipwood (10 gp / lbs)
+              </td>
+              <td>
+                -2
+              </td>
+              <td>
+                -
+              </td>
+              <td>
+                STR Bludgeoning
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Wyrroot (1,000 gp / lbs)
+              </td>
+              <td>
+                +5
+              </td>
+              <td>
+                Increase Crit Range +1
+              </td>
+              <td>
+                1d4 + STR Bludgeoning
+              </td>
+            </tr>
+          </table>
+          <br>
+          <div class="bold">
+            &nbsp; - Success Table
+          </div>
+          <table style="margin: auto;">
+            <tr>
+              <th>
+                Success Result
+              </th>
+              <th>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td>
+                > 1
+              </td>
+              <td>
+                You destroy the material reducing it to a worthless lump that's not usable. Hopefully you learn from this.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                1 - 10
+              </td>
+              <td>
+                You create an adequate stock. If it is metal, it can be reforged. If it is wood, it can be sculpted further, but it has a Misfire chance increased by 1.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                11 - 35
+              </td>
+              <td>
+                You create a stock. If it is metal, it can be reforged. If it is wood, the stock can be reshaped. If the material has an additional property, it is unusable unless you reforge the stock.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                36 - 99
+              </td>
+              <td>
+                You create a great stock. If it is metal, it can be reforged. If it is wood, the stock can be reshaped.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                < 100
+              </td>
+              <td>
+                You create a perfect stock. If it is metal, it can be reforged. If it is wood, the stock can be reshaped. Gain +1 to hit on all targets within your effective range.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="text-xl bold" style="margin-top: 30px; text-align: center;">
+            Ammo Tinkering
+          </div>
+          <div class="text-sm emp">
+            <b>
+              Requirements:
+            </b>
+            Tinker's Tools
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>
+            This is the stage where you decide which type of Ammo is going to be used, and which the gun will be capable of firing. There are a few things to note when deciding Ammo, you are not restricting the type of firearm you can make. A pistol cannot fire a Long Distance Sniper round. This process also dictates how much metal is required to craft a bullet for your weapon.
+          </p>
+          <p>
+            Since this step is a decision, and not based on your crafting capability, there's no rolling associated with this step. You simply choose the Loading Mechanism and the Bullet Caliber that's right for you, and spend the time necessary to build the Casing and Magazine.
+          </p>
+          <p>
+            Build Time by Weapon Type:
+          </p>
+          <ul>
+            <li>
+              <b>Pistol:</b> 2 Hours
+            </li>
+            <li>
+              <b>Rifle & Shotgun:</b> 3 Hours
+            </li>
+            <li>
+              <b>Sniper:</b> 5 Hours
+            </li>
+          </ul>
+          <span class="text-sm emp">
+            <b>Note:</b> 1 Hour is allotted to prep work during a long rest.
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="bold">
+            &nbsp; - Bullet Caliber
+          </div>
+          <table style="margin: auto;">
+            <tr>
+              <th>
+                Caliber (in inches)
+              </th>
+              <th colspan="4">
+                Weapon
+              </th>
+              <th>
+                Target
+              </th>
+              <th>
+                Base Damage
+              </th>
+              <th>
+                Bullet Modifier
+              </th>
+            </tr>
+            <tr>
+              <th>
+              </th>
+              <th>
+                P
+              </th>
+              <th>
+                R
+              </th>
+              <th>
+                Sh
+              </th>
+              <th>
+                Sn
+              </th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td>
+                0.10 Bullet
+              </td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>
+                Target
+              </td>
+              <td>
+                1d4 P
+              </td>
+              <td>
+                80 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.15 Bullet
+              </td>
+              <td>&#128505;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>
+                Target
+              </td>
+              <td>
+                1d6 P
+              </td>
+              <td>
+                60 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.05 Pellets
+              </td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>
+                Cone
+              </td>
+              <td>
+                1d6 B
+              </td>
+              <td>
+                60 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.25 Bullet
+              </td>
+              <td>&#128505;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>
+                Target
+              </td>
+              <td>
+                1d8 P
+              </td>
+              <td>
+                40 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.10 Pellets
+              </td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>
+                Cone
+              </td>
+              <td>
+                1d8 B
+              </td>
+              <td>
+                40 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.30 Bullet
+              </td>
+              <td>&#128505;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>
+                Target
+              </td>
+              <td>
+                1d10 P
+              </td>
+              <td>
+                30 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.12 Pellets
+              </td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>
+                Cone
+              </td>
+              <td>
+                1d10 B
+              </td>
+              <td>
+                30 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.40 Bullet
+              </td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>
+                Target
+              </td>
+              <td>
+                1d12 P
+              </td>
+              <td>
+                15 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.15 Pellets
+              </td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>
+                Cone
+              </td>
+              <td>
+                2d6 B
+              </td>
+              <td>
+                15 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.50 Bullet
+              </td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>
+                Line
+              </td>
+              <td>
+                2d8 P
+              </td>
+              <td>
+                5 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.20 Pellets
+              </td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>
+                Cone
+              </td>
+              <td>
+                2d8 B
+              </td>
+              <td>
+                5 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.60 Bullet
+              </td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>
+                Line
+              </td>
+              <td>
+                2d10 P
+              </td>
+              <td>
+                3 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.25 Pellets
+              </td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>
+                Cone
+              </td>
+              <td>
+                2d10 B
+              </td>
+              <td>
+                3 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.85 Bullet
+              </td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>
+                Line
+              </td>
+              <td>
+                2d12 P
+              </td>
+              <td>
+                1 rounds / lbs
+              </td>
+            </tr>
+            <tr>
+              <td>
+                0.30 Pellets
+              </td>
+              <td>&#9744;</td>
+              <td>&#9744;</td>
+              <td>&#128505;</td>
+              <td>&#9744;</td>
+              <td>
+                Cone
+              </td>
+              <td>
+                2d12 B
+              </td>
+              <td>
+                1 rounds / lbs
+              </td>
+            </tr>
+          </table>
+          <br>
+          <div class="bold">
+            &nbsp; - Loading Mechanism
+          </div>
+          <table style="margin: auto;">
+            <tr>
+              <th colspan="5" style="text-align:center;" class="und">
+                Pistol Mechanism
+              </th>
+            </tr>
+            <tr>
+              <th>
+                Magazine
+              </th>
+              <th>
+                Rounds
+              </th>
+              <th>
+                Compatible
+              </th>
+              <th>
+                Default Reload Action
+              </th>
+              <th>
+                Additional Properties
+              </th>
+            </tr>
+            <tr>
+              <td>
+                Hot Swapper Magazine
+              </td>
+              <td>
+                5
+              </td>
+              <td>
+                > 0.15 Bullet
+              </td>
+              <td>
+                Free Action
+              </td>
+              <td>
+                Automatic Only
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Flint Lock
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                All Rounds
+              </td>
+              <td>
+                Action
+              </td>
+              <td>
+                Extra Damage Dice
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Small Straight Magazine
+              </td>
+              <td>
+                4
+              </td>
+              <td>
+                > 0.25 Bullet
+              </td>
+              <td>
+                Bonus Action
+              </td>
+              <td>
+                Automatic & Burst Fire Capable
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Straight Magazine
+              </td>
+              <td>
+                7
+              </td>
+              <td>
+                > 0.25 Bullet
+              </td>
+              <td>
+                Bonus Action
+              </td>
+              <td>
+                Automatic & Burst Fire Capable
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Large Straight Magazine
+              </td>
+              <td>
+                10
+              </td>
+              <td>
+                > 0.25 Bullet
+              </td>
+              <td>
+                Bonus Action
+              </td>
+              <td>
+                Automatic Capable, +1 Misfire
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Revolver
+              </td>
+              <td>
+                6
+              </td>
+              <td>
+                All Rounds
+              </td>
+              <td>
+                Action
+              </td>
+              <td>
+                +1 to Init
+              </td>
+            </tr>
+            <tr>
+              <th colspan="5" style="text-align:center;" class="und">
+                Rifle Mechanism
+              </th>
+            </tr>
+            <tr>
+              <th>
+                Magazine
+              </th>
+              <th>
+                Rounds
+              </th>
+              <th>
+                Compatible
+              </th>
+              <th>
+                Default Reload Action
+              </th>
+              <th>
+                Additional Properties
+              </th>
+            </tr>
+            <tr>
+              <td>
+                Bolt Action Magazine
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                All Rounds
+              </td>
+              <td>
+                Bonus
+              </td>
+              <td>
+                Range +20 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Carbine Magazine
+              </td>
+              <td>
+                4
+              </td>
+              <td>
+                All Rounds
+              </td>
+              <td>
+                2 rounds / Bonus
+              </td>
+              <td>
+                +1 to Hit
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Break Away Magazine
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                All Rounds
+              </td>
+              <td>
+                Bonus Action
+              </td>
+              <td>
+                +1 to Hit, Burst Fire Capable
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Small Straight Magazine
+              </td>
+              <td>
+                10
+              </td>
+              <td>
+                > 0.30 Bullets
+              </td>
+              <td>
+                Bonus Action
+              </td>
+              <td>
+                Automatic & Burst Fire Capable
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Straight Magazine
+              </td>
+              <td>
+                15
+              </td>
+              <td>
+                > 0.30 Bullets
+              </td>
+              <td>
+                Bonus Action
+              </td>
+              <td>
+                Automatic & Burst Fire Capable
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Large Straight Magazine
+              </td>
+              <td>
+                20
+              </td>
+              <td>
+                > 0.25 Bullets
+              </td>
+              <td>
+                Bonus Action
+              </td>
+              <td>
+                Automatic Capable
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Drum Magazine
+              </td>
+              <td>
+                30
+              </td>
+              <td>
+                > 0.25 Bullets
+              </td>
+              <td>
+                Action
+              </td>
+              <td>
+                Automatic Only, +1 Misfire
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Revolver Magazine
+              </td>
+              <td>
+                6
+              </td>
+              <td>
+                All Bullets
+              </td>
+              <td>
+                Action
+              </td>
+              <td>
+                +1 Init
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Large Revolver Magazine
+              </td>
+              <td>
+                8
+              </td>
+              <td>
+                All Bullets
+              </td>
+              <td>
+                Action
+              </td>
+              <td>
+                -
+              </td>
+            </tr>
+            <tr>
+              <th colspan="5" style="text-align:center;" class="und">
+                Shotgun Mechanism
+              </th>
+            </tr>
+            <tr>
+              <th>
+                Magazine
+              </th>
+              <th>
+                Rounds
+              </th>
+              <th>
+                Compatible
+              </th>
+              <th>
+                Default Reload Action
+              </th>
+              <th>
+                Additional Properties
+              </th>
+            </tr>
+            <tr>
+              <td>
+                Single Shot
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                All Rounds
+              </td>
+              <td>
+                Reaction
+              </td>
+              <td>
+                +1 to Save DC
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Small Feeder Magazine
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                > 0.25 Pellets
+              </td>
+              <td>
+                2 rounds / Bonus
+              </td>
+              <td>
+                +1 to hit
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Break Away
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                > 0.25 Pellets
+              </td>
+              <td>
+                2 rounds / Bonus
+              </td>
+              <td>
+                Burst Fire Capable
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Feeder Magazine
+              </td>
+              <td>
+                4
+              </td>
+              <td>
+                > 0.20 Pellets
+              </td>
+              <td>
+                2 rounds / Bonus
+              </td>
+              <td>
+                -
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Large Feeder Magazine
+              </td>
+              <td>
+                6
+              </td>
+              <td>
+                > 0.10 Pellets
+              </td>
+              <td>
+                2 rounds / Bonus
+              </td>
+              <td>
+                -
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Small Straight Magazine
+              </td>
+              <td>
+                6
+              </td>
+              <td>
+                > 0.20 Pellets
+              </td>
+              <td>
+                1 Action
+              </td>
+              <td>
+                -
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Straight Magazine
+              </td>
+              <td>
+                8
+              </td>
+              <td>
+                > 0.15 Pellets
+              </td>
+              <td>
+                1 Action
+              </td>
+              <td>
+                -
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Drum Magazine
+              </td>
+              <td>
+                12
+              </td>
+              <td>
+                > 0.20 Pellets
+              </td>
+              <td>
+                1 Action
+              </td>
+              <td>
+                -1 to Hit, +1 Misfire
+              </td>
+            </tr>
+            <tr>
+              <th colspan="5" style="text-align:center;" class="und">
+                Sniper Mechanism
+              </th>
+            </tr>
+            <tr>
+              <th>
+                Magazine
+              </th>
+              <th>
+                Rounds
+              </th>
+              <th>
+                Compatible
+              </th>
+              <th>
+                Default Reload Action
+              </th>
+              <th>
+                Additional Properties
+              </th>
+            </tr>
+            <tr>
+              <td>
+                Bolt Action Magazine
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                All Bullets
+              </td>
+              <td>
+                Action
+              </td>
+              <td>
+                Range +20 ft
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Carbine Magazine
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                > 0.60 Bullets
+              </td>
+              <td>
+                2 Round / Bonus
+              </td>
+              <td>
+                +1 to Hit
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Small Cartridge Magazine
+              </td>
+              <td>
+                4
+              </td>
+              <td>
+                > 0.50 Bullets
+              </td>
+              <td>
+                Bonus
+              </td>
+              <td>
+                -
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Cartridge Magazine
+              </td>
+              <td>
+                6
+              </td>
+              <td>
+                > 0.50 Bullets
+              </td>
+              <td>
+                Bonus
+              </td>
+              <td>
+                -
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Large Cartridge Magazine
+              </td>
+              <td>
+                8
+              </td>
+              <td>
+                > 0.40 Bullets
+              </td>
+              <td>
+                Bonus
+              </td>
+              <td>
+                +1 Misfire
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="text-xl bold" style="margin-top: 30px; text-align: center;">
+            Receiver Tinkering
+          </div>
+          <div class="text-sm emp">
+            <b>
+              Requirements:
+            </b>
+            Tinker's Tools
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>
+            This is where the magic happens. Tinkering with delicate yet durable parts is the core of who a gunslinger is. This step is probably the most complicated of all the steps, and requires a lot of talent and instruction to do properly. Below are the build times and material costs for combining a receiver.
+          </p>
+          <p>
+            As with previous steps, begin with collecting the necessary materials, spend the requisite time building, and finally roll on the Success table.
+          </p>
+          <ul>
+            <li>
+              <b>Pistol:</b> 5 Hours + 2 lbs of Material
+            </li>
+            <li>
+              <b>Rifle & Shotgun:</b> 7 Hours + 5 lbs of Material
+            </li>
+            <li>
+              <b>Sniper:</b> 9 Hours + 8 lbs of Material
+            </li>
+          </ul>
+          <span class="text-sm emp">
+            <b>Note:</b> 1 Hour is allotted to prep work during a long rest.
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="bold">
+            &nbsp; - Firing Mechanism
+          </div>
+          <table style="margin: auto;">
+            <tr>
+              <th>
+                Mechanism
+              </th>
+              <th>
+                Success
+              </th>
+              <th>
+                Additional Properties
+              </th>
+              <th>
+                Distance Modifier
+              </th>
+            </tr>
+            <tr>
+              <td>
+                Semi-Automatic
+              </td>
+              <td>
+                +1
+              </td>
+              <td>
+                +1 Damage Dice
+              </td>
+              <td>
+                x2 / x4
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Burst *
+              </td>
+              <td>
+                +0
+              </td>
+              <td>
+                Roll Damage twice, take the higher
+              </td>
+              <td>
+                x1.5 / x3
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Automatic *
+              </td>
+              <td>
+                -1 
+              </td>
+              <td>
+                Can spray a Cone or Line to effective range as a DEX Save
+              </td>
+              <td>
+                x1 / x2
+              </td>
+            </tr>
+          </table>
+          <div class="text-sm emp">
+            <b>*Note:</b> Your Weapon must qualify during the Ammo Tinkering Step
+          </div>
+          <br>
+          <div class="bold">
+            &nbsp; - Material List
+          </div>
+          <table style="margin: auto;">
+            <tr>
+              <th>
+                Material
+              </th>
+              <th>
+                Success
+              </th>
+              <th>
+                Additional Properties
+              </th>
+              <th>
+                Base Misfire
+              </th>
+            </tr>
+            <tr>
+              <td>
+                Silver
+              </td>
+              <td>
+                -2
+              </td>
+              <td>
+                Resale Cost x2
+              </td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1, 2, 3
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2, 3, 4
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2, 3, 4
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Gold
+              </td>
+              <td>
+                -2
+              </td>
+              <td>
+                Resale Cost x5
+              </td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1, 2, 3
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2, 3, 4
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2, 3, 4
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Bronze
+                <br>
+                Copper
+                <br>
+                Steel
+                <br>
+                Brass
+                <br>
+                Iron
+              </td>
+              <td>
+                +0
+              </td>
+              <td>
+                -
+              </td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2, 3
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2, 3
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Platinum
+              </td>
+              <td>
+                +0
+              </td>
+              <td>
+                Resale Cost x10
+              </td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2, 3
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2, 3
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Cold Iron
+              </td>
+              <td>
+                +1
+              </td>
+              <td>
+                -
+              </td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2, 3
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2, 3
+                  </li>
+                </ul>
+              </td>
+            <tr>
+              <td>
+                Mithral
+              </td>
+              <td>
+                +2
+              </td>
+              <td>
+                
+              </td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2
+                  </li>
+                </ul>
+              </td>
+            <tr>
+              <td>
+                Noqual
+              </td>
+              <td>
+                +3
+              </td>
+              <td>
+                +1 Psychic Damage
+              </td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2, 3
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2, 3
+                  </li>
+                </ul>
+              </td>
+            <tr>
+              <td>
+                Hot Siccatite
+              </td>
+              <td>
+                +2
+              </td>
+              <td>
+                +1 Cold Damage
+              </td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2, 3
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2
+                  </li>
+                </ul>
+              </td>
+            <tr>
+              <td>
+                Cold Siccatite
+              </td>
+              <td>
+                +2
+              </td>
+              <td>
+                +1 Cold Damage
+              </td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2, 3
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2
+                  </li>
+                </ul>
+              </td>
+            <tr>
+              <td>
+                Elysian Bronze
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2, 3
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2
+                  </li>
+                </ul>
+              </td>
+            <tr>
+              <td>
+                Adamantine
+              </td>
+              <td>
+                +10
+              </td>
+              <td></td>
+              <td>
+                <ul class="in-table">
+                  <li>
+                    <b>Pistol:</b> 1
+                  </li>
+                  <li>
+                    <b>Rifle:</b> 1
+                  </li>
+                  <li>
+                    <b>Shotgun:</b> 1, 2
+                  </li>
+                  <li>
+                    <b>Sniper:</b> 1, 2
+                  </li>
+                </ul>
+              </td>
+          </table>
+          <br>
+          <div class="bold">
+            &nbsp; - Success Table
+          </div>
+          <table style="margin: auto;">
+            <tr>
+              <th>
+                Success Result
+              </th>
+              <th>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td>
+                > 1
+              </td>
+              <td>
+                You destroy the material reducing it to a worthless lump that's not usable. Hopefully you learn from this.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                1 - 10
+              </td>
+              <td>
+                You create an adequate firing mechanism. +1 Misfire Chance. Attempting to dismantle and retry with this Receiver has a 50% chance or ruin it, making it unusable. If the reciever has any additional properties, they are unusable until you dismantle and retry.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                11 - 40
+              </td>
+              <td>
+                You create a firing mechanism. Attempting to dismantle and retry with this Receiver has a 10% chance or ruin it, making it unusable. If the reciever has any additional properties, they are unusable until you dismantle and retry.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                41 - 99
+              </td>
+              <td>
+                You create a great firing mechanism. You can dismantle and retry with this receiver.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                < 100
+              </td>
+              <td>
+                You create a perfect firing mechanism. You can dismantle and retry with this receiver. Weapon is considered +1.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="text-xl bold" style="margin-top: 30px; text-align: center;">
+            Final Assembly
+          </div>
+          <div class="text-sm emp">
+            <b>
+              Requirements:
+            </b>
+            Tinker's Tools
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>
+            Final Assembly is the part you've been looking forward to. After all, it's when you finally get your Gun to a usable state. To begin final assembly, ensure all of your parts are compatible. Finally, assemble them together with your Tinker's Tools. You can also dismantle them with this step, to rebuild a new weapon with old parts.
+          </p>
+          <ul>
+            <li>
+              <b>Pistol:</b> 20 Minutes
+            </li>
+            <li>
+              <b>Rifle & Shotgun:</b> 30 Minutes
+            </li>
+            <li>
+              <b>Sniper:</b> 45 Minutes
+            </li>
+          </ul>
+          <span class="text-sm emp">
+            <b>Note:</b> 1 Hour is allotted to prep work during a long rest.
+          </span>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
