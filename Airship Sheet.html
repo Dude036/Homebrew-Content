@@ -345,7 +345,7 @@
 
       <label for="Move" class="text-md bold">Move:</label>
       <input type="text" name="Move" class="skinny">
-      <span style="margin-left: 50px;">If Weight is 50% of Lift, Accelerate freely. Otherwise Accelerate 1 step</span>
+      <span style="margin-left: 50px;">If Move PEN > 1, Accelerate freely. Otherwise Accelerate 1 step</span>
 
       <br>
 
@@ -372,9 +372,9 @@
           <line x1="30" y1="370" x2="370" y2="30" style="stroke:rgb(255,0,0);stroke-width:2" />
           <circle cx="200" cy="200" r="20" stroke="black" stroke-width="3" fill="red" />
           <text fill="#000000" font-size="16" x="160" y="30">Forward Arc</text>
+          <text fill="#000000" font-size="16" x="140" y="-370" transform="rotate(90)">Starboard Arc</text>
           <text fill="#000000" font-size="16" x="165" y="370">Rear Arc</text>
-          <text fill="#000000" font-size="16" x="370" y="150" transform="rotate(90)">Starboard Arc</text>
-          <text fill="#000000" font-size="16" x="30" y="150" transform="rotate(-90)">Port Arc</text>
+          <text fill="#000000" font-size="16" x="-220" y="30" transform="rotate(-90)">Port Arc</text>
         </svg>
       </div>
 
