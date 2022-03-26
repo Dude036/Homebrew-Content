@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width" name="viewport"/>
+    <title>
+      Airship Battles
+    </title>
+    <style>
+      body {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      html {
+        font-family: Arial;
+      }
+      h1, h2 {
+        color: black;
+        text-align: center;
+      }
+      .center {
+        text-align: center;
+      }
+      .centered {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .emp {
+        font-style: italic;
+      }
+      table {
+        border:1px solid black;
+        border-spacing:0px;
+      }
+      table tr th {
+          background-color:gray;
+          color:white;
+          padding:5px;
+      }
+      table tr td {
+          margin:0px;
+          padding:5px;
+      }
+      .text-xs {
+          font-size:10px;
+      }
+      .text-sm {
+          font-size:14px;
+      }
+      .text-md {
+          font-size:18px;
+      }
+      .text-lg {
+          font-size:24px;
+      }
+      .text-xl {
+          font-size:32px;
+      }
+      .sm-wrapper-box {
+        width: 80%;
+        border: 2px solid black;
+        margin-bottom: 40px;
+      }
+      .wrapper-box {
+        width: 100%;
+        border: 2px solid black;
+        margin-bottom: 60px;
+        padding: 5px;
+      }
+      .wide {
+        width: 100%;
+      }
+      .seperator-row {
+        border-top: 1px solid black;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .suggestion {
+        padding: 2px 0px;
+        margin: 0px;
+        list-style: none;
+      }
+      .suggestion li {
+        border: 1px solid black;
+        background-color: #dddddd;
+        padding: 2px 4px;
+        margin: 5px 10px;
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+      }
+      .suggestion li:active {
+        background-color: #404040;
+      }
+      .suggestion li:hover {
+        background-color: #808080;
+      }
+      .attacks {
+          display: flex; 
+          flex-wrap: wrap; 
+          align-items: flex-start; 
+          width: 100%; 
+          padding-top: 10px; 
+          padding-bottom: 20px
+      }
+      .attacks table {
+          width: 44%; 
+          margin-left: 3%;
+          margin-right: 3%; 
+          margin-bottom: 1%;
+      }
+      .header {
+        padding: 5px 5px;
+        border-bottom-color: black;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+      }
+      .crit tr:nth-child(even) {
+        background-color: #EEE;
+      }
+      .link {
+        text-align: center;
+      }
+      .link li {
+        padding-bottom: 10px;
+      }
+      .link a {
+        border: 1px solid black;
+        width: 60%;
+        text-decoration: none;
+        color: #222;
+        background-color: #ddd;
+        padding: 3px 3px 3px 3px;
+      }
+      .link a:hover {
+        background-color: #222;
+        color: #ddd;
+      }
+      .sidebar {
+        float: left;
+        position: fixed;
+        top: 0;
+        right: 0px;
+        margin: 5px;
+      }
+      .grey {
+        background-color: #EFEFEF;
+      }
+      .grey:hover {
+        background-color: #CFCFCF;
+      }
+      .blue {
+        background-color: #6666FF;
+      }
+      .blue:hover {
+        background-color: #6666CF;
+      }
+      .yellow {
+        background-color: #FFFF66;
+      }
+      .yellow:hover {
+        background-color: #CFCF66;
+      }
+      .green {
+        background-color: #66FF66;
+      }
+      .green:hover {
+        background-color: #66CF66;
+      }
+      .red {
+        background-color: #FF6666;
+      }
+      .red:hover {
+        background-color: #CF6666;
+      }
+      .grey:active, .blue:active, .yellow:active, .green:active {
+        background-color: #000000;
+        color: #EFEFEF;
+      }
+      .sidebar_object {
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+        padding: 10px 20px;
+        border-style: solid;
+        border: 2px;
+      }
+      .editor {
+        padding: 5px;
+      }
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 5px 0px;
+        background-color: grey;
+        color: white;
+        text-align: center;
+      }
+      .traits {
+        padding: 5px 2px;
+        width: 95%;
+        margin: 15px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+      .traits_obj {
+        justify-content: flex-start;
+        width: 23%;
+        margin: 0px 10px;
+        padding: 3px;
+      }
+      .spells {
+        width: 95%;
+        display: flex;
+        padding: 5px 2px;
+        margin: 2px 5px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      .spells_obj {
+        width: 31%;
+        margin: 0px 5px 3px 5px;
+        padding: 3px;
+      }
+      .spells_list {
+        width: 100%;
+        border: 1px solid black;
+      }
+      .spells_body:first-of-type {
+        text-align: center;
+        font-weight: bold;
+        background-color: grey;
+        color: white;
+        padding: 5px;
+      }
+      .spells_body {
+        padding: 2px;
+      }
+
+      .overflow_textarea {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        resize: both;
+        min-height: 40px;
+        line-height: 20px
+      }
+    </style>
+    <script>
+      function show_hide(ident) {
+        var a = document.getElementById(ident);
+        if (a.style.display === 'none') {
+          a.style.display = 'block';
+        } else {
+          a.style.display = 'none';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a style="width: 120px;
+              height: 30px;
+              background: whitesmoke;
+              padding: 10px;
+              text-align: center;
+              border: 2px solid gray;
+              border-radius: 5px;
+              color: black;
+              font-weight: bold;
+              line-height: 25px;
+              text-decoration: none;"
+      href=".">
+      Back
+    </a>
+    <div class="text-xl center bold">
+      Airship Battles
+    </div class="text-xl center bold">
+    <p>
+      Airship Battles are the pinnacle of Steampunk adventures. Typically these take place on a cartesian grid, and high up in the sky. These are sometimes known as Dogfights.
+    </p>
+    <span class="text-md bold">Table of Contents</span>
+    <ol>
+      <li>
+        <a href="#Airship_Construction">Airship Construction</a>
+        <ul>
+          <li>
+            <a href="#Size">Size</a>
+          </li>
+          <li>
+            <a href="#Armor">Armor</a>
+          </li>
+          <li>
+            <a href="#Shield">Shield</a>
+          </li>
+          <li>
+            <a href="#Lift">Lift</a>
+          </li>
+          <li>
+            <a href="#Motor">Motor</a>
+          </li>
+          <li>
+            <a href="#Armaments">Armaments</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#Dogfighting_Rules">Dogfighting Rules</a>
+        <ul>
+          <li>
+            <a href="#General_Rules">General Rules</a>
+          </li>
+          <li>
+            <a href="#Crew_Phase">Crew Phase</a>
+          </li>
+          <li>
+            <a href="#Deck_Phase">Deck Phase</a>
+          </li>
+          <li>
+            <a href="#Pilot_Phase">Pilot Phase</a>
+          </li>
+          <li>
+            <a href="#Gunner_Phase">Gunner Phase</a>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <hr>
+    <div class="text-lg bold center">
+      <a name="Airship_Construction">
+        Airship Construction
+      </a>
+    </div>
+    <p>
+      An Airship is built with 6 key points in mind. Size, Armor, Shields, Lift, Motor and Armaments. 
+    </p>
+    <div class="text-md bold center">
+      <a name="Size">
+        Size
+      </a>
+    </div>
+    <p>
+      This category decides the size of your Aircraft. Each square of the playing grid is 100' by 100', so keep that in mind when making your Airship. Size determine's Base Maneuverability (Move PEN), Base Occupancy, Base Equipment Capacity, and Base Hull Points (HP).
+    </p>
+    <table class="centered sm-wrapper-box">
+      <tr>
+        <th>Size</th>
+        <th>Base Credits</th>
+        <th>Occupancy</th>
+        <th>Max Grid Size</th>
+        <th>Move PEN</th>
+        <th>Base HP</th>
+      </tr>
+      <tr>
+        <td>Small</td>
+        <td>10</td>
+        <td>1 Soul</td>
+        <td>1 Square (25' x 50')</td>
+        <td>0</td>
+        <td>10 x Level</td>
+      </tr>
+      <tr>
+        <td>Medium</td>
+        <td>15</td>
+        <td>1 - 2 Souls</td>
+        <td>1 Square (50' x 75')</td>
+        <td>0</td>
+        <td>20 x Level</td>
+      </tr>
+      <tr>
+        <td>Large</td>
+        <td>25</td>
+        <td>2 - 8 Souls</td>
+        <td>2 x 1 Squares (150' x 75')</td>
+        <td>+1</td>
+        <td>35 x Level</td>
+      </tr>
+      <tr>
+        <td>Huge</td>
+        <td>55</td>
+        <td>2 - 16 Souls</td>
+        <td>3 x 2 Squares (250' x 175')</td>
+        <td>+2</td>
+        <td>75 x Level</td>
+      </tr>
+      <tr>
+        <td>Gargantuan</td>
+        <td>120</td>
+        <td>4 - 32 Souls</td>
+        <td>5 x 3 Squares (400' x 250')</td>
+        <td>+2</td>
+        <td>180 x Level</td>
+      </tr>
+      <tr>
+        <td>Colossal</td>
+        <td>250</td>
+        <td>8 - 64 Souls</td>
+        <td>6+ x 4+ Squares</td>
+        <td>+3</td>
+        <td>450 x Level</td>
+      </tr>
+    </table>
+    <div class="text-md bold center">
+      <a name="Armor">
+        Armor
+      </a>
+    </div>
+    <p>
+      Armor for Airships equates to Damage Reduction. If you have 10 Hull Points and 5 Armor Points, and take 8 points of Damage, your Armor Points reduce the incoming damage by 5, leaving only 3 damage points to your Hull.
+    </p>
+    <div class="text-md center">
+      Small Armor
+    </div>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">No Armor</div>
+          <div class="spells_body">
+            <b>Armor Points:</b> 1
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 0 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 0 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Light Armor</div>
+          <div class="spells_body">
+            <b>Armor Points:</b> 3
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 10 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 10 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Medium Armor</div>
+          <div class="spells_body">
+            <b>Armor Points:</b> 5
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 20 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 15 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Heavy Armor</div>
+          <div class="spells_body">
+            <b>Armor Points:</b> 7
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 35 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 25 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Hardy Armor</div>
+          <div class="spells_body">
+            <b>Armor Points:</b> 8
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> +1
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 45 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 35 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ----------------------------------------------------------------------------------------------- -->
+    <div class="text-md center">
+      Medium Armor
+    </div>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">No Armor</div>
+          <div class="spells_body">
+            <b>Armor Points:</b> 1
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 0 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 0 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------------------------------- -->
+    <div class="text-md center">
+      Large Armor
+    </div>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">No Armor</div>
+          <div class="spells_body">
+            <b>Armor Points:</b> 1
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 0 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 0 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------------------------------- -->
+    <div class="text-md center">
+      Huge Armor
+    </div>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">No Armor</div>
+          <div class="spells_body">
+            <b>Armor Points:</b> 1
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 0 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 0 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------------------------------- -->
+    <div class="text-md center">
+      Gargantuan Armor
+    </div>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">No Armor</div>
+          <div class="spells_body">
+            <b>Armor Points:</b> 1
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 0 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 0 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------------------------------- -->
+    <div class="text-md center">
+      Colossal Armor
+    </div>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">No Armor</div>
+          <div class="spells_body">
+            <b>Armor Points:</b> 1
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 0 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 0 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <p>
+      Various Materials can have an effect on your armor. You can choose from the following materials and acquire different effects.
+    </p>
+    <table class="centered sm-wrapper-box">
+      <tr>
+        <th>Material</th>
+        <th>Cost per AP</th>
+        <th>Effects</th>
+        <th>Restrictions</th>
+      </tr>
+      <tr>
+        <td>Alloy Groups</td>
+        <td>0 Credits</td>
+        <td>-</td>
+        <td>All Airships</td>
+      </tr>
+      <tr>
+        <td>Polymer Groups</td>
+        <td>+2 Credits</td>
+        <td>Weight Reduced by half</td>
+        <td>Small or Medium only</td>
+      </tr>
+      <tr>
+        <td>Adamantine Group</td>
+        <td>+10 Credits</td>
+        <td>Weight Reduced by half; AP increased by 1</td>
+        <td>All Airships</td>
+      </tr>
+      <tr>
+        <td>Sky Metal Group</td>
+        <td>+1 Credits</td>
+        <td>Weight Reduced by 1</td>
+        <td>All Airships</td>
+      </tr>
+      <tr>
+        <td>Deep Metal Group</td>
+        <td>+7 Credits</td>
+        <td>Weight Increased by 1; AP increased by half</td>
+        <td>Large to Colossal Airships</td>
+      </tr>
+    </table>
+    <div class="text-md bold center">
+      <a name="Shields">
+        Shields
+      </a>
+    </div>
+    <p>
+      Shields are the first points to be depleted when you are struck by an attack.
+    </p>
+    <div class="text-md center">
+      Small Shields
+    </div>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Basic Shield Capacitor</div>
+          <div class="spells_body">
+            <b>Shield Points:</b> 10 x Level
+          </div>
+          <div class="spells_body">
+            <b>Recharge Capacity:</b> 3 Points
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 15 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 3 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Large Shield Capacitor</div>
+          <div class="spells_body">
+            <b>Shield Points:</b> 20 x Level
+          </div>
+          <div class="spells_body">
+            <b>Recharge Capacity:</b> 2 Points
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 30 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 5 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Rapid Capacitor</div>
+          <div class="spells_body">
+            <b>Shield Points:</b> 8 x Level
+          </div>
+          <div class="spells_body">
+            <b>Recharge Capacity:</b> 4 Points
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 25 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 4 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-md bold center">
+      <a name="Lift">
+        Lift
+      </a>
+    </div>
+    <p>
+      The Goal of Lift is to determine how much can the aircraft carry comfortably. Anything past it's comfortable point will make the aircraft unstable, and difficult to fly.
+    </p>
+    <div class="text-md center">
+      Small Lifts
+    </div>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Basic Levitator</div>
+          <div class="spells_body">
+            <b>Lift Capacity:</b> 60 Tons
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 4 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Rapid Levitator</div>
+          <div class="spells_body">
+            <b>Lift Capacity:</b> 45 Tons
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> -1
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 2 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Large Levitator</div>
+          <div class="spells_body">
+            <b>Lift Capacity:</b> 80 Tons
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 7 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-md bold center">
+      <a name="Motor">
+        Motor
+      </a>
+    </div>
+    <p>
+      The Goal of Lift is to determine how much can the aircraft carry comfortably. Anything past it's comfortable point will make the aircraft unstable, and difficult to fly.
+    </p>
+    <div class="text-md center">
+      Small Motors
+    </div>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Basic Engine</div>
+          <div class="spells_body">
+            <b>Speed:</b> 5
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 10 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 2 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Raw Injection</div>
+          <div class="spells_body">
+            <b>Speed:</b> 7
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 30 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 4 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Afterburner</div>
+          <div class="spells_body">
+            <b>Speed:</b> 10
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 30 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 7 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-md bold center">
+      <a name="Armaments">
+        Armaments
+      </a>
+    </div>
+    <p>
+      Armaments are the weapons attached to your ship. Various damage types affect Airships based on their composition. Here is how damage types affect different parts of aircrafts.
+    </p>
+    <ul>
+      <li>
+        <b>Energy Damage:</b> 150% Damage against Shields, 100% Damage against Hull
+        <ul>
+          <li>Fire</li>
+          <li>Acid</li>
+          <li>Cold</li>
+          <li>Electricity</li>
+          <li>Sonic</li>
+        </ul>
+      </li>
+      <li>
+        <b>Physical Damage:</b> 150% Damage against Hull, 100% Damage against Shields
+        <ul>
+          <li>Bludgeoning</li>
+          <li>Slashing</li>
+          <li>Piercing</li>
+        </ul>
+      </li>
+      <li>
+        <b>Aligment Damage:</b> 50% Damage overall
+        <ul>
+          <li>Positive</li>
+          <li>Negative</li>
+        </ul>
+      </li>
+      <li>
+        <b>Special Damage:</b> 100% Damage overall
+        <ul>
+          <li>Force</li>
+          <li>Precision</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Fire Thrower</div>
+          <div class="spells_body">
+            <b>Damage:</b> 1d6 Fire
+          </div>
+          <div class="spells_body">
+            <b>Range:</b> 4 / 6 Spaces
+          </div>
+          <div class="spells_body">
+            <b>Arc Coverage:</b> 3
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 10 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 2 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Coil Driver</div>
+          <div class="spells_body">
+            <b>Damage:</b> 1d8 Electric
+          </div>
+          <div class="spells_body">
+            <b>Range:</b> 3 / 6 Spaces
+          </div>
+          <div class="spells_body">
+            <b>Arc Coverage:</b> 3
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 10 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 3 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="text-lg bold center">
+      <a name="Dogfighting_Rules">
+        Dogfighting Rules
+      </a>
+    </div>
+    <p>
+      Dogfighting is when various ships engage in air to air fighting. Here are the General Rules for Dogfighting;
+    </p>
+    <div class="text-md bold center">
+      <a name="General_Rules">
+        General Rules
+      </a>
+    </div>
+    <ul>
+      <li>
+        Everyone gets 3 action points per Round to allocate as they see fit.
+      </li>
+      <li>
+        There are 4 Phases to the Fight which happen at the same time. All Crew Phases happen at the same time, but Crew and Piloting Phases happen at seperate times.
+      </li>
+      <li>
+        Any Damage dealt during round is applied at the end of the round.
+      </li>
+    </ul>
+
+    <div class="text-md bold center">
+      <a name="Crew_Phase">
+        Crew Phase
+      </a>
+    </div>
+    <p>
+      The Goal of the Crew Phase is Preperation, such as shield regeneration, reload heavy weapons, etc...
+    </p>
+
+    <div class="text-md bold center">
+      <a name="Deck_Phase">
+        Deck Phase
+      </a>
+    </div>
+    <p>
+      The Goal of the Deck Phase is Buff and Debuff your allies and enemies. Calling an enemy a particularly offensive name, aggrivating an enemy to attack only you, etc...
+    </p>
+
+    <div class="text-md bold center">
+      <a name="Pilot_Phase">
+        Pilot Phase
+      </a>
+    </div>
+    <p>
+      The Goal of the Pilot Phase is Positioning for the Gunner Phase. Align your weapons towards your enemies, allowing them to be fired.
+    </p>
+
+    <div class="text-md bold center">
+      <a name="Gunner_Phase">
+        Gunner Phase
+      </a>
+    </div>
+    <p>
+      The Goal of the Gunner Phase is Damage. Remember all damage is applied at the end of the round, not when dice are rolled.
+    </p>
+  </body>
+</html>

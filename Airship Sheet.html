@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="width=device-width" name="viewport"/>
+    <title>
+      Airship Sheet
+    </title>
+    <style>
+      body {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      html {
+        font-family: Arial;
+      }
+      h1, h2 {
+        color: black;
+        text-align: center;
+      }
+      .center {
+        text-align: center;
+      }
+      .centered {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .emp {
+        font-style: italic;
+      }
+      table {
+        border:1px solid black;
+        border-spacing:0px;
+      }
+      table tr th {
+          background-color:gray;
+          color:white;
+          padding:5px;
+      }
+      table tr td {
+          margin:0px;
+          padding:5px;
+      }
+      .text-xs {
+          font-size:10px;
+      }
+      .text-sm {
+          font-size:14px;
+      }
+      .text-md {
+          font-size:18px;
+      }
+      .text-lg {
+          font-size:24px;
+      }
+      .text-xl {
+          font-size:32px;
+      }
+      .sm-wrapper-box {
+        width: 80%;
+        border: 2px solid black;
+        margin-bottom: 40px;
+      }
+      .wrapper-box {
+        width: 100%;
+        border: 2px solid black;
+        margin-bottom: 60px;
+        padding: 5px;
+      }
+      .wide {
+        width: 100%;
+      }
+      .skinny {
+        width: 20%;
+      }
+      .seperator-row {
+        border-top: 1px solid black;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .suggestion {
+        padding: 2px 0px;
+        margin: 0px;
+        list-style: none;
+      }
+      .suggestion li {
+        border: 1px solid black;
+        background-color: #dddddd;
+        padding: 2px 4px;
+        margin: 5px 10px;
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+      }
+      .suggestion li:active {
+        background-color: #404040;
+      }
+      .suggestion li:hover {
+        background-color: #808080;
+      }
+      .attacks {
+          display: flex; 
+          flex-wrap: wrap; 
+          align-items: flex-start; 
+          width: 100%; 
+          padding-top: 10px; 
+          padding-bottom: 20px
+      }
+      .attacks table {
+          width: 44%; 
+          margin-left: 3%;
+          margin-right: 3%; 
+          margin-bottom: 1%;
+      }
+      .header {
+        padding: 5px 5px;
+        border-bottom-color: black;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+      }
+      .crit tr:nth-child(even) {
+        background-color: #EEE;
+      }
+      .link {
+        text-align: center;
+      }
+      .link li {
+        padding-bottom: 10px;
+      }
+      .link a {
+        border: 1px solid black;
+        width: 60%;
+        text-decoration: none;
+        color: #222;
+        background-color: #ddd;
+        padding: 3px 3px 3px 3px;
+      }
+      .link a:hover {
+        background-color: #222;
+        color: #ddd;
+      }
+      .sidebar {
+        float: left;
+        position: fixed;
+        top: 0;
+        right: 0px;
+        margin: 5px;
+      }
+      .grey {
+        background-color: #EFEFEF;
+      }
+      .grey:hover {
+        background-color: #CFCFCF;
+      }
+      .blue {
+        background-color: #6666FF;
+      }
+      .blue:hover {
+        background-color: #6666CF;
+      }
+      .yellow {
+        background-color: #FFFF66;
+      }
+      .yellow:hover {
+        background-color: #CFCF66;
+      }
+      .green {
+        background-color: #66FF66;
+      }
+      .green:hover {
+        background-color: #66CF66;
+      }
+      .red {
+        background-color: #FF6666;
+      }
+      .red:hover {
+        background-color: #CF6666;
+      }
+      .grey:active, .blue:active, .yellow:active, .green:active {
+        background-color: #000000;
+        color: #EFEFEF;
+      }
+      .sidebar_object {
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+        padding: 10px 20px;
+        border-style: solid;
+        border: 2px;
+      }
+      .editor {
+        padding: 5px;
+      }
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 5px 0px;
+        background-color: grey;
+        color: white;
+        text-align: center;
+      }
+      .traits {
+        padding: 5px 2px;
+        width: 95%;
+        margin: 15px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+      .traits_obj {
+        justify-content: flex-start;
+        width: 23%;
+        margin: 0px 10px;
+        padding: 3px;
+      }
+      .spells {
+        width: 95%;
+        display: flex;
+        padding: 5px 2px;
+        margin: 2px 5px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      .spells_obj {
+        width: 31%;
+        margin: 0px 5px 3px 5px;
+        padding: 3px;
+      }
+      .spells_list {
+        width: 100%;
+        border: 1px solid black;
+      }
+      .spells_body:first-of-type {
+        text-align: center;
+        font-weight: bold;
+        background-color: grey;
+        color: white;
+        padding: 5px;
+      }
+      .spells_body {
+        padding: 2px;
+      }
+
+      .overflow_textarea {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        resize: both;
+        min-height: 40px;
+        line-height: 20px
+      }
+    </style>
+    <script>
+      function show_hide(ident) {
+        var a = document.getElementById(ident);
+        if (a.style.display === 'none') {
+          a.style.display = 'block';
+        } else {
+          a.style.display = 'none';
+        }
+      }
+      function export_to_html(form) {
+        
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <label for="Name" class="text-lg bold">Ship Name:</label>
+      <input type="text" name="Name" class="text-lg bold">
+
+      <svg height="125" width="125" viewbox="0 0 200 200" style="float: right;">
+        <!--
+          Down Angle: 4/10
+          Across Angle: 12/5
+        -->
+
+        <polygon points="100,5 28,155 64,170 76,140 64,135 76,140 100,150 124,140 136,135 124,140 136,170 172,155" fill="none" stroke="black"/>
+        <polygon points="100,50 76,105 100,115 124,105" fill="rgb(6, 50, 245)" stroke="black" />
+
+        <!-- Side Flairs -->
+        <polygon points="40,130 4,115 47,115" fill="rgb(6, 50, 245)" stroke="black" />
+        <polygon points="160,130 196,115 153,115" fill="rgb(6, 50, 245)" stroke="black" />
+
+        <!-- Mountain Flair -->
+        <polygon points="100,50 92,68 96,70 100,66 104,70 108,68" fill="rgb(230, 230, 230)" stroke="black" />
+      </svg>
+
+      <br>
+      <hr>
+      <p>
+        <b>HD</b> = 10 + Pilot Reflex + Pilot Technique
+      </p>
+      <p>
+        <b>AP</b> = Ship AP + Deck Buffs
+      </p>
+      <hr>
+
+      <label for="HD" class="text-md bold">HD:</label>
+      <input type="text" name="HD" class="skinny">
+
+      <label for="AP" class="text-md bold">AP:</label>
+      <input type="text" name="AP" class="skinny">
+
+      <label for="HP" class="text-md bold">HP:</label>
+      <input type="text" name="HP" class="skinny">
+
+      <label for="SP" class="text-md bold">SP:</label>
+      <input type="text" name="SP" class="skinny">
+
+      <br>
+      <hr>
+
+      <label for="Recharge" class="text-md bold">Recharge:</label>
+      <input type="text" name="Recharge" class="skinny">
+
+      <label for="Thresholds" class="text-md bold">Thresholds:</label>
+      <input type="text" name="Thresholds" class="skinny">
+
+      <br>
+      <hr>
+
+      <label for="Lift" class="text-md bold">Lift:</label>
+      <input type="text" name="Lift" class="skinny">
+      <span> lbs.</span>
+
+      <br>
+
+      <label for="Weight" class="text-md bold">Weight:</label>
+      <input type="text" name="Weight" class="skinny">
+      <span> lbs.</span>
+
+      <br>
+
+      <label for="Move" class="text-md bold">Move:</label>
+      <input type="text" name="Move" class="skinny">
+      <span style="margin-left: 50px;">If Weight is 50% of Lift, Accelerate freely. Otherwise Accelerate 1 step</span>
+
+      <br>
+
+      <span class="bold">Current Speed: </span>
+      <label for="None">Stalled</label>
+      <input type="radio" id="None" value="None" name="Speed">
+      <span style="display:inline-block; margin-bottom: 6px; width: 35px; border-top: 2px solid black;"></span>
+      <input type="radio" id="Half" value="Half" name="Speed" checked>
+      <span style="display:inline-block; margin-bottom: 6px; width: 35px; border-top: 2px solid black;"></span>
+      <input type="radio" id="Full" value="Full" name="Speed">
+      <label for="Full">Full</label>
+
+      <br>
+
+      <label for="Crew" class="text-md bold">Crew:</label>
+      <input type="text" name="Crew" class="skinny">
+      <span> Souls</span>
+
+      <br>
+      <hr>
+      <div style="display: flex;justify-content: center;align-items: center;">
+        <svg height="400" width="400" id="ArcSVG" style="border: 2px solid black;">
+          <line x1="30" y1="30" x2="370" y2="370" style="stroke:rgb(255,0,0);stroke-width:2" />
+          <line x1="30" y1="370" x2="370" y2="30" style="stroke:rgb(255,0,0);stroke-width:2" />
+          <circle cx="200" cy="200" r="20" stroke="black" stroke-width="3" fill="red" />
+          <text fill="#000000" font-size="16" x="160" y="30">Forward Arc</text>
+          <text fill="#000000" font-size="16" x="165" y="370">Rear Arc</text>
+          <text fill="#000000" font-size="16" x="370" y="150" transform="rotate(90)">Starboard Arc</text>
+          <text fill="#000000" font-size="16" x="30" y="150" transform="rotate(-90)">Port Arc</text>
+        </svg>
+      </div>
+
+    </form>
+  </body>
+</html>
