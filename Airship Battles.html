@@ -150,6 +150,10 @@
         right: 0px;
         margin: 5px;
       }
+      .action {
+        width: 18px;
+        height: 18px;
+      }
       .grey {
         background-color: #EFEFEF;
       }
@@ -364,7 +368,7 @@
       </tr>
       <tr>
         <td>Small</td>
-        <td>10</td>
+        <td>25</td>
         <td>1 Soul</td>
         <td>1 Square (25' x 50')</td>
         <td>0</td>
@@ -372,7 +376,7 @@
       </tr>
       <tr>
         <td>Medium</td>
-        <td>15</td>
+        <td>55</td>
         <td>1 - 2 Souls</td>
         <td>1 Square (50' x 75')</td>
         <td>0</td>
@@ -380,7 +384,7 @@
       </tr>
       <tr>
         <td>Large</td>
-        <td>25</td>
+        <td>120</td>
         <td>2 - 8 Souls</td>
         <td>2 x 1 Squares (150' x 75')</td>
         <td>+1</td>
@@ -388,7 +392,7 @@
       </tr>
       <tr>
         <td>Huge</td>
-        <td>55</td>
+        <td>250</td>
         <td>2 - 16 Souls</td>
         <td>3 x 2 Squares (250' x 175')</td>
         <td>+2</td>
@@ -396,7 +400,7 @@
       </tr>
       <tr>
         <td>Gargantuan</td>
-        <td>120</td>
+        <td>600</td>
         <td>4 - 32 Souls</td>
         <td>5 x 3 Squares (400' x 250')</td>
         <td>+2</td>
@@ -404,7 +408,7 @@
       </tr>
       <tr>
         <td>Colossal</td>
-        <td>250</td>
+        <td>1500</td>
         <td>8 - 64 Souls</td>
         <td>6+ x 4+ Squares</td>
         <td>+3</td>
@@ -419,6 +423,8 @@
     <p>
       Armor for Airships equates to Damage Reduction. If you have 10 Hull Points and 5 Armor Points, and take 8 points of Damage, your Armor Points reduce the incoming damage by 5, leaving only 3 damage points to your Hull.
     </p>
+
+    <!-- ----------------------------------------------------------------------------------------------- -->
     <div class="text-md center">
       Small Armor
     </div>
@@ -743,6 +749,8 @@
     <p>
       The Goal of Lift is to determine how much can the aircraft carry comfortably. Anything past it's comfortable point will make the aircraft unstable, and difficult to fly.
     </p>
+
+    <!-- ----------------------------------------------------------------------------------------------- -->
     <div class="text-md center">
       Small Lifts
     </div>
@@ -786,6 +794,83 @@
           </div>
           <div class="spells_body">
             <b>Cost:</b> 7 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Cargo Levitator</div>
+          <div class="spells_body">
+            <b>Lift Capacity:</b> 100 Tons
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> +1
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 13 Credits
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------------------------------- -->
+    <div class="text-md center">
+      Medium Lifts
+    </div>
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Basic Levitator</div>
+          <div class="spells_body">
+            <b>Lift Capacity:</b> 80 Tons
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 7 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Rapid Levitator</div>
+          <div class="spells_body">
+            <b>Lift Capacity:</b> 60 Tons
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> -1
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 10 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Large Levitator</div>
+          <div class="spells_body">
+            <b>Lift Capacity:</b> 100 Tons
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> 0
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 13 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Cargo Levitator</div>
+          <div class="spells_body">
+            <b>Lift Capacity:</b> 150 Tons
+          </div>
+          <div class="spells_body">
+            <b>Move PEN:</b> +1
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 20 Credits
           </div>
         </div>
       </div>
@@ -901,7 +986,7 @@
             <b>Arc Coverage:</b> 3
           </div>
           <div class="spells_body">
-            <b>Weight:</b> 10 Tons
+            <b>Weight:</b> 8 Tons
           </div>
           <div class="spells_body">
             <b>Cost:</b> 2 Credits
@@ -928,6 +1013,106 @@
           </div>
         </div>
       </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Flak Cannon</div>
+          <div class="spells_body">
+            <b>Damage:</b> 1d10 Slashing
+          </div>
+          <div class="spells_body">
+            <b>Range:</b> 6 / 10 Spaces
+          </div>
+          <div class="spells_body">
+            <b>Arc Coverage:</b> 3
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 15 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 5 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Coolant Applicator</div>
+          <div class="spells_body">
+            <b>Damage:</b> 2d4 Cold
+          </div>
+          <div class="spells_body">
+            <b>Range:</b> 2 / 3 Spaces
+          </div>
+          <div class="spells_body">
+            <b>Arc Coverage:</b> 4
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 5 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 4 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Small Caliber Array</div>
+          <div class="spells_body">
+            <b>Damage:</b> 2d6 Piercing
+          </div>
+          <div class="spells_body">
+            <b>Range:</b> 6 / 10 Spaces
+          </div>
+          <div class="spells_body">
+            <b>Arc Coverage:</b> 1
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 10 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 4 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Medium Caliber Array</div>
+          <div class="spells_body">
+            <b>Damage:</b> 4d6 Piercing
+          </div>
+          <div class="spells_body">
+            <b>Range:</b> 6 / 10 Spaces
+          </div>
+          <div class="spells_body">
+            <b>Arc Coverage:</b> 1
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 20 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 40 Credits
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Small Bolla Launcher</div>
+          <div class="spells_body">
+            <b>Damage:</b> 1d12 Bludgeoning
+          </div>
+          <div class="spells_body">
+            <b>Range:</b> 6 / 10 Spaces
+          </div>
+          <div class="spells_body">
+            <b>Arc Coverage:</b> 1
+          </div>
+          <div class="spells_body">
+            <b>Weight:</b> 20 Tons
+          </div>
+          <div class="spells_body">
+            <b>Cost:</b> 40 Credits
+          </div>
+        </div>
+      </div>
     </div>
     <hr>
     <div class="text-lg bold center">
@@ -945,13 +1130,16 @@
     </div>
     <ul>
       <li>
-        Everyone gets 3 action points per Round to allocate as they see fit.
+        Each airship has a number of action points to use per round of combat, which do not roll over between rounds. The number of action points is also based on the crew size.
       </li>
       <li>
-        There are 4 Phases to the Fight which happen at the same time. All Crew Phases happen at the same time, but Crew and Piloting Phases happen at seperate times.
+        There are 4 Phases to a fight, all of which happen at the same time, Each round of combat lasts about a minute, where each phase may be occupied the entire duration, or for a few split seconds.
       </li>
       <li>
-        Any Damage dealt during round is applied at the end of the round.
+        Crew members are limited to actions within their Phase, but can rotate out to a new station in between Rounds. A Gunner can swap to the Crew at the end of the round, but someone on the Deck phase cannot pilot during the same round.
+      </li>
+      <li>
+        Any Damage dealt during round is applied at the end of the round in one lump sum. If your Pilot takes a Flyby Attack during the pilot phase, that damage is applied after the gunner phase. 
       </li>
     </ul>
 
@@ -961,9 +1149,32 @@
       </a>
     </div>
     <p>
-      The Goal of the Crew Phase is Preperation, such as shield regeneration, reload heavy weapons, etc...
+      The Goal of the Crew Phase is Preperation, such as shield regeneration/redistributing, hull patching, reload heavy weapons, etc...
     </p>
-
+    <div class="spells">
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Shield Regeneration</div>
+          <div class="spells_body">
+            <b>Actions:</b> <img class="action" src="img/1 Action.png">
+          </div>
+          <div class="spells_body">
+            <b>Details:</b> the crew charges the shield with magical energy. Regenerate an amount equal to your shield's Recharge Capacity.
+          </div>
+        </div>
+      </div>
+      <div class="spells_obj">
+        <div class="spells_list">
+          <div class="spells_body">Hull Repair</div>
+          <div class="spells_body">
+            <b>Actions:</b> <img class="action" src="img/1 Action.png">
+          </div>
+          <div class="spells_body">
+            <b>Details:</b> Repair one broken condition on the ship.
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="text-md bold center">
       <a name="Deck_Phase">
         Deck Phase
