@@ -473,10 +473,10 @@
           </h3>
         </a>
         <p>
-          <span class="bold">Gun Usage:</span> All guns in Thunia tend to operate on the basic mechanics of load a round, fire a round, eject casing and other debris, repeat. If any event in that process fails, the gun misfires. When making an Attack Roll, if the d20 lands on a 1 or a 2, the gun Misfires. If the gun is in perfect condition, it gains the broken condition. If the gun has the broken condition, the gun explodes. All creatures in a 10ft radius of the gunslinger, including the gunslinger, must roll a DC15 DEX save or take the gun's regular damage.
+          <span class="bold">Gun Usage:</span> All guns in Thunia tend to operate on the basic mechanics of load a round, fire a round, eject casing and other debris, repeat. If any event in that process fails, the gun misfires. When making an Attack Roll, if the d20 lands on a number in your misfire range, the gun Misfires. If the gun is in perfect condition, it gains the broken condition. If the gun already has the broken condition, the gun explodes. All creatures in a 10ft radius of the gunslinger, including the gunslinger, must roll a DC15 DEX save or take the gun's regular damage.
         </p>
         <p>
-          There are ways your misfire chance can increase, such as using poorly made bullets, which means if your misfire chance is a 4, then when making an attack roll, a 4 or lower on the die, will cause a misfire.
+          There are ways your misfire chance can increase, such as using poorly made bullets, and ways your misfire and decrease, like a well made part. If your weapon has a misfire range / chance of 4 when making an attack roll, a 4 or lower on the d20 die, will cause a misfire.
         </p>
         <p>
           <span class="bold">Ammo:</span> All ammunition is not created equal. Ammunition made for a pistol will not work for any other type of firearm. If a firearm is loaded and discharged with the incorrect ammunition, the weapon automatically misfires.
@@ -488,7 +488,7 @@
           <span class="bold">Repairs & Cleanings:</span> A gunslinger needs to know their tools inside and out. With weapons only recently emerging in Thunia, having this knowledge is critical to a gunslinger's survival. During a short or long rest, you can repair your firearm back to it's original glory, with the aid of a set of Tinker's Tools. This cleaing and repair removes the broken condition as well as any effect that effect the efficacy of your firearm.
         </p>
         <p>
-          <span class="bold">Ranges:</span> Firearms have two ranges. The first is your <u>Close Range</u>. This is the range at which you are most effective at hitting targets. Anything past that is the <u>Effective Range</u>. This is the range that you are still capable of hitting within, but it is much harder. When firing at a target outside of your effective range, roll with disadvantage.
+          <span class="bold">Ranges:</span> Firearms have two ranges. The first is your <u>Effective Range</u>. This is the range at which you are most effective at hitting targets. Anything past that is the <u>Long Range</u>. This is the range that you are still capable of hitting within, but it is much harder. When firing at a target outside of your effective range, but within your long range, roll with disadvantage. Outside of your Long range is considered unhittable, and nigh impossible.
         </p>
         <p>
           <span class="bold">Gun Types:</span> There are three main types of guns. For the purposes of defining the use case of these weapons, I will use the following metric;
@@ -1112,7 +1112,7 @@
               <br/>
               <span class="text-sm emp" id="4a" style="display: none;">
                 <p>
-                  <span style="color: red;">Sniper or Rifle Only</span> You add a way better sight to your weapon making it easier to aim, especially at targets further away. Doubles your weapon's effective range.
+                  <span style="color: red;">Sniper or Rifle Only</span> You add a way better sight to your weapon making it easier to aim, especially at targets further away. Doubles your weapon's effective and long range.
                 </p>
               </span>
             </td>
@@ -3070,7 +3070,7 @@
             <th>
               Additional Propertoes
             </th>
-            <th colspan="2">
+            <th colspan="3">
               Base Range
             </th>
           </tr>
@@ -3079,7 +3079,10 @@
             <th></th>
             <th></th>
             <th>
-              Rifle & Sniper
+              Sniper
+            </th>
+            <th>
+              Rifle
             </th>
             <th>
               Pistol & Shotgun
@@ -3094,6 +3097,9 @@
             </td>
             <td>
               Resale Cost x 2
+            </td>
+            <td>
+              80 ft / 120 ft
             </td>
             <td>
               60 ft / 120 ft
@@ -3113,6 +3119,9 @@
               Resale Cost x 5
             </td>
             <td>
+              80 ft / 120 ft
+            </td>
+            <td>
               60 ft / 120 ft
             </td>
             <td>
@@ -3128,6 +3137,9 @@
             </td>
             <td>
               -
+            </td>
+            <td>
+              80 ft / 120 ft
             </td>
             <td>
               60 ft / 120 ft
@@ -3147,6 +3159,9 @@
               Resale Cost x 10
             </td>
             <td>
+              80 ft / 120 ft
+            </td>
+            <td>
               60 ft / 120 ft
             </td>
             <td>
@@ -3162,6 +3177,9 @@
             </td>
             <td>
               +1 Damage against Demons
+            </td>
+            <td>
+              100 ft / 175 ft
             </td>
             <td>
               80 ft / 160 ft
@@ -3181,6 +3199,9 @@
               Resale Cost x 5, Weight x 0.5
             </td>
             <td>
+              100 ft / 175 ft
+            </td>
+            <td>
               80 ft / 160 ft
             </td>
             <td>
@@ -3196,6 +3217,9 @@
             </td>
             <td>
               Deals 1 Psychic Damage
+            </td>
+            <td>
+              80 ft / 120 ft
             </td>
             <td>
               50 ft / 100 ft
@@ -3215,6 +3239,9 @@
               Deals 1 Fire Damage
             </td>
             <td>
+              100 ft / 175 ft
+            </td>
+            <td>
               80 ft / 160 ft
             </td>
             <td>
@@ -3230,6 +3257,9 @@
             </td>
             <td>
               Deals 1 Cold Damage
+            </td>
+            <td>
+              100 ft / 175 ft
             </td>
             <td>
               80 ft / 160 ft
@@ -3249,6 +3279,9 @@
               Deals 1 Radiant Damage
             </td>
             <td>
+              100 ft / 175 ft
+            </td>
+            <td>
               80 ft / 160 ft
             </td>
             <td>
@@ -3264,6 +3297,9 @@
             </td>
             <td>
               -
+            </td>
+            <td>
+              125 ft / 250 ft
             </td>
             <td>
               100 ft / 200 ft
@@ -4927,7 +4963,7 @@
               +2
             </td>
             <td>
-              +1 Cold Damage
+              +1 Fire Damage
             </td>
             <td>
               <ul class="in-table">
@@ -5057,7 +5093,7 @@
           </tr>
           <tr>
             <td>
-              41 - 99
+              41 - 89
             </td>
             <td>
               You create a great firing mechanism. You can dismantle and retry with this receiver.
@@ -5065,10 +5101,18 @@
           </tr>
           <tr>
             <td>
+              90 - 99
+            </td>
+            <td>
+              You create a great firing mechanism. You can dismantle and retry with this receiver. You gain the additional effects at this level.
+            </td>
+          </tr>
+          <tr>
+            <td>
               < 100
             </td>
             <td>
-              You create a perfect firing mechanism. You can dismantle and retry with this receiver. Weapon is considered +1.
+              You create a perfect firing mechanism. You can dismantle and retry with this receiver. You gain the additional effects at this level. Weapon is considered +1.
             </td>
           </tr>
         </table>
